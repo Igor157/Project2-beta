@@ -69,17 +69,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = doingSmth;
-
-
-function doingSmth(message) {
-
-  //   if (NODE_ENV == 'development') {
-  //     console.log(message);
-  //   }
-
-  alert(`Hello ${message}`);
-};
+eval("/* harmony export (immutable) */ __webpack_exports__[\"a\"] = doingSmth;\n\n\nfunction doingSmth(message) {\n\n  //   if (NODE_ENV == 'development') {\n  //     console.log(message);\n  //   }\n\n  alert(`Hello ${message}`);\n};\n\n//////////////////\n// WEBPACK FOOTER\n// ./doingSmth.js\n// module id = 0\n// module chunks = 0 1\n\n//# sourceURL=webpack:///./doingSmth.js?");
 
 /***/ }),
 
@@ -87,13 +77,7 @@ function doingSmth(message) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__doingSmth__ = __webpack_require__(0);
-
-
-
-
-Object(__WEBPACK_IMPORTED_MODULE_0__doingSmth__["a" /* default */])("World I am Igor");
+eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__doingSmth__ = __webpack_require__(0);\n\n\n\n\nObject(__WEBPACK_IMPORTED_MODULE_0__doingSmth__[\"a\" /* default */])(\"World I am Igor\");\n\n//////////////////\n// WEBPACK FOOTER\n// ./footer.js\n// module id = 7\n// module chunks = 1\n\n//# sourceURL=webpack:///./footer.js?");
 
 /***/ })
 
