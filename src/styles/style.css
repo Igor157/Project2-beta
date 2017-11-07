@@ -45,6 +45,22 @@ max-height: 85vh;
 .ik-avaible-currencies__day-progress--green {
     background-color: rgb(30, 126, 30);
 }
+.ik-currency-page__currency-table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 50%;
+    max-height: 85vh;
+    border-radius: 5px;
+}
+.ik-currency-date-table__row {
+    border: 2px solid black;
+
+}
+.ik-currency-date-table__item {
+    border: 2px solid black;
+    text-align: center; 
+}
 .ik-currency-page__output-table{
 
 }
@@ -96,5 +112,9 @@ border-radius: 10px 0 0 10px;
     border-radius: 5px;
 }
 .ik-output {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(83, 17, 17);
+    padding-top: 20px;
 
 }
