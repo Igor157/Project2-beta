@@ -1,0 +1,58 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.ik-currency-page {
+    /* background-color: grey;   */
+    background-image: url(108bd45c298d582ec715a090b590fd63.jpg); 
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    position: fixed;        
+}
+.ik-currency-page__search {
+width: 30%;
+display: flex;
+flex-wrap: wrap;
+padding-left: 30px;
+padding-top: 20px;
+
+}
+.ik-currency-page__navigation {
+width: 70%;
+}
+.ik-currency-page__avaible-currencies{
+width: 30%;
+
+display: flex;
+flex-wrap: wrap;
+}
+.ik-currency-page__output-table{
+width:70%;
+}
+.ik-search {
+    height: 30px;    
+}
+.ik-search__search-place {
+width:70%;
+}
+.ik-search__search-button {
+    float: right;
+}
+.ik-nav {
+    /* width: 70%; */
+
+}
+.ik-avaible-currencies {
+
+}
+.ik-avaible-currencies__abr {
+
+}
+.ik-avaible-currencies__rate{
+
+}
+.ik-output {
+
+}

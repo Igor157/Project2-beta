@@ -60,25 +60,15 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
 
-/***/ 0:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("/* harmony export (immutable) */ __webpack_exports__[\"a\"] = doingSmth;\n\n\nfunction doingSmth(message) {\n\n  //   if (NODE_ENV == 'development') {\n  //     console.log(message);\n  //   }\n\n  alert(`Hello ${message}`);\n};\n\n//////////////////\n// WEBPACK FOOTER\n// ./doingSmth.js\n// module id = 0\n// module chunks = 0 1\n\n//# sourceURL=webpack:///./doingSmth.js?");
-
-/***/ }),
-
-/***/ 7:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__doingSmth__ = __webpack_require__(0);\n\n\n\n\nObject(__WEBPACK_IMPORTED_MODULE_0__doingSmth__[\"a\" /* default */])(\"World I am Igor\");\n\n//////////////////\n// WEBPACK FOOTER\n// ./footer.js\n// module id = 7\n// module chunks = 1\n\n//# sourceURL=webpack:///./footer.js?");
+throw new Error("Module build failed: SyntaxError: D:/IT_learning/FrontEnd-Project-2/src/app.jsx: Unexpected token (6:12)\n\n\u001b[0m \u001b[90m 4 | \u001b[39m\n \u001b[90m 5 | \u001b[39m\u001b[36mfunction\u001b[39m \u001b[33mHelloWorld\u001b[39m() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 | \u001b[39m    \u001b[36mreturn\u001b[39m (\u001b[33m<\u001b[39m\u001b[33mh1\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"ik-hello__world\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33mHello\u001b[39m\u001b[33m,\u001b[39m \u001b[33mWorld\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh1\u001b[39m\u001b[33m>\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   | \u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 | \u001b[39m}\n \u001b[90m 8 | \u001b[39m\n \u001b[90m 9 | \u001b[39m\u001b[33mReactDOM\u001b[39m\u001b[33m.\u001b[39mrender(\u001b[33m<\u001b[39m\u001b[33mHelloWorld\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m,\u001b[39m document\u001b[33m.\u001b[39mgetElementById(\u001b[32m\"ik-page\"\u001b[39m))\u001b[33m;\u001b[39m\u001b[0m\n");
 
 /***/ })
-
-/******/ });
+/******/ ]);
+//# sourceMappingURL=bundle.js.map
