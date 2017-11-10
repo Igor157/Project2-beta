@@ -1,0 +1,24 @@
+
+.ik-avaible-currencies {
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: auto;
+    color: rgb(74, 74, 228);
+}
+.ik-avaible-currencies__row {
+    display: flex;
+    justify-content: space-around;   
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.ik-avaible-currencies__abr {
+    font-weight: bold;
+}
+.ik-avaible-currencies__rate {
+
+}
+.ik-avaible-currencies__day-progress {
+    border: 2px solid white;
+    min-width: 75px;
+    border-radius: 5px;
+}

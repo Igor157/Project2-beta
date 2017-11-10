@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.ik-currency-page {
+    background-color: rgb(88, 82, 82);  
+    background-image: url(./images/rich.jpg);  
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;       
+}
+.ik-currency-page__search {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 30px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.ik-currency-page__navigation {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 100px;
+    padding-right: 50px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.ik-currency-page__avaible-currencies {
+width: 30%;
+margin: 30px;
+box-sizing: border-box;
+margin-top: 20px;
+max-height: 85vh;  
+}
+.ik-avaible-currencies__day-progress--red {
+    background-color: rgb(151, 21, 21);
+}
+.ik-avaible-currencies__day-progress--green {
+    background-color: rgb(30, 126, 30);
+}
+.ik-currency-page__currency-table {
+    margin-top: 20px;
+    width: 50%;
+    max-height: 85vh;
+}
+.ik-currency-page__converter-button {
+    position: fixed;
+    right: 0px;
+    top: 40%;
+}
+.ik-currency-page__converter-container {
+    position: fixed;
+    right: 0px;
+    padding-top: 20px;
+    padding-left: 10px;
+}

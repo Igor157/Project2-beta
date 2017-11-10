@@ -7,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     context: __dirname + '/src',
     entry: {
-        app: './app.js',
+        app: './CurrencyPage/CurrencyPage.js',
     },
     output: {
         path: __dirname + '/build',

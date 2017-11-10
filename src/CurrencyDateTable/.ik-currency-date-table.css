@@ -1,0 +1,13 @@
+.ik-currency-date-table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    border-radius: 5px;
+}
+.ik-currency-date-table__row {
+    border: 2px solid black;
+
+}
+.ik-currency-date-table__item {
+    border: 2px solid black;
+    text-align: center; 
+}
