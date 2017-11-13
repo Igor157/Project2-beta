@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styles from './.ik-currency-date-table.css';
-import { Tableplace } from '../Tableplace/Tableplace.js'
+import { EmptyTemplate } from '../EmptyTemplate/EmptyTemplate.js';
 
 export class CurrencyDateTable extends React.Component {
   render() {
-    if (this.props.abr == undefined)
+    if (this.props.abr == undefined) {
       return (
-        <Tableplace />
+        <EmptyTemplate />
       )
-
+    }
     const pageElementClass = this.props.className;
     const abr = this.props.abr;
     let choicedArr = this.props.currencyArr.filter((item) => item.Cur_Abbreviation == this.props.abr);
@@ -21,6 +21,7 @@ export class CurrencyDateTable extends React.Component {
         </tr>
       )
     });
+    // TODO: better to use div instead of table
     return (
       <table className={`ik-currency-date-table ${pageElementClass}`}>
         <tbody>
@@ -34,3 +35,4 @@ export class CurrencyDateTable extends React.Component {
     )
   }
 }
+CurrencyDateTable.defaultProps = {currencyArr:[], yesterdayCurrency:[]};

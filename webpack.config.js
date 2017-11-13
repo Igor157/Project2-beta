@@ -15,7 +15,7 @@ module.exports = {
         // library:  "[name]"
     },
     watch: NODE_ENV == 'development',
-    devtool: NODE_ENV == 'development' ? 'eval' : 'sourceMap',
+    devtool: NODE_ENV == 'development' ? 'sourceMap' : 'eval',
     devServer: {
         contentBase: path.resolve(__dirname)
     },

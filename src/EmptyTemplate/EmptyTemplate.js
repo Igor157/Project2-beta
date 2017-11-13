@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styles from './.ik-output.css';
 
-export class Tableplace extends React.Component {
+// TODO: rename to empty hint/template
+export class EmptyTemplate extends React.Component {
   render() {
     const pageElementClass = this.props.className
     return (

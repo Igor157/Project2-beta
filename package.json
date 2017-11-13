@@ -27,6 +27,7 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "node-fetch": "^1.7.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }

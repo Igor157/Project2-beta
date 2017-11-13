@@ -34,7 +34,8 @@ width: 30%;
 margin: 30px;
 box-sizing: border-box;
 margin-top: 20px;
-max-height: 85vh;  
+max-height: 85vh;
+min-height: 85vh;  
 }
 .ik-avaible-currencies__day-progress--red {
     background-color: rgb(151, 21, 21);
@@ -46,6 +47,23 @@ max-height: 85vh;
     margin-top: 20px;
     width: 50%;
     max-height: 85vh;
+}
+
+.ik-currency-page__converter-container {
+    position: fixed;
+    right: 0px;
+    padding-top: 20px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}.ik-nav {
+    color: white;
+    height: 50px;
+
+}
+.ik-nav__button {
+    color:white;
 }.ik-search {
     height: 45px;    
 }
@@ -62,13 +80,6 @@ border-radius: 10px 0 0 10px;
     background-color: rgb(228, 192, 74);
     border: 2px solid white;
     border-radius: 0 10px 10px 0;
-}.ik-nav {
-    color: white;
-    height: 50px;
-
-}
-.ik-nav__button {
-    color:white;
 }
 .ik-avaible-currencies {
     border: 2px solid black;
@@ -111,4 +122,54 @@ border-radius: 10px 0 0 10px;
     color: rgb(83, 17, 17);
     padding-top: 20px;
 
+}
+
+.ik-converter-button {
+    width: 110px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50px 0 0 50px;
+    background-color: rgb(184, 176, 176);
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.ik-converter-container {
+    width: 30%;
+    height: 100%;
+    /* border: 2px solid black;
+    background-color: rgb(184, 176, 176);  */
+}
+.ik-converter-container__field {
+    height: 100%;
+    border: 2px solid black;
+    background-color: rgb(184, 176, 176);
+}
+.ik-converter-container__button {
+   }
+.ik-converter-container__converter-input {
+    padding-top: 50px;
+}
+.hidden {
+    display: none;
+    width: 0;
+}
+
+.ik-converter-input {
+
+}
+.ik-converter-input__label{
+    float:left;
+    min-width: 80px;
+}
+.ik-converter-input__form {
+    
+}
+.ik-converter-input__textarea {
+    margin-right: 5px;
+    border-radius: 5px;
+    max-width: 100px;
+}
+.ik-converter-select {
+    border-radius: 5px;
 }
