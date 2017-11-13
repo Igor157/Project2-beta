@@ -5,11 +5,11 @@ import styles from './.ik-search.css';
 export class Search extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+    this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
   }
-  // handleFilterTextChange(e) {
-  //   this.props.onFilterTextChange(e.target.value);
-  // }
+  handleFilterTextChange(e) {
+    this.props.onFilterTextChange(e.target.value);
+  }
   render() {
     const pageElementClass = this.props.className;
     return (

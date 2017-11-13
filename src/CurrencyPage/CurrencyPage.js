@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import styles from './.ik-currency-page.css';
 
 import { Navigation } from '../Navigation/Navigation.js';
-import {Search} from '../Search/Search.js'
+import { Search } from '../Search/Search.js'
 import { AvaibleCurrencies } from '../AvaibleCurrencies/AvaibleCurrencies.js';
 import { CurrencyDateTable } from '../CurrencyDateTable/CurrencyDateTable.js';
 import { ConverterButton } from '../ConverterButton/ConverterButton.js';
@@ -15,13 +15,17 @@ export class CurrencyPage extends React.Component {
     super(props);
     this.state = {}
     this.currencyOnclick = this.currencyOnclick.bind(this);
+    this.onFilterTextChange = this.onFilterTextChange.bind(this);
   }
   currencyOnclick(target) {
     this.setState({ abr: target });
   }
+  onFilterTextChange(target) {
+    this.setState({ filterText: target });
+  }
   componentWillMount() {
     let promisesArr = [];
-    for (let i =0; i <= 9; ++i) {
+    for (let i = 0; i <= 9; ++i) {
       promisesArr.push(services.reqCur(services.getUrl()[i]))
     };
     Promise.all(promisesArr)
@@ -37,18 +41,32 @@ export class CurrencyPage extends React.Component {
       .catch(err => { console.log(err) });
   }
   render() {
-    console.log("render");
     return (
       // TODO: move attributes to new lines
       <div className="ik-currency-page">
-        <Search className="ik-currency-page__search" />
-        <Navigation className="ik-currency-page__navigation" />
-        <AvaibleCurrencies className="ik-currency-page__avaible-currencies" currency={this.state.currency} yesterdayCurrency={this.state.yesterdayCurrency} currencyOnclick={this.currencyOnclick} />
-
+        <Search
+          className="ik-currency-page__search"
+          onFilterTextChange={this.onFilterTextChange}
+          filterText={this.state.filterText}
+        />
+        <Navigation
+          className="ik-currency-page__navigation"
+        />
+        <AvaibleCurrencies
+          className="ik-currency-page__avaible-currencies"
+          currency={this.state.currency}
+          yesterdayCurrency={this.state.yesterdayCurrency}
+          currencyOnclick={this.currencyOnclick}
+          filterText={this.state.filterText}
+        />
         <CurrencyDateTable className="ik-currency-page__currency-table"
           currencyArr={this.state.currencyArr}
-          abr={this.state.abr} />
-        <ConverterContainer className="ik-currency-page__converter-container" currency={this.state.currency}/>
+          abr={this.state.abr}
+        />
+        <ConverterContainer
+          className="ik-currency-page__converter-container"
+          currency={this.state.currency}
+        />
       </div>
     )
   }
@@ -56,6 +74,6 @@ export class CurrencyPage extends React.Component {
 
 // TODO: separate to enother file
 ReactDOM.render(
-  <CurrencyPage/>,
+  <CurrencyPage />,
   document.getElementById('ik-page')
 );
