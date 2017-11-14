@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styles from './.ik-avaible-currencies.css';
+import styles from './ik-avaible-currencies.style.css';
 import { services } from '../Services/Services.js';
 
 export class AvaibleCurrencies extends React.Component {
@@ -18,13 +18,9 @@ export class AvaibleCurrencies extends React.Component {
     const downStyle = "ik-avaible-currencies__day-progress--red";
     let currencyArr = this.props.currency;
     let filterText = this.props.filterText;
-    console.log(filterText, "filtertext");
-    console.log(currencyArr, "currencyArr");
     let currencyFilter = (filterText) ?
       currencyArr.filter((item) => item.Cur_Abbreviation.indexOf(filterText) != -1)
       : currencyArr;
-    console.log(currencyFilter, "currencyFilter");
-    console.log(this.props.currency, "this.props.currency");
     let currency = currencyFilter.map((item, index) => (
       <div key={index} className="ik-avaible-currencies__row">
         <div className="ik-avaible-currencies__abr">{item.Cur_Abbreviation}</div>

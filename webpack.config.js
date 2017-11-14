@@ -9,7 +9,7 @@ console.log(NODE_ENV == 'development');
 module.exports = {
     context: __dirname + '/src',
     entry: {
-        app: './CurrencyPage/CurrencyPage.js',
+        app: './currency-page/ik-currency-page.component.js',
     },
     output: {
         path: __dirname + '/build',

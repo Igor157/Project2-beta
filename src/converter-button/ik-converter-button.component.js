@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styles from './.ik-converter-button.css';
+import styles from './ik-converter-button.style.css';
 
 export class ConverterButton extends React.Component {
   constructor(props) {

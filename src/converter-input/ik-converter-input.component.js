@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styles from './.ik-convert-input.css';
+import styles from './ik-convert-input.style.css';
 
 export class ConverterInput extends React.Component {
     constructor(props) {

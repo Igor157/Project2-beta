@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styles from './.ik-currency-page.css';
+import styles from './ik-currency-page.style.css';
 
-import { Navigation } from '../Navigation/Navigation.js';
-import { Search } from '../Search/Search.js'
-import { AvaibleCurrencies } from '../AvaibleCurrencies/AvaibleCurrencies.js';
-import { CurrencyDateTable } from '../CurrencyDateTable/CurrencyDateTable.js';
-import { ConverterButton } from '../ConverterButton/ConverterButton.js';
-import { ConverterContainer } from '../ConverterContainer/ConverterContainer.js';
+import { Navigation } from '../navigation/ik-navigation.component.js';
+import { Search } from '../search/ik-search.component.js'
+import { AvaibleCurrencies } from '../avaible-currencies/ik-avaible-currencies.component.js';
+import { CurrencyDateTable } from '../currency-date-table/ik-currency-date-table.component.js';
+import { ConverterButton } from '../converter-button/ik-converter-button.component.js';
+import { ConverterContainer } from '../converter-container/ik-converter-container.component.js';
 import { services } from '../Services/Services.js';
 
 export class CurrencyPage extends React.Component {

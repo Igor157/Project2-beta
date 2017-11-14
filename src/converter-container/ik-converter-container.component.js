@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styles from './.ik-converter-container.css';
-import { ConverterInput } from '../ConverterInput/ConverterInput.js';
+import styles from './ik-converter-container.style.css';
+import { ConverterInput } from '../converter-input/ik-converter-input.component.js';
 import { services } from '../Services/Services.js';
-import { ConverterButton } from '../ConverterButton/ConverterButton.js';
+import { ConverterButton } from '../converter-button/ik-converter-button.component.js';
 
 
 export class ConverterContainer extends React.Component {
