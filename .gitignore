@@ -58,3 +58,5 @@ typings/
 .env
 # ignore files in build/
 build/
+# ignore files in dist/
+dist/

@@ -4,6 +4,8 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+console.log(NODE_ENV == 'development');
+
 module.exports = {
     context: __dirname + '/src',
     entry: {
@@ -15,7 +17,7 @@ module.exports = {
         // library:  "[name]"
     },
     watch: NODE_ENV == 'development',
-    devtool: NODE_ENV == 'development' ? 'sourceMap' : 'eval',
+    devtool:'source-map',
     devServer: {
         contentBase: path.resolve(__dirname)
     },

@@ -42,7 +42,6 @@ export class CurrencyPage extends React.Component {
   }
   render() {
     return (
-      // TODO: move attributes to new lines
       <div className="ik-currency-page">
         <Search
           className="ik-currency-page__search"

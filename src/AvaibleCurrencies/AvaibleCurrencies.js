@@ -16,8 +16,16 @@ export class AvaibleCurrencies extends React.Component {
     const pageElementClass = this.props.className;
     const rizeStyle = "ik-avaible-currencies__day-progress--green";
     const downStyle = "ik-avaible-currencies__day-progress--red";
-    // TODO: move calculations to separate method
-    let currency = this.props.currency.map((item, index) => (
+    let currencyArr = this.props.currency;
+    let filterText = this.props.filterText;
+    console.log(filterText, "filtertext");
+    console.log(currencyArr, "currencyArr");
+    let currencyFilter = (filterText) ?
+      currencyArr.filter((item) => item.Cur_Abbreviation.indexOf(filterText) != -1)
+      : currencyArr;
+    console.log(currencyFilter, "currencyFilter");
+    console.log(this.props.currency, "this.props.currency");
+    let currency = currencyFilter.map((item, index) => (
       <div key={index} className="ik-avaible-currencies__row">
         <div className="ik-avaible-currencies__abr">{item.Cur_Abbreviation}</div>
         <div className="ik-avaible-currencies__rate">{item.Cur_OfficialRate}</div>
@@ -38,4 +46,4 @@ export class AvaibleCurrencies extends React.Component {
     );
   }
 }
-AvaibleCurrencies.defaultProps = { currency: [], yesterdayCurrency: [] };
+AvaibleCurrencies.defaultProps = { currency: [], yesterdayCurrency: [], filterText: false };
