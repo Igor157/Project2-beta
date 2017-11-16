@@ -5,19 +5,19 @@ import { EmptyTemplate } from '../empty-template/ik-empty-template.component.js'
 
 export class CurrencyDateTable extends React.Component {
   render() {
-    if (this.props.abr == undefined) {
+    if (this.props.dynamic == undefined) {
       return (
         <EmptyTemplate />
       )
     }
     const pageElementClass = this.props.className;
-    const abr = this.props.abr;
-    let choicedArr = this.props.currencyArr.filter((item) => item.Cur_Abbreviation == this.props.abr);
-    let currencyTable = choicedArr.map(function (item, index) {
+    // let choicedArr = this.props.currencyArr.filter((item) => item.Cur_Abbreviation == this.props.abr);
+    let abr = this.props.abr;
+    let currencyTable = this.props.dynamic.map(function (item, index) {
       return (
         <tr className="ik-currency-date-table__row" key={index}>
-          <td className="ik-currency-date-table__item">{item.Date}</td>
-          <td className="ik-currency-date-table__item">{item.Cur_OfficialRate}</td>
+          <td className="ik-currency-date-table__item">{item.date}</td>
+          <td className="ik-currency-date-table__item">{item.curRate}</td>
         </tr>
       )
     });

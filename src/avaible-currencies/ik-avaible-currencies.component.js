@@ -3,43 +3,45 @@ import ReactDOM from "react-dom";
 import styles from './ik-avaible-currencies.style.css';
 import { services } from '../Services/Services.js';
 
+const rizeStyle = "ik-avaible-currencies__day-progress--green";
+const downStyle = "ik-avaible-currencies__day-progress--red";
+
 export class AvaibleCurrencies extends React.Component {
   constructor(props) {
     super(props);
     this.clickHandler = this.clickHandler.bind(this);
   }
   clickHandler(e) {
-    this.props.currencyOnclick(e.target.getAttribute("abr"));
+    this.props.currencyOnclick(e.target);
   }
   render() {
-    const yesterdayCurrency = this.props.yesterdayCurrency;
     const pageElementClass = this.props.className;
-    const rizeStyle = "ik-avaible-currencies__day-progress--green";
-    const downStyle = "ik-avaible-currencies__day-progress--red";
-    let currencyArr = this.props.currency;
+    let currencyArr = this.props.cur;
+    console.log(this.props.cur, "currencyArr");
     let filterText = this.props.filterText;
     let currencyFilter = (filterText) ?
-      currencyArr.filter((item) => item.Cur_Abbreviation.indexOf(filterText) != -1)
+      currencyArr.filter((item) => item.curAbr.indexOf(filterText) !== -1)
       : currencyArr;
-    let currency = currencyFilter.map((item, index) => (
+    let avaibleCurrency = currencyFilter.map((item, index) => (
       <div key={index} className="ik-avaible-currencies__row">
-        <div className="ik-avaible-currencies__abr">{item.Cur_Abbreviation}</div>
-        <div className="ik-avaible-currencies__rate">{item.Cur_OfficialRate}</div>
+        <div className="ik-avaible-currencies__abr">{item.curAbr}</div>
+        <div className="ik-avaible-currencies__rate">{item.curRate}</div>
         <button
-          abr={item.Cur_Abbreviation}
-          className={`ik-avaible-currencies__day-progress  ${services.curTendetionDetermination(item, index, yesterdayCurrency) > 0 ? rizeStyle : downStyle}`}
+          id={item.curId}
+          abr={item.curAbr}
+          className={`ik-avaible-currencies__day-progress  ${item.curDifference > 0 ? rizeStyle : downStyle}`}
         >
           {
-            (services.curTendetionDetermination(item, index, yesterdayCurrency) > 0) ? "+" + services.curTendetionDetermination(item, index, yesterdayCurrency) : services.curTendetionDetermination(item, index, yesterdayCurrency)
+            (item.curDifference > 0) ? "+" + services.curTendetionDetermination(item.curDifference) : services.curTendetionDetermination(item.curDifference)
           }
         </button>
       </div>
     ));
     return (
       <div onClick={this.clickHandler} className={`ik-avaible-currencies  ${pageElementClass}`}>
-        {currency}
+        {avaibleCurrency}
       </div>
     );
   }
 }
-AvaibleCurrencies.defaultProps = { currency: [], yesterdayCurrency: [], filterText: false };
+AvaibleCurrencies.defaultProps = { cur: [], filterText: false };

@@ -4,11 +4,12 @@ import styles from './ik-currency-page.style.css';
 
 import { Navigation } from '../navigation/ik-navigation.component.js';
 import { Search } from '../search/ik-search.component.js'
-import { AvaibleCurrencies } from '../avaible-currencies/ik-avaible-currencies.component.js';
+import { AvaibleCurrencies } from '../avaible-currencies';
 import { CurrencyDateTable } from '../currency-date-table/ik-currency-date-table.component.js';
 import { ConverterButton } from '../converter-button/ik-converter-button.component.js';
 import { ConverterContainer } from '../converter-container/ik-converter-container.component.js';
 import { services } from '../Services/Services.js';
+import { requestServices } from '../Services/Services.js';
 
 export class CurrencyPage extends React.Component {
   constructor(props) {
@@ -18,27 +19,23 @@ export class CurrencyPage extends React.Component {
     this.onFilterTextChange = this.onFilterTextChange.bind(this);
   }
   currencyOnclick(target) {
-    this.setState({ abr: target });
+    this.setState({ id: target.abr });
+    let dynamicForId = requestServices.getDynamicForCurId(target.getAttribute("id"));
+    dynamicForId
+      .then((data) => {
+        this.setState({ dynamic: data, abr: target.getAttribute("abr")})
+      });
   }
   onFilterTextChange(target) {
     this.setState({ filterText: target });
   }
-  componentWillMount() {
-    let promisesArr = [];
-    for (let i = 0; i <= 9; ++i) {
-      promisesArr.push(services.reqCur(services.getUrl()[i]))
-    };
-    Promise.all(promisesArr)
-      .then(Data => {
-        console.dir(Data, "data");
-        let currencyCollection = Data[0].concat(Data[1], Data[2], Data[3], Data[4], Data[5], Data[6], Data[7], Data[8], Data[9]);
-        this.setState({
-          currency: Data[0],
-          yesterdayCurrency: Data[1],
-          currencyArr: currencyCollection
-        })
-      })
-      .catch(err => { console.log(err) });
+  componentDidMount() {
+    let todaysCurPromise = requestServices.getTodaysCurrencies();
+    todaysCurPromise
+      .then(data => {
+        this.setState({ cur: data })
+      });
+
   }
   render() {
     return (
@@ -53,13 +50,12 @@ export class CurrencyPage extends React.Component {
         />
         <AvaibleCurrencies
           className="ik-currency-page__avaible-currencies"
-          currency={this.state.currency}
-          yesterdayCurrency={this.state.yesterdayCurrency}
+          cur={this.state.cur}
           currencyOnclick={this.currencyOnclick}
           filterText={this.state.filterText}
         />
         <CurrencyDateTable className="ik-currency-page__currency-table"
-          currencyArr={this.state.currencyArr}
+          dynamic={this.state.dynamic}
           abr={this.state.abr}
         />
         <ConverterContainer
@@ -70,9 +66,3 @@ export class CurrencyPage extends React.Component {
     )
   }
 }
-
-// TODO: separate to enother file
-ReactDOM.render(
-  <CurrencyPage />,
-  document.getElementById('ik-page')
-);
