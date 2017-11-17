@@ -20,8 +20,8 @@ export class ConverterInput extends React.Component {
         const currentValue = this.props.currentValue;
         let abr = this.props.currency.map(function (item, index) {
             return (
-                <option key={index} value={item.Cur_Abbreviation}>
-                    {item.Cur_Abbreviation}
+                <option key={index} value={item.curAbr}>
+                    {item.curAbr}
                 </option>
             )
         });

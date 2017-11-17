@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styles from './ik-converter-container.style.css';
 import { ConverterInput } from '../converter-input/ik-converter-input.component.js';
-import { services } from '../Services/Services.js';
+import { converterServices } from '../Services/Services.js';
 import { ConverterButton } from '../converter-button/ik-converter-button.component.js';
 
 
@@ -30,17 +30,24 @@ export class ConverterContainer extends React.Component {
     });
   }
   onAbr1Change(target) {
+    let cur = this.props.currency;
+    console.log(cur, "cur");
+    console.log(target, 'targ')
+    console.dir(converterServices.filterCurForTarget(cur, target), 'filter');
     this.setState({
       input1Abr: target,
-      current1Rate: this.props.currency.filter((item) => item.Cur_Abbreviation == target)[0].Cur_OfficialRate
+      current1Rate: converterServices.filterCurForTarget(cur, target) ?
+        converterServices.filterCurForTarget(cur, target).curRate
+        : ""
     });
   }
   onAbr2Change(target) {
+    let cur = this.props.currency;
     this.setState({
       input2Abr: target,
-      current2Rate: this.props.currency
-        .filter((item) => item.Cur_Abbreviation == target)[0]
-        .Cur_OfficialRate
+      current2Rate: converterServices.filterCurForTarget(cur, target) ?
+      converterServices.filterCurForTarget(cur, target).curRate
+      : ""
     });
   }
   converterOnclick() {
@@ -59,8 +66,8 @@ export class ConverterContainer extends React.Component {
     const selectedCur = allCurrencies.filter((item) => item.Cur_Abbreviation == abr1);
     const cur1 = this.state.current1Rate;
     const cur2 = this.state.current2Rate;
-    const field1 = (currentAbr === abr1) ? services.tryConvert(value, cur1, cur2, services.moneyConvert) : value;
-    const field2 = (currentAbr === abr2) ? services.tryConvert(value, cur2, cur1, services.moneyConvert) : value;
+    const field1 = (currentAbr === abr1) ? converterServices.tryConvert(value, cur1, cur2, converterServices.moneyConvert) : value;
+    const field2 = (currentAbr === abr2) ? converterServices.tryConvert(value, cur2, cur1, converterServices.moneyConvert) : value;
     let converterView = "";
     if (this.state.converterView) {
       converterView = "hidden";
@@ -69,7 +76,7 @@ export class ConverterContainer extends React.Component {
     return (
       <div className={`ik-converter-container ${pageElementClass}`}>
         <ConverterButton
-          className="ik-converter-container__button" 
+          className="ik-converter-container__button"
           converterOnclick={this.converterOnclick}
           converterView={this.state.converterView}
         />
@@ -97,4 +104,4 @@ export class ConverterContainer extends React.Component {
     )
   }
 }
-ConverterContainer.defaultProps = { currency: []};
+ConverterContainer.defaultProps = { currency: [] };

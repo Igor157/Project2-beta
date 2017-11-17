@@ -60,7 +60,7 @@ export class CurrencyPage extends React.Component {
         />
         <ConverterContainer
           className="ik-currency-page__converter-container"
-          currency={this.state.currency}
+          currency={this.state.cur}
         />
       </div>
     )

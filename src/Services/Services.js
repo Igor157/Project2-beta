@@ -1,41 +1,5 @@
 
 class Services {
-    moneyConvert(value, currency1, currency2) {
-        return value * currency1 / currency2;
-    }
-    tryConvert(value, currency1, currency2, convert) {
-        const input = parseFloat(value);
-        console.dir(currency1)
-        const cur1 = currency1;
-        const cur2 = currency2;
-        console.log(input);
-        if (Number.isNaN(input)) {
-            return '';
-        }
-        const output = convert(input, cur1, cur2);
-        const rounded = Math.round(output * 1000) / 1000;
-        return rounded.toString();
-    }
-    reqCur(url) {
-        return fetch(url)
-            .then((result) => {
-                return result.json();
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
-    getUrl() {
-        let date = new Date;
-        let today = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-        let daysArr = [];
-        let currencyCollection = [];
-        for (let i = 0; i < 10; i++) {
-            daysArr.push(`${date.getFullYear()}-${date.getMonth()}-${date.getDate() - i}`);
-        }
-        let urlArr = daysArr.map((item) => `http://www.nbrb.by/API/ExRates/Rates?onDate=${item}&Periodicity=0`);
-        return urlArr
-    }
     curTendetionDetermination(cur) {
         return Math.round((cur) * 10000) / 10000;
     }
@@ -60,21 +24,14 @@ class RequestServices {
     getTodaysCurrencies() {
         let today = new Date(Date.now());
         let currentCurrencies = this.getCurrenciesForDate(today.getFullYear(), today.getMonth(), today.getDate());
-        console.log(currentCurrencies, 'currentCurrencies');
-
         let yesterday = new Date(today);
         yesterday.setDate(yesterday.getDate() - 1);
-        console.log(yesterday, 'yesterday')
-
         let prevCurrencies = this.getCurrenciesForDate(yesterday.getFullYear(), yesterday.getMonth(), yesterday.getDate());
-        console.log(prevCurrencies, 'prevCurrencies');
         return Promise.all([currentCurrencies, prevCurrencies])
             .then(([current, previous]) => {
                 let result = current.map((item) => new MapperService(item));
                 let previousRate = previous.map((item) => new MapperService(item).curRate);
                 result.forEach((item, index) => {
-                    console.log(index.curRate, 'index.curRate');
-                    console.log(previousRate[1], 'previousRate');
                     item.curDifference = item.curRate - previousRate[index];
                 });
                 return result;
@@ -122,3 +79,24 @@ class MapperService {
         return new Entity(entity);
     }
 }
+
+class ConverterServices {
+    filterCurForTarget(cur, target) {
+        return cur.filter((item) => item.curAbr == target)[0]
+    }
+    moneyConvert(value, currency1, currency2) {
+        return value * currency1 / currency2;
+    }
+    tryConvert(value, currency1, currency2, convert) {
+        const input = parseFloat(value);
+        const cur1 = parseFloat(currency1);
+        const cur2 = parseFloat(currency2);
+        if (Number.isNaN(input)) {
+            return '';
+        }
+        const output = convert(input, cur1, cur2);
+        const rounded = Math.round(output * 1000) / 1000;
+        return Number.isNaN(rounded) ? "select currency" : rounded;
+    }
+}
+export let converterServices = new ConverterServices();
