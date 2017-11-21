@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styles from './ik-converter-container.style.css';
 import { ConverterInput } from '../converter-input/ik-converter-input.component.js';
-import { converterServices } from '../Services/Services.js';
+import { converterServices } from '../../services/Services.js';
 import { ConverterButton } from '../converter-button/ik-converter-button.component.js';
 
 

@@ -1,0 +1,1 @@
+export * from './ik-empty-template.component.js';

@@ -28,3 +28,4 @@ export class Search extends React.Component {
     );
   }
 }
+

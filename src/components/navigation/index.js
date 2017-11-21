@@ -1,0 +1,1 @@
+export * from './ik-navigation.component.js';

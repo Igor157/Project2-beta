@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styles from './ik-avaible-currencies.style.css';
-import { services } from '../Services/Services.js';
+import { services } from '../../services/Services.js';
 
 const rizeStyle = "ik-avaible-currencies__day-progress--green";
 const downStyle = "ik-avaible-currencies__day-progress--red";
@@ -12,12 +12,14 @@ export class AvaibleCurrencies extends React.Component {
     this.clickHandler = this.clickHandler.bind(this);
   }
   clickHandler(e) {
-    this.props.currencyOnclick(e.target);
+    // this.props.currencyOnclick(e.target);
+  }
+  componentDidMount() {
+    this.props.getCur();
   }
   render() {
     const pageElementClass = this.props.className;
     let currencyArr = this.props.cur;
-    console.log(this.props.cur, "currencyArr");
     let filterText = this.props.filterText;
     let currencyFilter = (filterText) ?
       currencyArr.filter((item) => item.curAbr.indexOf(filterText) !== -1)
@@ -44,4 +46,4 @@ export class AvaibleCurrencies extends React.Component {
     );
   }
 }
-AvaibleCurrencies.defaultProps = { cur: [], filterText: false };
+
