@@ -12,7 +12,7 @@ import {
 } from 'react-router-dom';
 import { createStore } from 'redux';
 
-let store = configureStore({avaibleCurrencies: {filterText: false}, getCurrencies: {cur: []}});
+let store = configureStore({getCurrencies: {cur: []}});
 ReactDOM.render(
     <Provider store={store}>
         <CurrencyPage />

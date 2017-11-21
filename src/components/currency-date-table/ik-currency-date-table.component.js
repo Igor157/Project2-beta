@@ -11,7 +11,6 @@ export class CurrencyDateTable extends React.Component {
       )
     }
     const pageElementClass = this.props.className;
-    // let choicedArr = this.props.currencyArr.filter((item) => item.Cur_Abbreviation == this.props.abr);
     let abr = this.props.abr;
     let currencyTable = this.props.dynamic.map(function (item, index) {
       return (

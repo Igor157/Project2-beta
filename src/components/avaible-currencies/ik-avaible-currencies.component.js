@@ -6,13 +6,15 @@ import { services } from '../../services/Services.js';
 const rizeStyle = "ik-avaible-currencies__day-progress--green";
 const downStyle = "ik-avaible-currencies__day-progress--red";
 
+
 export class AvaibleCurrencies extends React.Component {
   constructor(props) {
     super(props);
     this.clickHandler = this.clickHandler.bind(this);
   }
-  clickHandler(e) {
-    // this.props.currencyOnclick(e.target);
+  clickHandler(e) { 
+    this.props.getDynamic(e.target.getAttribute("id"));
+    this.props.changeCurForDynamic(e.target.getAttribute("abr"))
   }
   componentDidMount() {
     this.props.getCur();

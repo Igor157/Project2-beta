@@ -1,22 +1,21 @@
 import { connect } from 'react-redux';
 import { chooseCur } from '../actions';
 import { getAvaibleCur } from '../actions'
-import { filterCur } from '../actions'
+import { filterAvaibleCur } from '../actions'
 
 import {Search} from '../components/search';
 
 
 const mapStateToProps = (state) => {
   return {
-    pageElementClass: state.searchClass,
-    value: state.filterText
+    filterText: state.avaibleCurrencies.filterText
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onFilterTextChange: (target) => {
-      dispatch(filterCur(target))
+      dispatch(filterAvaibleCur(target))
     }
   }
 };

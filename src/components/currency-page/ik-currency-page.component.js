@@ -9,15 +9,14 @@ import {
 } from 'react-router-dom';
 
 import { Navigation } from '../navigation/ik-navigation.component.js';
-import { Search } from '../search/ik-search.component.js'
-import { AvaibleCurrencies } from '../avaible-currencies';
-import { CurrencyDateTable } from '../currency-date-table/ik-currency-date-table.component.js';
+// import { Search } from '../search/ik-search.component.js'
+// import { AvaibleCurrencies } from '../avaible-currencies';
+// import { CurrencyDateTable } from '../currency-date-table/ik-currency-date-table.component.js';
 import { ConverterButton } from '../converter-button/ik-converter-button.component.js';
 import { ConverterContainer } from '../converter-container/ik-converter-container.component.js';
-import { ChooseAvaibleCurrencies } from '../../containers/ik-choose-avaible-currencies.container.js'
-import { FilterSearch } from '../../containers/ik-filter-search.container.js'
-// import { services } from '../Services/Services.js';
-// import { requestServices } from '../Services/Services.js';
+import { ChooseAvaibleCurrencies } from '../../containers/ik-choose-avaible-currencies.container.js';
+import { FilterSearch } from '../../containers/ik-filter-search.container.js';
+import { ChangeableCurrencyDateTable } from '../../containers/ik-changeable-currency-date-table.container.js'
 
 export class CurrencyPage extends React.Component {
   // constructor(props) {
@@ -49,12 +48,8 @@ export class CurrencyPage extends React.Component {
     return (
       <Router>
         <div className="ik-currency-page">
-          {/* <Search
-          className="ik-currency-page__search"
-        /> */}
           <FilterSearch
             className="ik-currency-page__search"
-
           />
           <Navigation
             className="ik-currency-page__navigation"
@@ -62,14 +57,10 @@ export class CurrencyPage extends React.Component {
           <ChooseAvaibleCurrencies
             className="ik-currency-page__avaible-currencies"
           />
-          {/* <AvaibleCurrencies
-          className="ik-currency-page__avaible-currencies"
-        /> */}
-          {/* <CurrencyDateTable className="ik-currency-page__currency-table"
-          dynamic={this.state.dynamic}
-          abr={this.state.abr}
-        />
-        <ConverterContainer
+          <ChangeableCurrencyDateTable
+            className="ik-currency-page__currency-table"
+          />
+          {/* <ConverterContainer
           className="ik-currency-page__converter-container"
           currency={this.state.cur}
         /> */}

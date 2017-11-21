@@ -45,19 +45,35 @@ export function getCur() {
     }
 }
 
-// export function getDynamic(curID) {
-    
-//         return (dispatch) => {
-//             dispatch({
-//                 type: 'GET_DYNAMIC_REQUEST',
-//             });
-//             let dynamicForIdPromise = requestServices.getDynamicForCurId(curID);
-//             dynamicForIdPromise
-//                 .then(data => {
-//                     dispatch({
-//                         type: 'GET_DYNAMIC_SUCCESS',
-//                         payload: data
-//                     })
-//                 });
-//         }
-//     }
+export function getDynamic(curID) {
+
+    return (dispatch) => {
+        dispatch({
+            type: 'GET_DYNAMIC_REQUEST',
+        });
+        let dynamicForIdPromise = requestServices.getDynamicForCurId(curID);
+        dynamicForIdPromise
+            .then(data => {
+                dispatch({
+                    type: 'GET_DYNAMIC_SUCCESS',
+                    payload: data
+                })
+            });
+    }
+}
+export function changeCurForDynamic(abr) {
+    return {
+        type: 'CHANGE_CUR_FOR_DYNAMIC',
+        payload: {
+            changedAbr: abr
+        }
+    }
+}
+export function filterAvaibleCur(value) {
+    return {
+        type: 'FILTER_AVAIBLE-CUR',
+        payload: {
+            filterText: value
+        }
+    }
+}
