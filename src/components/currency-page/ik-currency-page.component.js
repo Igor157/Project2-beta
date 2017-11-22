@@ -18,35 +18,54 @@ import { ChooseAvaibleCurrencies } from '../../containers/ik-choose-avaible-curr
 import { FilterSearch } from '../../containers/ik-filter-search.container.js';
 import { ChangeableCurrencyDateTable } from '../../containers/ik-changeable-currency-date-table.container.js';
 import { BothSideConverterContainer } from '../../containers/ik-both-side-converter.container.js';
+import { EmptyTemplate } from '../../components/empty-template'
 
 export class CurrencyPage extends React.Component {
 
   render() {
     return (
-      <div className="ik-currency-page">
-        <FilterSearch
-          className="ik-currency-page__search"
+      <Switch>
+        <Route
+          path='/about'
+          render={() => <EmptyTemplate
+          />}
         />
-        <Navigation
-          className="ik-currency-page__navigation"
+        <Route
+          path='/favorite'
+          render={() => <EmptyTemplate
+          />}
         />
-        <ChooseAvaibleCurrencies
-          className="ik-currency-page__avaible-currencies"
+        <Route
+          path='/'
+          render={() =>
+            <div className="ik-currency-page">
+              <FilterSearch
+                className="ik-currency-page__search"
+              />
+              <Navigation
+                className="ik-currency-page__navigation"
+              />
+              <ChooseAvaibleCurrencies
+                className="ik-currency-page__avaible-currencies"
+              />
+              <Switch>
+                <Route
+                  path='/calculator'
+                  render={() => <BothSideConverterContainer
+                    className="ik-currency-page__info-place"
+                  />}
+                />
+                <Route
+                  path='/'
+                  render={() => <ChangeableCurrencyDateTable
+                    className="ik-currency-page__info-place"
+                  />}
+                />
+              </Switch>
+            </div>
+          }
         />
-        <Switch>
-          <Route
-            exact path='/'
-            render={() => <ChangeableCurrencyDateTable
-              className="ik-currency-page__info-place"
-            />}
-          />
-          <Route path='/converter'
-            render={() => <BothSideConverterContainer
-              className="ik-currency-page__info-place"
-            />}
-          />
-        </Switch>
-      </div>
+      </Switch>
     )
   }
 }

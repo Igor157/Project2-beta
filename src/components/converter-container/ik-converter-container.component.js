@@ -42,7 +42,6 @@ export class ConverterContainer extends React.Component {
     const currentAbr = this.props.currentAbr;
     const value = this.props.inputValue;
     const abr1 = this.props.input1Abr;
-    console.log(abr1);
     const abr2 = this.props.input2Abr;
     const allCurrencies = this.props.currency;
     const selectedCur = allCurrencies.filter((item) => item.Cur_Abbreviation == abr1);
