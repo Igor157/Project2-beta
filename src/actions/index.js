@@ -1,4 +1,5 @@
 import { requestServices } from '../Services/Services.js';
+import { converterServices } from '../Services/Services.js';
 
 
 export const filterCur = (value) => {
@@ -17,15 +18,15 @@ export const chooseCur = (id, abr) => {
         }
     }
 }
-export const initialize = () => {
-    return {
-        type: 'INITIALIZE',
-        payload: {
-            cur: [],
-            filterText: false
-        }
-    }
-}
+// export const initialize = () => {
+//     return {
+//         type: 'INITIALIZE',
+//         payload: {
+//             cur: [],
+//             filterText: false
+//         }
+//     }
+// }
 
 
 export function getCur() {
@@ -74,6 +75,45 @@ export function filterAvaibleCur(value) {
         type: 'FILTER_AVAIBLE-CUR',
         payload: {
             filterText: value
+        }
+    }
+}
+
+export function changeValue1(target) {
+    return {
+        type: 'CHANGE_VALUE_1',
+        payload: {
+            inputValue: target
+        }
+    }
+}
+export function changeValue2(target) {
+    return {
+        type: 'CHANGE_VALUE_2',
+        payload: {
+            inputValue: target
+        }
+    }
+}
+export function changeAbr1(target, cur) {
+    return {
+        type: 'CHANGE_ABR_1',
+        payload: {
+            input1Abr: target,
+            current1Rate: converterServices.filterCurForTarget(cur, target) ?
+                converterServices.filterCurForTarget(cur, target).curRate
+                : ""
+        }
+    }
+}
+export function changeAbr2(target, cur) {
+    return {
+        type: 'CHANGE_ABR_2',
+        payload: {
+            input2Abr: target,
+            current2Rate: converterServices.filterCurForTarget(cur, target) ?
+                converterServices.filterCurForTarget(cur, target).curRate
+                : ""
         }
     }
 }

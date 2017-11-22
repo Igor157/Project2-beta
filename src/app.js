@@ -12,10 +12,12 @@ import {
 } from 'react-router-dom';
 import { createStore } from 'redux';
 
-let store = configureStore({getCurrencies: {cur: []}});
+let store = configureStore({ getCurrencies: { cur: [] } });
 ReactDOM.render(
     <Provider store={store}>
-        <CurrencyPage />
+        <Router>
+            <CurrencyPage />
+        </Router>
     </Provider>,
     document.getElementById('ik-page')
 );

@@ -43,9 +43,9 @@ min-height: 85vh;
 .ik-avaible-currencies__day-progress--green {
     background-color: rgb(30, 126, 30);
 }
-.ik-currency-page__currency-table {
+.ik-currency-page__info-place {
     margin-top: 20px;
-    width: 50%;
+    width: 60%;
     max-height: 85vh;
 }
 

@@ -1,8 +1,3 @@
-// const initialState = {
-//   year: 2016,
-//   photos: []
-// }
-
 
 export function avaibleCurrencies(state = {}, action) {
 
@@ -15,5 +10,4 @@ export function avaibleCurrencies(state = {}, action) {
     default:
       return state;
   }
-
 }

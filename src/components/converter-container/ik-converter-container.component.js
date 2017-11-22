@@ -9,78 +9,60 @@ import { ConverterButton } from '../converter-button/ik-converter-button.compone
 export class ConverterContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { converterView: true };
+    // this.state = { converterView: true }; 
     this.onValue1Change = this.onValue1Change.bind(this);
     this.onValue2Change = this.onValue2Change.bind(this);
     this.onAbr1Change = this.onAbr1Change.bind(this);
     this.onAbr2Change = this.onAbr2Change.bind(this);
-    this.converterOnclick = this.converterOnclick.bind(this);
+    // this.converterOnclick = this.converterOnclick.bind(this);
   }
 
   onValue1Change(target) {
-    this.setState({
-      inputValue: target,
-      currentAbr: this.state.input1Abr
-    });
+    this.props.changeValue1(target)
   }
   onValue2Change(target) {
-    this.setState({
-      inputValue: target,
-      currentAbr: this.state.input2Abr
-    });
+    this.props.changeValue2(target)
   }
   onAbr1Change(target) {
     let cur = this.props.currency;
-    console.log(cur, "cur");
-    console.log(target, 'targ')
-    console.dir(converterServices.filterCurForTarget(cur, target), 'filter');
-    this.setState({
-      input1Abr: target,
-      current1Rate: converterServices.filterCurForTarget(cur, target) ?
-        converterServices.filterCurForTarget(cur, target).curRate
-        : ""
-    });
+    this.props.changeAbr1(target, cur);
   }
   onAbr2Change(target) {
     let cur = this.props.currency;
-    this.setState({
-      input2Abr: target,
-      current2Rate: converterServices.filterCurForTarget(cur, target) ?
-      converterServices.filterCurForTarget(cur, target).curRate
-      : ""
-    });
+    this.props.changeAbr2(target, this.props.currency);
   }
-  converterOnclick() {
-    this.setState(prevState => ({
-      converterView: !prevState.converterView
-    }));
-  }
+  // converterOnclick() {
+  //   this.setState(prevState => ({
+  //     converterView: !prevState.converterView
+  //   }));
+  // }
 
   render() {
     const pageElementClass = this.props.className;
-    const currentAbr = this.state.currentAbr;
-    const value = this.state.inputValue;
-    const abr1 = this.state.input1Abr;
-    const abr2 = this.state.input2Abr;
+    const currentAbr = this.props.currentAbr;
+    const value = this.props.inputValue;
+    const abr1 = this.props.input1Abr;
+    console.log(abr1);
+    const abr2 = this.props.input2Abr;
     const allCurrencies = this.props.currency;
     const selectedCur = allCurrencies.filter((item) => item.Cur_Abbreviation == abr1);
-    const cur1 = this.state.current1Rate;
-    const cur2 = this.state.current2Rate;
+    const cur1 = this.props.current1Rate;
+    const cur2 = this.props.current2Rate;
     const field1 = (currentAbr === abr1) ? converterServices.tryConvert(value, cur1, cur2, converterServices.moneyConvert) : value;
     const field2 = (currentAbr === abr2) ? converterServices.tryConvert(value, cur2, cur1, converterServices.moneyConvert) : value;
-    let converterView = "";
-    if (this.state.converterView) {
-      converterView = "hidden";
-    }
+    // let converterView = "";
+    // if (this.state.converterView) {
+    //   converterView = "hidden";
+    // }
     // TODO: new lines for attributes
     return (
       <div className={`ik-converter-container ${pageElementClass}`}>
-        <ConverterButton
+        {/* <ConverterButton
           className="ik-converter-container__button"
           converterOnclick={this.converterOnclick}
           converterView={this.state.converterView}
-        />
-        <div className={`ik-converter-container__field ${converterView}`}>
+        /> */}
+        <div className="ik-converter-container__field">
           <div className="ik-converter-container__tittle"> Currency converter</div>
           <hr></hr>
           <ConverterInput
@@ -104,4 +86,4 @@ export class ConverterContainer extends React.Component {
     )
   }
 }
-ConverterContainer.defaultProps = { currency: [] };
+

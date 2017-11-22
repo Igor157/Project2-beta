@@ -13,19 +13,6 @@ const mapStateToProps = (state) => {
   }
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     changeCurForDynamic: (target) => {
-//       dispatch(changeCurForDynamic(target))
-//     },
-//     getCur: () => {
-//       dispatch(getCur())
-//     },
-//     getDynamic: (target) => {
-//       dispatch(getDynamic(target))
-//     }
-//   }
-// };
 
 export const ChangeableCurrencyDateTable = connect(
   mapStateToProps

@@ -3,8 +3,6 @@ import { getCur } from '../actions';
 import {getDynamic} from '../actions';
 import {changeCurForDynamic} from '../actions';
 import { getFilterText } from '../actions';
-import {initialize} from '../actions';
-
 import {AvaibleCurrencies} from '../components/avaible-currencies';
 
 const mapStateToProps = (state) => {

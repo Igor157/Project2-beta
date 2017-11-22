@@ -16,56 +16,37 @@ import { ConverterButton } from '../converter-button/ik-converter-button.compone
 import { ConverterContainer } from '../converter-container/ik-converter-container.component.js';
 import { ChooseAvaibleCurrencies } from '../../containers/ik-choose-avaible-currencies.container.js';
 import { FilterSearch } from '../../containers/ik-filter-search.container.js';
-import { ChangeableCurrencyDateTable } from '../../containers/ik-changeable-currency-date-table.container.js'
+import { ChangeableCurrencyDateTable } from '../../containers/ik-changeable-currency-date-table.container.js';
+import { BothSideConverterContainer } from '../../containers/ik-both-side-converter.container.js';
 
 export class CurrencyPage extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {}
-  //   this.currencyOnclick = this.currencyOnclick.bind(this);
-  //   this.onFilterTextChange = this.onFilterTextChange.bind(this);
-  // }
-  // currencyOnclick(target) {
-  //   this.setState({ id: target.abr });
-  //   let dynamicForId = requestServices.getDynamicForCurId(target.getAttribute("id"));
-  //   dynamicForId
-  //     .then((data) => {
-  //       this.setState({ dynamic: data, abr: target.getAttribute("abr")})
-  //     });
-  // }
-  // onFilterTextChange(target) {
-  //   this.setState({ filterText: target });
-  // }
-  // componentDidMount() {
-  //   let todaysCurPromise = requestServices.getTodaysCurrencies();
-  //   todaysCurPromise
-  //     .then(data => {
-  //       this.setState({ cur: data })
-  //     });
 
-  // }
   render() {
     return (
-      <Router>
-        <div className="ik-currency-page">
-          <FilterSearch
-            className="ik-currency-page__search"
+      <div className="ik-currency-page">
+        <FilterSearch
+          className="ik-currency-page__search"
+        />
+        <Navigation
+          className="ik-currency-page__navigation"
+        />
+        <ChooseAvaibleCurrencies
+          className="ik-currency-page__avaible-currencies"
+        />
+        <Switch>
+          <Route
+            exact path='/'
+            render={() => <ChangeableCurrencyDateTable
+              className="ik-currency-page__info-place"
+            />}
           />
-          <Navigation
-            className="ik-currency-page__navigation"
+          <Route path='/converter'
+            render={() => <BothSideConverterContainer
+              className="ik-currency-page__info-place"
+            />}
           />
-          <ChooseAvaibleCurrencies
-            className="ik-currency-page__avaible-currencies"
-          />
-          <ChangeableCurrencyDateTable
-            className="ik-currency-page__currency-table"
-          />
-          {/* <ConverterContainer
-          className="ik-currency-page__converter-container"
-          currency={this.state.cur}
-        /> */}
-        </div>
-      </Router>
+        </Switch>
+      </div>
     )
   }
 }
