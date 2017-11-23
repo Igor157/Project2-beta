@@ -12,9 +12,9 @@ export class AvaibleCurrencies extends React.Component {
     super(props);
     this.clickHandler = this.clickHandler.bind(this);
   }
-  clickHandler(e) { 
+  clickHandler(e) {
     this.props.getDynamic(e.target.getAttribute("id"));
-    this.props.changeCurForDynamic(e.target.getAttribute("abr"))
+    this.props.changeCurForDynamic(e.target.getAttribute("abr"));
   }
   componentDidMount() {
     this.props.getCur();
@@ -23,10 +23,10 @@ export class AvaibleCurrencies extends React.Component {
     const pageElementClass = this.props.className;
     let currencyArr = this.props.cur;
     let filterText = this.props.filterText;
-    let currencyFilter = (filterText) ?
+    let currencyFilter = filterText ?
       currencyArr.filter((item) => item.curAbr.indexOf(filterText) !== -1)
       : currencyArr;
-    let avaibleCurrency = currencyFilter.map((item, index) => (
+    let avaibleCurrency = currencyFilter.map((item, index) =>
       <div key={index} className="ik-avaible-currencies__row">
         <div className="ik-avaible-currencies__abr">{item.curAbr}</div>
         <div className="ik-avaible-currencies__rate">{item.curRate}</div>
@@ -36,11 +36,12 @@ export class AvaibleCurrencies extends React.Component {
           className={`ik-avaible-currencies__day-progress  ${item.curDifference > 0 ? rizeStyle : downStyle}`}
         >
           {
-            (item.curDifference > 0) ? "+" + services.curTendetionDetermination(item.curDifference) : services.curTendetionDetermination(item.curDifference)
+            item.curDifference > 0
+              ? '+' + services.curTendetionDetermination(item.curDifference) : services.curTendetionDetermination(item.curDifference)
           }
         </button>
       </div>
-    ));
+    );
     return (
       <div onClick={this.clickHandler} className={`ik-avaible-currencies  ${pageElementClass}`}>
         {avaibleCurrency}

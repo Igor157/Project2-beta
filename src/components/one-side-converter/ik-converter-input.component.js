@@ -34,13 +34,15 @@ export class ConverterInput extends React.Component {
                         type="text"
                         placeholder="InputNumbers"
                         onChange={this.onChangeValue}
-                        value={currentValue} />
-                    <select
-                        className="ik-converter-select"
-                        onChange={this.onChangeAbr}>
-                        <option>select currency</option>
-                        {abr}
-                    </select>
+                        value={currentValue}
+                    />
+                    {operation === "Destination" ?
+                        <div className="ik-converter__value-abr">{valueAbr}</div> :
+                        <select className="ik-converter-select" onChange={this.onChangeAbr}>
+                            {/* <option>select currency</option> */}
+                            {abr}
+                        </select>
+                    }
                 </form>
             </div>
         );

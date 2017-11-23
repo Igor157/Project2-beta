@@ -1,9 +1,9 @@
 
 class Services {
     curTendetionDetermination(cur) {
-        return Math.round((cur) * 10000) / 10000;
+        return Math.round(cur * 10000) / 10000;
     }
-};
+}
 export let services = new Services();
 
 class RequestServices {
@@ -14,10 +14,10 @@ class RequestServices {
             })
             .catch((err) => {
                 console.log(err);
-            })
+            });
     }
     getCurrenciesForDate(year, month, date) {
-        let reqDate = (`${year}-${month + 1}-${date}`);
+        let reqDate = `${year}-${month + 1}-${date}`;
         let urlForDate = `http://www.nbrb.by/API/ExRates/Rates?onDate=${reqDate}&Periodicity=0`;
         return this.reqCur(urlForDate);
     }
@@ -39,8 +39,8 @@ class RequestServices {
         // .catch(err => { console.log(err) });
     }
     getDynamicOfCurrencie(reqId, start, end) {
-        let startDate = (`${start.getFullYear()}-${start.getMonth() + 1}-${start.getDate()}`)
-        let endDate = (`${end.getFullYear()}-${end.getMonth() + 1}-${end.getDate()}`);
+        let startDate = `${start.getFullYear()}-${start.getMonth() + 1}-${start.getDate()}`;
+        let endDate = `${end.getFullYear()}-${end.getMonth() + 1}-${end.getDate()}`;
         // http://www.nbrb.by/API/ExRates/Rates/Dynamics/190?startDate=2016-6-1&endDate=2016-6-30
         let urlForPeriod = `http://www.nbrb.by/API/ExRates/Rates/Dynamics/${reqId}?startDate=${startDate}&endDate=${endDate}`;
         return this.reqCur(urlForPeriod);
@@ -54,7 +54,7 @@ class RequestServices {
             .then((data = []) => {
                 let result = data.map((item) => new MapperService(item));
                 return result;
-            })
+            });
     }
 }
 export let requestServices = new RequestServices();
@@ -67,22 +67,22 @@ class MapperService {
         this.curId = entity.Cur_ID || '';
     }
 
-    toEntity() {
-        return {
-            Cur_Abbreviation: this.curAbr,
-            Cur_OfficialRate: this.curRate,
-            Date: this.date
-        };
-    }
+    // toEntity() {
+    //     return {
+    //         Cur_Abbreviation: this.curAbr,
+    //         Cur_OfficialRate: this.curRate,
+    //         Date: this.date
+    //     };
+    // }
 
-    fromEntity(entity) {
-        return new Entity(entity);
-    }
+    // fromEntity(entity) {
+    //     return new Entity(entity);
+    // }
 }
 
 class ConverterServices {
     filterCurForTarget(cur, target) {
-        return cur.filter((item) => item.curAbr == target)[0]
+        return cur.filter((item) => item.curAbr === target)[0];
     }
     moneyConvert(value, currency1, currency2) {
         return value * currency1 / currency2;
@@ -96,7 +96,7 @@ class ConverterServices {
         }
         const output = convert(input, cur1, cur2);
         const rounded = Math.round(output * 1000) / 1000;
-        return Number.isNaN(rounded) ? "select currency" : rounded;
+        return Number.isNaN(rounded) ? 'select currency' : rounded;
     }
 }
 export let converterServices = new ConverterServices();

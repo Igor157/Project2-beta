@@ -1,0 +1,18 @@
+.ik-converter-input {
+
+}
+.ik-converter-input__label{
+    float:left;
+    min-width: 80px;
+}
+.ik-converter-input__form {
+    
+}
+.ik-converter-input__textarea {
+    margin-right: 5px;
+    border-radius: 5px;
+    max-width: 100px;
+}
+.ik-converter-select {
+    border-radius: 5px;
+}

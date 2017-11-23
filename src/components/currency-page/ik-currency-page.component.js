@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import styles from './ik-currency-page.style.css';
 import {
   HashRouter as Router,
@@ -18,7 +18,7 @@ import { ChooseAvaibleCurrencies } from '../../containers/ik-choose-avaible-curr
 import { FilterSearch } from '../../containers/ik-filter-search.container.js';
 import { ChangeableCurrencyDateTable } from '../../containers/ik-changeable-currency-date-table.container.js';
 import { BothSideConverterContainer } from '../../containers/ik-both-side-converter.container.js';
-import { EmptyTemplate } from '../../components/empty-template'
+import { EmptyTemplate } from '../../components/empty-template';
 
 export class CurrencyPage extends React.Component {
 
@@ -66,7 +66,7 @@ export class CurrencyPage extends React.Component {
           }
         />
       </Switch>
-    )
+    );
   }
 }
 

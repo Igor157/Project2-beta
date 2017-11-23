@@ -17,28 +17,28 @@ const mapStateToProps = (state) => {
         inputValue: state.bothSideConverter.inputValue,
         currentAbr: state.bothSideConverter.currentAbr
 
-    }
-}
+    };
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
         changeValue1: (target) => {
-            dispatch(changeValue1(target))
+            dispatch(changeValue1(target));
         },
         changeValue2: (target) => {
-            dispatch(changeValue2(target))
+            dispatch(changeValue2(target));
         },
         changeAbr1: (target, cur) => {
-            dispatch(changeAbr1(target, cur))
+            dispatch(changeAbr1(target, cur));
         },
         changeAbr2: (target, cur) => {
-            dispatch(changeAbr2(target, cur))
+            dispatch(changeAbr2(target, cur));
         }
-    }
-}
+    };
+};
 
 export const BothSideConverterContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(ConverterContainer)
+)(ConverterContainer);
 

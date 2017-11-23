@@ -4,19 +4,19 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-console.log(NODE_ENV == 'development');
+console.log(NODE_ENV === 'development');
 
 module.exports = {
     context: __dirname + '/src',
     entry: {
-        app: './app.js',
+        app: './app.js'
     },
     output: {
         path: __dirname + '/build',
-        filename: "[name].js",
+        filename: "[name].js"
         // library:  "[name]"
     },
-    watch: NODE_ENV == 'development',
+    watch: NODE_ENV === 'development',
     devtool:'source-map',
     devServer: {
         contentBase: path.resolve(__dirname)
@@ -27,16 +27,22 @@ module.exports = {
             title: 'My Awesome application',
             myPageHeader: 'Hello World',
             template: '.././src/index.html',
-            filename: './index.html',
+            filename: './index.html'
         }),
         new ExtractTextPlugin({
             filename: "css/[name].css?[hash]-[chunkhash]-[contenthash]-[name]",
             disable: false,
             allChunks: true
-        }),
+        })
     ],
     module: {
         rules: [
+            {
+                enforce: "pre",
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: "eslint-loader"
+              },
             {
                 test: /\.js$/,
                 exclude: [/node_modules/],
@@ -54,7 +60,7 @@ module.exports = {
                 use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: 'css-loader'
-                })),
+                }))
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
@@ -63,10 +69,10 @@ module.exports = {
                         loader: 'image-webpack-loader',
                         options: {
                             gifsicle: {
-                                interlaced: false,
+                                interlaced: false
                             },
                             optipng: {
-                                optimizationLevel: 7,
+                                optimizationLevel: 7
                             },
                             pngquant: {
                                 quality: '65-90',
@@ -88,7 +94,7 @@ module.exports = {
     }
 };
 
-if (NODE_ENV == 'production') {
+if (NODE_ENV === 'production') {
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {

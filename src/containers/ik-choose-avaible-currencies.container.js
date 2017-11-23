@@ -9,25 +9,25 @@ const mapStateToProps = (state) => {
   return {
     cur: state.getCurrencies.cur,
     filterText: state.avaibleCurrencies.filterText
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     changeCurForDynamic: (target) => {
-      dispatch(changeCurForDynamic(target))
+      dispatch(changeCurForDynamic(target));
     },
     getCur: () => {
-      dispatch(getCur())
+      dispatch(getCur());
     },
     getDynamic: (target) => {
-      dispatch(getDynamic(target))
+      dispatch(getDynamic(target));
     }
-  }
-}
+  };
+};
 
 export const ChooseAvaibleCurrencies = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AvaibleCurrencies)
+)(AvaibleCurrencies);
 

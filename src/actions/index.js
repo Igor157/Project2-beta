@@ -6,8 +6,8 @@ export const filterCur = (value) => {
     return {
         type: 'FILTER_CUR',
         payload: value
-    }
-}
+    };
+};
 
 export const chooseCur = (id, abr) => {
     return {
@@ -16,8 +16,8 @@ export const chooseCur = (id, abr) => {
             id: id,
             abr: abr
         }
-    }
-}
+    };
+};
 // export const initialize = () => {
 //     return {
 //         type: 'INITIALIZE',
@@ -33,7 +33,7 @@ export function getCur() {
 
     return (dispatch) => {
         dispatch({
-            type: 'GET_CUR_REQUEST',
+            type: 'GET_CUR_REQUEST'
         });
         let todaysCurPromise = requestServices.getTodaysCurrencies();
         todaysCurPromise
@@ -41,16 +41,16 @@ export function getCur() {
                 dispatch({
                     type: 'GET_CUR_SUCCESS',
                     payload: data
-                })
+                });
             });
-    }
+    };
 }
 
 export function getDynamic(curID) {
 
     return (dispatch) => {
         dispatch({
-            type: 'GET_DYNAMIC_REQUEST',
+            type: 'GET_DYNAMIC_REQUEST'
         });
         let dynamicForIdPromise = requestServices.getDynamicForCurId(curID);
         dynamicForIdPromise
@@ -58,9 +58,9 @@ export function getDynamic(curID) {
                 dispatch({
                     type: 'GET_DYNAMIC_SUCCESS',
                     payload: data
-                })
+                });
             });
-    }
+    };
 }
 export function changeCurForDynamic(abr) {
     return {
@@ -68,7 +68,7 @@ export function changeCurForDynamic(abr) {
         payload: {
             changedAbr: abr
         }
-    }
+    };
 }
 export function filterAvaibleCur(value) {
     return {
@@ -76,7 +76,7 @@ export function filterAvaibleCur(value) {
         payload: {
             filterText: value
         }
-    }
+    };
 }
 
 export function changeValue1(target) {
@@ -85,7 +85,7 @@ export function changeValue1(target) {
         payload: {
             inputValue: target
         }
-    }
+    };
 }
 export function changeValue2(target) {
     return {
@@ -93,7 +93,7 @@ export function changeValue2(target) {
         payload: {
             inputValue: target
         }
-    }
+    };
 }
 export function changeAbr1(target, cur) {
     return {
@@ -102,9 +102,9 @@ export function changeAbr1(target, cur) {
             input1Abr: target,
             current1Rate: converterServices.filterCurForTarget(cur, target) ?
                 converterServices.filterCurForTarget(cur, target).curRate
-                : ""
+                : ''
         }
-    }
+    };
 }
 export function changeAbr2(target, cur) {
     return {
@@ -113,7 +113,7 @@ export function changeAbr2(target, cur) {
             input2Abr: target,
             current2Rate: converterServices.filterCurForTarget(cur, target) ?
                 converterServices.filterCurForTarget(cur, target).curRate
-                : ""
+                : ''
         }
-    }
+    };
 }

@@ -1,0 +1,1 @@
+export * from './ik-currency-date-table.component.js';
