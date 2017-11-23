@@ -1,0 +1,1 @@
+export * from './ik-about.component.js';

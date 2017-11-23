@@ -20,53 +20,82 @@ import { ChangeableCurrencyDateTable } from '../../containers/ik-changeable-curr
 import { BothSideConverterContainer } from '../../containers/ik-both-side-converter.container.js';
 import { EmptyTemplate } from '../../components/empty-template';
 import { ConnectedCurrencyCalculator } from '../../containers/ik-connected-currency-calculator.container.js';
+import { About } from '../about';
 
 export class CurrencyPage extends React.Component {
 
   render() {
     return (
-      <Switch>
-        <Route
-          path='/about'
-          render={() => <EmptyTemplate
-          />}
-        />
-        <Route
-          path='/favorite'
-          render={() => <EmptyTemplate
-          />}
-        />
-        <Route
-          path='/'
-          render={() =>
-            <div className="ik-currency-page">
-              <FilterSearch
-                className="ik-currency-page__search"
+      <Route
+        path='/'
+        render={() =>
+          <div className="ik-currency-page">
+            <Switch>
+              <Route
+                path='/about'
+                render={() => <FilterSearch
+                  className="ik-currency-page__search ik-currency-page__search--unvizible"
+                />}
               />
-              <Navigation
-                className="ik-currency-page__navigation"
+              <Route
+                path='/favorite'
+                render={() => <FilterSearch
+                  className="ik-currency-page__search ik-currency-page__search--unvizible"
+                />}
               />
-              <ChooseAvaibleCurrencies
-                className="ik-currency-page__avaible-currencies"
+              <Route
+                path='/'
+                render={() => <FilterSearch
+                  className="ik-currency-page__search ik-currency-page__search"
+                />}
               />
-              <Switch>
-                <Route
-                  path='/calculator'
-                  render={() => <ConnectedCurrencyCalculator
-                    className="ik-currency-page__info-place"
-                  />}
-                />
-                <Route
-                  path='/'
-                  render={() => <ChangeableCurrencyDateTable
-                    className="ik-currency-page__info-place"
-                  />}
-                />
-              </Switch>
-            </div>
-          }
-        />
-      </Switch>
+            </Switch>
+            <Navigation
+              className="ik-currency-page__navigation"
+            />
+            <Switch>
+              <Route
+                exact path='/'
+                render={() => <ChooseAvaibleCurrencies
+                  className="ik-currency-page__avaible-currencies"
+                />}
+              />
+              <Route
+                path='/calculator'
+                render={() => <ChooseAvaibleCurrencies
+                  className="ik-currency-page__avaible-currencies"
+                />}
+              />
+            </Switch>
+            <Switch>
+              <Route
+                path='/calculator'
+                render={() => <ConnectedCurrencyCalculator
+                  className="ik-currency-page__info-place"
+                />}
+              />
+              <Route
+                exact path='/'
+                render={() => <ChangeableCurrencyDateTable
+                  className="ik-currency-page__info-place"
+                />}
+              />
+              <Route
+                path='/favorite'
+                render={() => <EmptyTemplate
+                />}
+              />
+              <Route
+                path='/about'
+                render={() =>
+                  <About
+                  />
+                }
+              />
+            </Switch>
+          </div>
+        }
+      />
     );
   }
 }
