@@ -6,7 +6,7 @@
     min-width: 80px;
 }
 .ik-converter-input__form {
-    
+    display: flex;
 }
 .ik-converter-input__textarea {
     margin-right: 5px;
@@ -15,4 +15,13 @@
 }
 .ik-converter-select {
     border-radius: 5px;
+    width:60px;
 }
+.ik-converter__value-abr {
+    border-radius: 5px;
+    background-color: white;
+    width: 60px;
+}
+input:read-only {
+    opacity: 0.6; 
+   }

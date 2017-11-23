@@ -1,0 +1,22 @@
+
+.ik-converter-container {
+    /* width: 30%;
+    height: 100%; */
+    /* border: 2px solid black;
+    background-color: rgb(184, 176, 176);  */
+}
+.ik-converter-container__field {
+    height: 100%;
+    border: 2px solid black;
+    background-color: rgb(184, 176, 176);
+}
+.ik-converter-container__button {
+   }
+.ik-converter-container__converter-input {
+    padding-top: 15px;
+}
+.hidden {
+    display: none;
+    width: 0;
+}
+

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-convert-input.style.css';
+import styles from './ik-one-side-converter-input.style.css';
 
-export class ConverterInput extends React.Component {
+export class OneSideConverterInput extends React.Component {
     constructor(props) {
         super(props);
         this.onChangeValue = this.onChangeValue.bind(this);
@@ -18,6 +18,7 @@ export class ConverterInput extends React.Component {
         const pageElementClass = this.props.className;
         const operation = this.props.operation;
         const currentValue = this.props.currentValue;
+        const valueAbr = this.props.choosenAbr;
         let abr = this.props.currency.map(function (item, index) {
             return (
                 <option key={index} value={item.curAbr}>
@@ -29,14 +30,23 @@ export class ConverterInput extends React.Component {
             <div className={`ik-converter-input ${pageElementClass}`}>
                 <div className="ik-converter-input__label">{operation}</div>
                 <form className="ik-converter-input__form">
-                    <input
-                        className="ik-converter-input__textarea"
-                        type="text"
-                        placeholder="InputNumbers"
-                        onChange={this.onChangeValue}
-                        value={currentValue}
-                    />
-                    {operation === "Destination" ?
+                    {operation === 'Value' ?
+                        <input
+                            className="ik-converter-input__textarea"
+                            type="text"
+                            placeholder="InputNumbers"
+                            onChange={this.onChangeValue}
+                            value={currentValue}
+                        /> :
+                        <input
+                            className="ik-converter-input__textarea"
+                            type="text"
+                            placeholder="Result"
+                            value={currentValue}
+                            readOnly
+                        />
+                    }
+                    {operation === 'Value' ?
                         <div className="ik-converter__value-abr">{valueAbr}</div> :
                         <select className="ik-converter-select" onChange={this.onChangeAbr}>
                             {/* <option>select currency</option> */}
