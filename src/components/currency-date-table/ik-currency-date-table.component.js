@@ -5,7 +5,7 @@ import { EmptyTemplate } from '../empty-template/ik-empty-template.component.js'
 
 export class CurrencyDateTable extends React.Component {
   render() {
-    if (this.props.dynamic === undefined) {
+    if (this.props.dynamic.length === 0) {
       return (
         <EmptyTemplate />
       );
@@ -33,4 +33,3 @@ export class CurrencyDateTable extends React.Component {
     );
   }
 }
-CurrencyDateTable.defaultProps = {currencyArr:[], yesterdayCurrency:[]};

@@ -46,13 +46,13 @@ export function getCur() {
     };
 }
 
-export function getDynamic(curID) {
+export function getDynamic(curID, start, end) {
 
     return (dispatch) => {
         dispatch({
             type: 'GET_DYNAMIC_REQUEST'
         });
-        let dynamicForIdPromise = requestServices.getDynamicForCurId(curID);
+        let dynamicForIdPromise = requestServices.getDynamicForCurId(curID, start, end);
         dynamicForIdPromise
             .then(data => {
                 dispatch({
@@ -62,10 +62,11 @@ export function getDynamic(curID) {
             });
     };
 }
-export function changeCurForDynamic(abr) {
+export function changeCurForDynamic(id, abr) {
     return {
         type: 'CHANGE_CUR_FOR_DYNAMIC',
         payload: {
+            changedId: id,
             changedAbr: abr
         }
     };
@@ -116,4 +117,31 @@ export function changeAbr2(target, cur) {
                 : ''
         }
     };
+}
+
+export function changeStartDate(date) {
+    return {
+        type: 'CHANGE_START_DATE',
+        payload: {
+            startDate: date
+        }
+    };
+}
+export function changeEndDate(date) {
+    return {
+        type: 'CHANGE_END_DATE',
+        payload: {
+            endDate: date
+        }
+    };
+}
+export function addCurToFavorite(abr, id) {
+    return {
+        type: 'ADD_CUR_TO_FAVORITE',
+        payload: {
+            favoriteId: id,
+            favoriteAbr: abr
+        }
+    };
+
 }

@@ -10,7 +10,13 @@
     justify-content: space-around;   
     padding-top: 10px;
     padding-bottom: 10px;
+    cursor: pointer;
 }
+.ik-avaible-currencies__row:hover {
+    background-color: rgb(74, 74, 228);
+    color:white;
+
+ }
 .ik-avaible-currencies__abr {
     font-weight: bold;
 }

@@ -28,6 +28,10 @@ export class Navigation extends React.Component {
         <NavLink
           to='/favorite'
         > Favorite
+        <span className="ik-navigation">
+            {this.props.counter ?
+              this.props.counter : ''}
+          </span>
         </NavLink>
       </div>
     );

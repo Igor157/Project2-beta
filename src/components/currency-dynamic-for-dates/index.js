@@ -1,0 +1,1 @@
+export * from './ik-currency-dynamic-for-dates.component.js';
