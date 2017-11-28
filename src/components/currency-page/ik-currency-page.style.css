@@ -1,16 +1,24 @@
-body {
-    margin: 0;
+body, html { 
+    width: 100%;
+    height: 100%;
     padding: 0;
+    margin:0;
+}
+.ik-page {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items:stretch;
 }
 .ik-currency-page {
     background-color: rgb(88, 82, 82);  
-    background-image: url(./images/rich.jpg);  
+    /* background-image: url(./images/rich.jpg);  
     background-repeat:no-repeat;
     background-size:cover;
-    background-position: center;
+    background-position: center; */
     display: flex;
     flex-wrap: wrap;
-    /* min-height: 100vh;        */
+    max-width: 100%;
 }
 .ik-currency-page__search {
     width: 30%;
@@ -30,14 +38,14 @@ body {
     box-sizing: border-box;
 }
 .ik-currency-page__avaible-currencies {
-width: 30%;
-height: 100%;
-margin: 30px;
-margin-bottom: 40px;
-box-sizing: border-box;
-margin-top: 20px;
-max-height: 85vh;
-min-height: 85vh;  
+    width: 30%;
+    height: 100%;
+    margin: 30px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    max-height: 85vh;
+    min-height: 85vh;  
 }
 
 .ik-currency-page__info-place {
@@ -63,6 +71,24 @@ min-height: 85vh;
     height: 100%;
 } 
 .ik-currency-page__currency-calculator {
+    margin-top: 20px;
+    width: 60%;
+    max-height: 85vh;
+}
+.ik-currency-page__about {
+    margin: auto;
+    margin-bottom: 400px;
+    display:flex;
+    flex-direction: column;
+} 
+.ik-currency-page__favorite-currencies {
+    max-width: 80%;
+    height: 89%;
+    margin: auto;
+
+    background-color: white;
+}
+.ik-currency-page__dynamic-for-dates {
     margin-top: 20px;
     width: 60%;
     max-height: 85vh;

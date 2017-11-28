@@ -9,3 +9,9 @@
 .ik-navigation__button--selected {
     color: rgb(74, 74, 228);
 }
+.ik-navigation__counter {
+    color:red;
+    text-decoration: none;
+    float:right;
+    margin-left:10px;
+}

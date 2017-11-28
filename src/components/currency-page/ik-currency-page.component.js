@@ -81,7 +81,7 @@ export class CurrencyPage extends React.Component {
               <Route
                 exact path='/'
                 render={() => <ConnectedCurrencyDynamicForDates
-                  className="ik-currency-page__info-place"
+                  className="ik-currency-page__dynamic-for-dates"
                 />}
               />
               <Route
@@ -94,6 +94,7 @@ export class CurrencyPage extends React.Component {
                 path='/about'
                 render={() =>
                   <About
+                  className="ik-currency-page__about"
                   />
                 }
               />

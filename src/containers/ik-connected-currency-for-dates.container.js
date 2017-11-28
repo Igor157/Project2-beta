@@ -28,8 +28,8 @@ const mapDispatchToProps = (dispatch) => {
         changeEndDate: (date) => {
             dispatch(changeEndDate(date));
         },
-        addCurToFavorite: (abr, id) => {
-            dispatch(addCurToFavorite(abr, id));
+        addCurToFavorite: (abr, id, dynamic) => {
+            dispatch(addCurToFavorite(abr, id, dynamic));
         }
     };
 };

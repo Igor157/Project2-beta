@@ -14,6 +14,8 @@
    }
 .ik-converter-container__converter-input {
     padding-top: 15px;
+    margin:auto;
+    color:white;
 }
 .hidden {
     display: none;

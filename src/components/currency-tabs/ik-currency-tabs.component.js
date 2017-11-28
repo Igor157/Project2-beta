@@ -11,17 +11,17 @@ export class CurrencyTabs extends React.Component {
     }
     clickHandler(e) {
         let target = e.target;
-        // while (target !== this) {
-        //   if (target.className === 'ik-avaible-currencies__row') {
-        //     let end = new Date(Date.now());
-        //     let start = new Date(end);
-        //     start.setDate(start.getDate() - 20);
-        //     this.props.getDynamic(target.getAttribute('id'),this.props.startDate, this.props.endDate);
-        //     this.props.changeCurForDynamic(target.getAttribute('id'), target.getAttribute('abr'));
-        //     return;
-        //   }
-        //   target = target.parentNode;
-        // }
+        while (target !== this) {
+          if (target.className === 'ik-avaible-currencies__row') {
+            let end = new Date(Date.now());
+            let start = new Date(end);
+            start.setDate(start.getDate() - 20);
+            this.props.getDynamic(target.getAttribute('id'), this.props.startDate, this.props.endDate);
+            this.props.changeCurForDynamic(target.getAttribute('id'), target.getAttribute('abr'));
+            return;
+          }
+          target = target.parentNode;
+        }
     }
     // componentDidMount() {
     //   this.props.getCur();
@@ -35,6 +35,7 @@ export class CurrencyTabs extends React.Component {
                 className="ik-currency-tab"
                 id={item.favoriteId}
                 abr={item.favoriteAbr}
+                onClick = {this.clickHandler}
             >
                 <div
                     className="ik-currency-tab__new">

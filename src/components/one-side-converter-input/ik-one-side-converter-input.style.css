@@ -16,10 +16,12 @@
 .ik-converter-select {
     border-radius: 5px;
     width:60px;
+    background-color: rgb(88, 82, 82);
+    color:white;
 }
 .ik-converter__value-abr {
     border-radius: 5px;
-    background-color: white;
+
     width: 60px;
 }
 input:read-only {

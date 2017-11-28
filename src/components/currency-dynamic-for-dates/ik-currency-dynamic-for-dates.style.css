@@ -1,13 +1,22 @@
-.ik-currency-date-table {
-    border: 2px solid black;
-    border-collapse: collapse;
-    border-radius: 5px;
-}
-.ik-currency-date-table__row {
-    border: 2px solid black;
+.ik-currency-dynamic-for-dates {
 
 }
-.ik-currency-date-table__item {
+.ik-currency-dynamic-for-dates__date-input {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-top: 40px;
+    padding-bottom:30px;
+}
+.ik-currency-dynamic-for-dates__savebutton {
+    margin-left: 80%;
     border: 2px solid black;
-    text-align: center; 
+    background-color: rgb(48, 136, 84);
+    border-radius: 2px;
+}
+.ik-currency-dynamic-for-dates__date-picker {
+    display: inline-block;
+}
+.ik-currency-dynamic-for-dates__date-table {
+
 }
