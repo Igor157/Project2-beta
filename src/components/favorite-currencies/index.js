@@ -1,0 +1,1 @@
+export * from './ik-favorite-currencies.component.js';

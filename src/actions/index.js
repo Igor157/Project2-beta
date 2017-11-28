@@ -140,7 +140,8 @@ export function addCurToFavorite(abr, id) {
         type: 'ADD_CUR_TO_FAVORITE',
         payload: {
             favoriteId: id,
-            favoriteAbr: abr
+            favoriteAbr: abr,
+            new:true
         }
     };
 

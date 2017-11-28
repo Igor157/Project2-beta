@@ -85,6 +85,7 @@ class MapperService {
 }
 
 class ConverterServices {
+
     filterCurForTarget(cur, target) {
         return cur.filter((item) => item.curAbr === target)[0];
     }
@@ -102,5 +103,22 @@ class ConverterServices {
         const rounded = Math.round(output * 1000) / 1000;
         return Number.isNaN(rounded) ? 'select currency' : rounded;
     }
+    getRates(allCurrencies, abr) {
+        const filteredArr = this.filterCurForTarget(allCurrencies, abr);
+        let rate = 1;
+        if (filteredArr) {
+            rate = filteredArr.curRate;
+        }
+        else {
+            rate = allCurrencies[0] ?
+                allCurrencies[0].curRate :
+                1;
+        }
+        console.log(rate, 'rate');
+        return rate;
+    }
+
 }
+
+
 export let converterServices = new ConverterServices();

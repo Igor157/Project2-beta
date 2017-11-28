@@ -19,11 +19,11 @@ export class CurrencyCalculator extends React.Component {
     const currentAbr = this.props.currentAbr;
     return (
       <div className={`ik-currency-calculator ${pageElementClass}`}>
-      <OneSideConverterContainer
-        className="ik-currency-calculator__converter"
-        currency={this.props.currency}
-        currentAbr={currentAbr}
-      />
+        <OneSideConverterContainer
+          className="ik-currency-calculator__converter"
+          currency={this.props.currency}
+          currentAbr={currentAbr ? currentAbr : 'AUD'}
+        />
       </div>
     );
   }

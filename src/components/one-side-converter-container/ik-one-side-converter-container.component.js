@@ -26,11 +26,17 @@ export class OneSideConverterContainer extends React.Component {
     const value = this.state.inputValue;
     const valueAbr = this.props.currentAbr;
     const destinationAbr = this.state.choosenAbr;
+    console.log(destinationAbr, 'destinationAbr');
     const allCurrencies = this.props.currency;
-    const currentValueRate = converterServices.filterCurForTarget(allCurrencies, valueAbr).curRate;
-    const currentDestRate = destinationAbr ?
-      converterServices.filterCurForTarget(allCurrencies, destinationAbr).curRate :
-      allCurrencies[0].curRate;
+    const currentValueRate = converterServices.getRates(allCurrencies, valueAbr);
+    const currentDestRate = converterServices.getRates(allCurrencies, destinationAbr);
+
+    // const filteredForValueArr = converterServices.filterCurForTarget(allCurrencies, valueAbr);
+    // const filteredForDestArr = converterServices.filterCurForTarget(allCurrencies, destinationAbr);
+    // const currentValueRate = filteredForValueArr.curRate;
+    // const currentDestRate = destinationAbr ?
+    //   filteredForDestArr.curRate :
+    //   allCurrencies[0].curRate;
     const destinationField = converterServices.tryConvert(value, currentValueRate, currentDestRate, converterServices.moneyConvert);
     const valueField = value;
     return (

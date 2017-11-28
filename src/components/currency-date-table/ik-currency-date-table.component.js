@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styles from './ik-currency-date-table.style.css';
 import { EmptyTemplate } from '../empty-template/ik-empty-template.component.js';
 
+
 export class CurrencyDateTable extends React.Component {
   render() {
     if (this.props.dynamic.length === 0) {

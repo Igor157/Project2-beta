@@ -14,24 +14,32 @@ export class Navigation extends React.Component {
     return (
       <div className={`ik-navigation ${pageElementClass}`}>
         <NavLink
+          className="ik-navigation__button"
           to='/'
+
         > Currencies
         </NavLink>
         <NavLink
+          className="ik-navigation__button"
           to='/calculator'
+          activeClassName="ik-navigation__button--selected"
         > Calculator
         </NavLink>
         <NavLink
+          className="ik-navigation__button"
           to='/about'
+          activeClassName="ik-navigation__button--selected"
         > About
         </NavLink>
         <NavLink
+          className="ik-navigation__button"
           to='/favorite'
+          activeClassName="ik-navigation__button--selected"
         > Favorite
-        <span className="ik-navigation">
+        <div className="ik-navigation__counter">
             {this.props.counter ?
               this.props.counter : ''}
-          </span>
+          </div>
         </NavLink>
       </div>
     );

@@ -6,3 +6,6 @@
 .ik-navigation__button {
     color:white;
 }
+.ik-navigation__button--selected {
+    color: rgb(74, 74, 228);
+}
