@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { CurrencyPage } from './components/currency-page';
 import configureStore from './store/configureStore.js';
+import moment from 'moment';
 
 import {
     HashRouter as Router,
@@ -11,8 +12,16 @@ import {
     Switch
 } from 'react-router-dom';
 import { createStore } from 'redux';
-
-let store = configureStore({ getCurrencies: { cur: [] }, getDynamic: { dynamic: [] }, curToFavorite: { favoriteCurData: [] } });
+let initDateForStat = { startDate: moment().date(-20), endDate: moment() };
+let store = configureStore({
+    getCurrencies: { cur: [] },
+    getDynamic: { dynamic: [] },
+    curToFavorite: { favoriteCurData: [] },
+    changeDate: {
+        startDate: initDateForStat.startDate,
+        endDate: initDateForStat.endDate
+    }
+});
 ReactDOM.render(
     <Provider store={store}>
         <Router>
