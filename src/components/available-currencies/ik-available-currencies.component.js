@@ -34,7 +34,7 @@ export class AvailableCurrencies extends React.Component {
     let currencyArr = this.props.cur;
     let filterText = this.props.filterText;
     let currencyFilter = filterText ?
-      currencyArr.filter((item) => item.curAbr.indexOf(filterText) !== -1)
+      currencyArr.filter((item) => item.curAbr.toLowerCase().indexOf(filterText.toLowerCase()) !== -1)
       : currencyArr;
     let choosenId = this.props.choosenId;
     console.log(choosenId);
