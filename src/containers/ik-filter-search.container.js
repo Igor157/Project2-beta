@@ -1,21 +1,21 @@
 import { connect } from 'react-redux';
 import { chooseCur } from '../actions';
-import { getAvaibleCur } from '../actions';
-import { filterAvaibleCur } from '../actions';
+import { getAvailableCur } from '../actions';
+import { filterAvailableCur } from '../actions';
 
 import {Search} from '../components/search';
 
 
 const mapStateToProps = (state) => {
   return {
-    filterText: state.avaibleCurrencies.filterText
+    filterText: state.availableCurrencies.filterText
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onFilterTextChange: (target) => {
-      dispatch(filterAvaibleCur(target));
+      dispatch(filterAvailableCur(target));
     }
   };
 };

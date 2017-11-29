@@ -10,11 +10,11 @@ import {
 
 import { Navigation } from '../navigation/ik-navigation.component.js';
 // import { Search } from '../search/ik-search.component.js'
-// import { AvaibleCurrencies } from '../avaible-currencies';
+// import { AvailableCurrencies } from '../available-currencies';
 // import { CurrencyDateTable } from '../currency-date-table/ik-currency-date-table.component.js';
 import { ConverterButton } from '../converter-button/ik-converter-button.component.js';
 import { ConverterContainer } from '../converter-container/ik-converter-container.component.js';
-import { ChooseAvaibleCurrencies } from '../../containers/ik-choose-avaible-currencies.container.js';
+import { ChooseAvailableCurrencies } from '../../containers/ik-choose-available-currencies.container.js';
 import { FilterSearch } from '../../containers/ik-filter-search.container.js';
 import { ChangeableCurrencyDateTable } from '../../containers/ik-changeable-currency-date-table.container.js';
 import { BothSideConverterContainer } from '../../containers/ik-both-side-converter.container.js';
@@ -60,14 +60,14 @@ export class CurrencyPage extends React.Component {
             <Switch>
               <Route
                 exact path='/'
-                render={() => <ChooseAvaibleCurrencies
-                  className="ik-currency-page__avaible-currencies"
+                render={() => <ChooseAvailableCurrencies
+                  className="ik-currency-page__available-currencies"
                 />}
               />
               <Route
                 path='/calculator'
-                render={() => <ChooseAvaibleCurrencies
-                  className="ik-currency-page__avaible-currencies"
+                render={() => <ChooseAvailableCurrencies
+                  className="ik-currency-page__available-currencies"
                 />}
               />
             </Switch>

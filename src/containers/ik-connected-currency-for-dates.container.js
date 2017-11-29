@@ -10,8 +10,8 @@ import { addCurToFavorite } from '../actions';
 const mapStateToProps = (state) => {
     return {
         dynamic: state.getDynamic.dynamic,
-        choosenId: state.avaibleCurrencies.choosenId,
-        choosenAbr: state.avaibleCurrencies.choosenAbr,
+        choosenId: state.availableCurrencies.choosenId,
+        choosenAbr: state.availableCurrencies.choosenAbr,
         startDate: state.changeDate.startDate,
         endDate: state.changeDate.endDate,
         favoriteCurData: state.curToFavorite.favoriteCurData

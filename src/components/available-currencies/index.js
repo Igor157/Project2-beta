@@ -1,0 +1,1 @@
+export * from './ik-available-currencies.component.js';

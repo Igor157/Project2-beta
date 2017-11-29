@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { chooseCur } from '../actions';
-import { getAvaibleCur } from '../actions';
-import { filterAvaibleCur } from '../actions';
+import { getAvailableCur } from '../actions';
+import { filterAvailableCur } from '../actions';
 import {selectFavoriteCur} from '../actions';
 import {removeFromFavorite} from '../actions';
 

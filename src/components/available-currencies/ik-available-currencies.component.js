@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styles from './ik-avaible-currencies.style.css';
+import styles from './ik-available-currencies.style.css';
 import { services } from '../../services/Services.js';
 
-const rizeStyle = "ik-avaible-currencies__day-progress--green";
-const downStyle = "ik-avaible-currencies__day-progress--red";
+const rizeStyle = "ik-available-currencies__day-progress--green";
+const downStyle = "ik-available-currencies__day-progress--red";
 
 
-export class AvaibleCurrencies extends React.Component {
+export class AvailableCurrencies extends React.Component {
   constructor(props) {
     super(props);
     this.clickHandler = this.clickHandler.bind(this);
@@ -15,7 +15,7 @@ export class AvaibleCurrencies extends React.Component {
   clickHandler(e) {
     let target = e.target;
     while (target !== this) {
-      if (target.className === 'ik-avaible-currencies__row') {
+      if (target.className === 'ik-available-currencies__row') {
         let end = new Date(Date.now());
         let start = new Date(end);
         start.setDate(start.getDate() - 20);
@@ -38,18 +38,18 @@ export class AvaibleCurrencies extends React.Component {
       : currencyArr;
     let choosenId = this.props.choosenId;
     console.log(choosenId);
-    let avaibleCurrency = currencyFilter.map((item, index) =>
+    let availableCurrency = currencyFilter.map((item, index) =>
       <div
         key={index}
-        className={`ik-avaible-currencies__row${+item.curId === +choosenId ? ' ik-avaible-currencies__row--selected' : ''}`}
+        className={`ik-available-currencies__row${+item.curId === +choosenId ? ' ik-available-currencies__row--selected' : ''}`}
         smth = {`ik-currency-tab${item.selected ? ' ik-currency-tab--selected' : ''}`}
         id={item.curId}
         abr={item.curAbr}
       >
-        <div className="ik-avaible-currencies__abr">{item.curAbr}</div>
-        <div className="ik-avaible-currencies__rate">{item.curRate}</div>
+        <div className="ik-available-currencies__abr">{item.curAbr}</div>
+        <div className="ik-available-currencies__rate">{item.curRate}</div>
         <button
-          className={`ik-avaible-currencies__day-progress  ${item.curDifference > 0 ? rizeStyle : downStyle}`}
+          className={`ik-available-currencies__day-progress  ${item.curDifference > 0 ? rizeStyle : downStyle}`}
         >
           {
             item.curDifference > 0
@@ -59,8 +59,8 @@ export class AvaibleCurrencies extends React.Component {
       </div>
     );
     return (
-      <div onClick={this.clickHandler} className={`ik-avaible-currencies  ${pageElementClass}`}>
-        {avaibleCurrency}
+      <div onClick={this.clickHandler} className={`ik-available-currencies  ${pageElementClass}`}>
+        {availableCurrency}
       </div>
     );
   }

@@ -1,8 +1,8 @@
 
-export function avaibleCurrencies(state = {}, action) {
+export function availableCurrencies(state = {}, action) {
 
   switch (action.type) {
-    case 'FILTER_AVAIBLE-CUR':
+    case 'FILTER_AVAILABLE-CUR':
       return { ...state, filterText: action.payload.filterText };
     case 'CHANGE_CUR_FOR_DYNAMIC':
     return { ...state, choosenId: action.payload.changedId, choosenAbr: action.payload.changedAbr };

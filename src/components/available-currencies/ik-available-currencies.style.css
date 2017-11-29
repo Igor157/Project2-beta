@@ -1,38 +1,38 @@
 
-.ik-avaible-currencies {
+.ik-available-currencies {
     border: 2px solid black;
     border-radius: 5px;
     overflow: auto;
     color: rgb(74, 74, 228);
 }
-.ik-avaible-currencies__day-progress--red {
+.ik-available-currencies__day-progress--red {
     background-color: rgb(151, 21, 21);
 }
-.ik-avaible-currencies__day-progress--green {
+.ik-available-currencies__day-progress--green {
     background-color: rgb(30, 126, 30);
 }
-.ik-avaible-currencies__row {
+.ik-available-currencies__row {
     display: flex;
     justify-content: space-around;   
     padding-top: 10px;
     padding-bottom: 10px;
     cursor: pointer;
 }
-.ik-avaible-currencies__row:hover {
+.ik-available-currencies__row:hover {
     background-color: rgb(74, 74, 228);
     color:white;
 }
-.ik-avaible-currencies__row--selected {
+.ik-available-currencies__row--selected {
     background-color: rgb(74, 74, 228);
     color:white;    
 }
-.ik-avaible-currencies__abr {
+.ik-available-currencies__abr {
     font-weight: bold;
 }
-.ik-avaible-currencies__rate {
+.ik-available-currencies__rate {
 
 }
-.ik-avaible-currencies__day-progress {
+.ik-available-currencies__day-progress {
     border: 2px solid white;
     min-width: 75px;
     border-radius: 5px;

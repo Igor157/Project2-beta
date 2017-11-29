@@ -71,9 +71,9 @@ export function changeCurForDynamic(id, abr) {
         }
     };
 }
-export function filterAvaibleCur(value) {
+export function filterAvailableCur(value) {
     return {
-        type: 'FILTER_AVAIBLE-CUR',
+        type: 'FILTER_AVAILABLE-CUR',
         payload: {
             filterText: value
         }
