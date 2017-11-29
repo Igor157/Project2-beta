@@ -36,10 +36,13 @@ export class AvaibleCurrencies extends React.Component {
     let currencyFilter = filterText ?
       currencyArr.filter((item) => item.curAbr.indexOf(filterText) !== -1)
       : currencyArr;
+    let choosenId = this.props.choosenId;
+    console.log(choosenId);
     let avaibleCurrency = currencyFilter.map((item, index) =>
       <div
         key={index}
-        className="ik-avaible-currencies__row"
+        className={`ik-avaible-currencies__row${+item.curId === +choosenId ? ' ik-avaible-currencies__row--selected' : ''}`}
+        smth = {`ik-currency-tab${item.selected ? ' ik-currency-tab--selected' : ''}`}
         id={item.curId}
         abr={item.curAbr}
       >

@@ -21,8 +21,11 @@
 .ik-avaible-currencies__row:hover {
     background-color: rgb(74, 74, 228);
     color:white;
-
- }
+}
+.ik-avaible-currencies__row--selected {
+    background-color: rgb(74, 74, 228);
+    color:white;    
+}
 .ik-avaible-currencies__abr {
     font-weight: bold;
 }
