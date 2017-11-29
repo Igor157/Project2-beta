@@ -17,7 +17,7 @@ export class CurrencyTabs extends React.Component {
             needToClose = !needToClose;
         }
         while (target !== this) {
-            if (target.className === 'ik-currency-tab') {
+            if (target.className === 'ik-currency-tab' || target.className === 'ik-currency-tab ik-currency-tab--selected') {
                 let indexOfSelected = 0;
                 let targetId = target.getAttribute('id');
                 console.log(this, 'this');
@@ -36,7 +36,7 @@ export class CurrencyTabs extends React.Component {
         let currencyTabs = favoriteCurArr.map((item, index) =>
             <div
                 key={index}
-                className="ik-currency-tab"
+                className={`ik-currency-tab${item.selected ? ' ik-currency-tab--selected' : ''}`}
                 id={item.favoriteId}
                 abr={item.favoriteAbr}
             >

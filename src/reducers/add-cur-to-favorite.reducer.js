@@ -10,7 +10,7 @@ export function curToFavorite(state = {}, action) {
                         return { ...item, new: action.payload.new, selected: action.payload.selected };
                     }
                     else {
-                        return item;
+                        return { ...item, selected: false };
                     }
                 })
             };

@@ -10,6 +10,9 @@
     height: 40px;
     flex-shrink: 0,1;
 }
+.ik-currency-tab--selected {
+    background-color: rgb(74, 74, 228);
+}
 .ik-currency-tab__new {
 
 }
