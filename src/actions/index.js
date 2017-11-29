@@ -135,14 +135,14 @@ export function changeEndDate(date) {
         }
     };
 }
-export function addCurToFavorite(abr, id, dynamic) {
+export function addCurToFavorite(abr, id, dynamic, favoriteFirst) {
     return {
         type: 'ADD_CUR_TO_FAVORITE',
         payload: {
             favoriteId: id,
             favoriteAbr: abr,
             dynamic: dynamic,
-            new: true
+            selected: favoriteFirst
         }
     };
 

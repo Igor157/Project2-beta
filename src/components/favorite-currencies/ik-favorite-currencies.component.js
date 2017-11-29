@@ -19,9 +19,10 @@ export class FavoriteCurrencies extends React.Component {
         this.props.removeFromFavorite(targetId);
     }
     render() {
+        console.log(this.props.favoriteCurData);
+        let filterForSelected = this.props.favoriteCurData.filter((item) => { return item.selected; });
+        let dynamic = filterForSelected[0] ? filterForSelected[0].dynamic : [];
         const pageElementClass = this.props.className;
-        console.log(this.props.favoriteCurData.dynamic, 'this.props.favoriteCurData.dynamic');
-        console.log(this.props.favoriteCurData, 'this.props.favoriteCurData.dynamic');
         return (
             <div className={`ik-favorite-currencies ${pageElementClass}`}>
                 <CurrencyTabs
@@ -30,10 +31,10 @@ export class FavoriteCurrencies extends React.Component {
                     selectFavoriteCur={this.selectFavoriteCur}
                     removeFromFavorite={this.removeFromFavorite}
                 />
-                {/* <CurrencyDateTable
+                <CurrencyDateTable
                     className="ik-favorite-currencies__date-table"
-                    dynamic={this.state.currentDynamic}
-                /> */}
+                    dynamic={dynamic}
+                />
             </div>
         );
     }

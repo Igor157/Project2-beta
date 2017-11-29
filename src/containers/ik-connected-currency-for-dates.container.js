@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
         choosenId: state.avaibleCurrencies.choosenId,
         choosenAbr: state.avaibleCurrencies.choosenAbr,
         startDate: state.changeDate.startDate,
-        endDate: state.changeDate.endDate
+        endDate: state.changeDate.endDate,
+        favoriteCurData: state.curToFavorite.favoriteCurData
     };
 };
 
@@ -28,8 +29,8 @@ const mapDispatchToProps = (dispatch) => {
         changeEndDate: (date) => {
             dispatch(changeEndDate(date));
         },
-        addCurToFavorite: (abr, id, dynamic) => {
-            dispatch(addCurToFavorite(abr, id, dynamic));
+        addCurToFavorite: (abr, id, dynamic, favoriteFirst) => {
+            dispatch(addCurToFavorite(abr, id, dynamic, favoriteFirst));
         }
     };
 };

@@ -34,3 +34,4 @@ export class CurrencyDateTable extends React.Component {
     );
   }
 }
+CurrencyDateTable.defaultProps = {dynamic: []};

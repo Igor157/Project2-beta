@@ -32,7 +32,8 @@ export class CurrencyDynamicForDates extends React.Component {
     this.props.getDynamic(this.props.choosenId, this.props.startDate, date);
   }
   clickToFavorite() {
-    this.props.addCurToFavorite(this.props.choosenAbr, this.props.choosenId, this.props.dynamic);
+    let favoriteFirst = this.props.favoriteCurData.length === 0 ? true : false;
+    this.props.addCurToFavorite(this.props.choosenAbr, this.props.choosenId, this.props.dynamic, favoriteFirst);
   }
 
   render() {
