@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { chooseCur } from '../actions';
 import { getAvaibleCur } from '../actions';
 import { filterAvaibleCur } from '../actions';
+import {selectFavoriteCur} from '../actions';
+import {removeFromFavorite} from '../actions';
 
 import { FavoriteCurrencies } from '../components/favorite-currencies';
 
@@ -12,15 +14,18 @@ const mapStateToProps = (state) => {
     };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         onFilterTextChange: (target) => {
-//             dispatch(filterAvaibleCur(target));
-//         }
-//     };
-// };
+const mapDispatchToProps = (dispatch) => {
+    return {
+        selectFavoriteCur: (id) => {
+            dispatch(selectFavoriteCur(id));
+        },
+        removeFromFavorite: (id) => {
+            dispatch(removeFromFavorite(id));
+        }
+    };
+};
 
 export const ConnectedFavoriteCurrencies = connect(
-    mapStateToProps
-    // mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(FavoriteCurrencies);

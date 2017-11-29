@@ -142,8 +142,27 @@ export function addCurToFavorite(abr, id, dynamic) {
             favoriteId: id,
             favoriteAbr: abr,
             dynamic: dynamic,
-            new:true
+            new: true
         }
     };
 
+}
+export function selectFavoriteCur(targetId) {
+    return {
+        type: 'SELECT_FAVORITE_CUR',
+        payload: {
+            id: targetId,
+            new: false,
+            selected: true
+        }
+    };
+
+}
+export function removeFromFavorite(targetId) {
+    return {
+        type: 'REMOVE_FROM_FAVORITE',
+        payload: {
+            id:targetId
+        }
+    };
 }
