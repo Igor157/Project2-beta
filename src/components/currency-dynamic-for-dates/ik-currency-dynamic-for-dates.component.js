@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styles from './ik-currency-dynamic-for-dates.style.css';
 import { EmptyTemplate } from '../empty-template/ik-empty-template.component.js';
 import { CurrencyDateTable } from '../currency-date-table';
+import {CurrencyGraph} from '../currency-graph';
 
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
@@ -65,8 +66,8 @@ export class CurrencyDynamicForDates extends React.Component {
             />
           </div>
         </div>
-        <CurrencyDateTable
-          className="ik-currency-dynamic-for-dates__date-table"
+        <CurrencyGraph
+          className="ik-currency-dynamic-for-dates__graph"
           dynamic={this.props.dynamic}
         />
       </div >

@@ -1,11 +1,11 @@
 import moment from 'moment';
 
-class Services {
+class MathService {
     curTendetionDetermination(cur) {
         return Math.round(cur * 10000) / 10000;
     }
 }
-export let services = new Services();
+export let mathService = new MathService();
 
 class RequestServices {
     reqCur(url) {
@@ -122,3 +122,36 @@ class ConverterServices {
 
 
 export let converterServices = new ConverterServices();
+
+class FaService {
+    chooseIco(abr) {
+        switch (abr) {
+            case 'EUR':
+                return 'eur';
+            case 'BTC':
+                return 'btc';
+            case 'KRW':
+                return 'krw';
+            case 'RUB':
+                return 'rub';
+            case 'TRY':
+                return 'try';
+            case 'YEN':
+                return 'yen';
+            case 'CNY':
+                return 'cny';
+            case 'GBP':
+                return 'gbp';
+            case 'INR':
+                return 'inr';
+            case 'FPY':
+                return 'jpy';
+            case 'USD':
+                return 'usd';
+            default:
+                return 'money';
+        }
+    }
+
+}
+export let faService = new FaService();

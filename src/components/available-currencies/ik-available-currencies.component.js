@@ -1,7 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import styles from './ik-available-currencies.style.css';
-import { services } from '../../services/Services.js';
+import { mathService } from '../../services/Services.js';
+import { faService } from '../../services/Services.js';
+import FontAwesome from 'react-fontawesome';
 
 const rizeStyle = "ik-available-currencies__day-progress--green";
 const downStyle = "ik-available-currencies__day-progress--red";
@@ -37,15 +39,20 @@ export class AvailableCurrencies extends React.Component {
       currencyArr.filter((item) => item.curAbr.toLowerCase().indexOf(filterText.toLowerCase()) !== -1)
       : currencyArr;
     let choosenId = this.props.choosenId;
-    console.log(choosenId);
     let availableCurrency = currencyFilter.map((item, index) =>
       <div
         key={index}
         className={`ik-available-currencies__row${+item.curId === +choosenId ? ' ik-available-currencies__row--selected' : ''}`}
-        smth = {`ik-currency-tab${item.selected ? ' ik-currency-tab--selected' : ''}`}
+        smth={`ik-currency-tab${item.selected ? ' ik-currency-tab--selected' : ''}`}
         id={item.curId}
         abr={item.curAbr}
       >
+        <FontAwesome
+          className="ik-available-currencies__icon"
+          name={faService.chooseIco(item.curAbr)}
+          size='1x'
+          style={{ color: 'white' }}
+        />
         <div className="ik-available-currencies__abr">{item.curAbr}</div>
         <div className="ik-available-currencies__rate">{item.curRate}</div>
         <button
@@ -53,7 +60,7 @@ export class AvailableCurrencies extends React.Component {
         >
           {
             item.curDifference > 0
-              ? '+' + services.curTendetionDetermination(item.curDifference) : services.curTendetionDetermination(item.curDifference)
+              ? '+' + mathService.curTendetionDetermination(item.curDifference) : mathService.curTendetionDetermination(item.curDifference)
           }
         </button>
       </div>
