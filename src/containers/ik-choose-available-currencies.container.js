@@ -9,8 +9,6 @@ const mapStateToProps = (state) => {
   return {
     cur: state.getCurrencies.cur,
     filterText: state.availableCurrencies.filterText,
-    startDate: state.changeDate.startDate,
-    endDate: state.changeDate.endDate,
     choosenId: state.availableCurrencies.choosenId
   };
 };

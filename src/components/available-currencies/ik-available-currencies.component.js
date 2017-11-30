@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styles from './ik-available-currencies.style.css';
 import { mathService } from '../../services/Services.js';
 import { faService } from '../../services/Services.js';
+import moment from 'moment';
 import FontAwesome from 'react-fontawesome';
 
 const rizeStyle = "ik-available-currencies__day-progress--green";
@@ -18,10 +19,10 @@ export class AvailableCurrencies extends React.Component {
     let target = e.target;
     while (target !== this) {
       if (target.className === 'ik-available-currencies__row') {
-        let end = new Date(Date.now());
-        let start = new Date(end);
-        start.setDate(start.getDate() - 20);
-        this.props.getDynamic(target.getAttribute('id'), this.props.startDate, this.props.endDate);
+        let end = moment();
+        let start = moment().date(-20);
+
+        this.props.getDynamic(target.getAttribute('id'), start, end);
         this.props.changeCurForDynamic(target.getAttribute('id'), target.getAttribute('abr'));
         return;
       }
