@@ -25,7 +25,7 @@ import { CurrencyDynamicForDates } from '../currency-dynamic-for-dates';
 import { ConnectedCurrencyDynamicForDates } from '../../containers/ik-connected-currency-for-dates.container.js';
 import { ConnectedNavigation } from '../../containers/connected-navigation.js';
 import { ConnectedFavoriteCurrencies } from '../../containers/connected-favorite-currencies.container.js';
-
+import {ConnectedSaveableCurrencyDynamic} from '../../components/saveable-currency-dynamic';
 export class CurrencyPage extends React.Component {
 
   render() {
@@ -80,8 +80,8 @@ export class CurrencyPage extends React.Component {
               />
               <Route
                 exact path='/'
-                render={() => <ConnectedCurrencyDynamicForDates
-                  className="ik-currency-page__dynamic-for-dates"
+                render={() => <ConnectedSaveableCurrencyDynamic
+                  className="ik-currency-page__saveable-currency-dynamic"
                 />}
               />
               <Route

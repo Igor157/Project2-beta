@@ -1,0 +1,1 @@
+export * from './ik-saveable-currency-dynamic.component.js';

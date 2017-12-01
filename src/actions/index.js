@@ -18,15 +18,6 @@ export const chooseCur = (id, abr) => {
         }
     };
 };
-// export const initialize = () => {
-//     return {
-//         type: 'INITIALIZE',
-//         payload: {
-//             cur: [],
-//             filterText: false
-//         }
-//     }
-// }
 
 
 export function getCur() {
@@ -80,22 +71,22 @@ export function filterAvailableCur(value) {
     };
 }
 
-export function changeValue1(target) {
-    return {
-        type: 'CHANGE_VALUE_1',
-        payload: {
-            inputValue: target
-        }
-    };
-}
-export function changeValue2(target) {
-    return {
-        type: 'CHANGE_VALUE_2',
-        payload: {
-            inputValue: target
-        }
-    };
-}
+// export function changeValue1(target) {
+//     return {
+//         type: 'CHANGE_VALUE_1',
+//         payload: {
+//             inputValue: target
+//         }
+//     };
+// }
+// export function changeValue2(target) {
+//     return {
+//         type: 'CHANGE_VALUE_2',
+//         payload: {
+//             inputValue: target
+//         }
+//     };
+// }
 export function changeAbr1(target, cur) {
     return {
         type: 'CHANGE_ABR_1',
@@ -135,18 +126,26 @@ export function changeEndDate(date) {
         }
     };
 }
-export function addCurToFavorite(abr, id, dynamic, favoriteFirst) {
-    return {
-        type: 'ADD_CUR_TO_FAVORITE',
-        payload: {
-            favoriteId: id,
-            favoriteAbr: abr,
-            dynamic: dynamic,
-            selected: favoriteFirst
-        }
-    };
 
+export function addCurToFavorite() {
+    return (dispatch, getState) => {
+        let state = getState();
+        let favoriteFirst = state.curToFavorite.favoriteCurData.length === 0 ? true : false;
+        dispatch({
+            type: 'ADD_CUR_TO_FAVORITE',
+            payload: {
+                favoriteId: state.availableCurrencies.choosenId,
+                favoriteAbr: state.availableCurrencies.choosenAbr,
+                dynamic: state.getDynamic.dynamic,
+                selected: favoriteFirst,
+                new:true
+            }
+        });
+    };
 }
+
+
+
 export function selectFavoriteCur(targetId) {
     return {
         type: 'SELECT_FAVORITE_CUR',
@@ -162,7 +161,7 @@ export function removeFromFavorite(targetId) {
     return {
         type: 'REMOVE_FROM_FAVORITE',
         payload: {
-            id:targetId
+            id: targetId
         }
     };
 }

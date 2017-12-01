@@ -87,7 +87,7 @@ body, html {
 
     background-color: white;
 }
-.ik-currency-page__dynamic-for-dates {
+.ik-currency-page__saveable-currency-dynamic {
     margin-top: 20px;
     width: 60%;
     max-height: 85vh;

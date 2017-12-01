@@ -5,7 +5,6 @@ import { changeStartDate } from '../actions';
 import { changeEndDate } from '../actions';
 
 import { CurrencyDynamicForDates } from '../components/currency-dynamic-for-dates';
-import { addCurToFavorite } from '../actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -13,8 +12,7 @@ const mapStateToProps = (state) => {
         choosenId: state.availableCurrencies.choosenId,
         choosenAbr: state.availableCurrencies.choosenAbr,
         startDate: state.changeDate.startDate,
-        endDate: state.changeDate.endDate,
-        favoriteCurData: state.curToFavorite.favoriteCurData
+        endDate: state.changeDate.endDate
     };
 };
 
@@ -28,9 +26,6 @@ const mapDispatchToProps = (dispatch) => {
         },
         changeEndDate: (date) => {
             dispatch(changeEndDate(date));
-        },
-        addCurToFavorite: (abr, id, dynamic, favoriteFirst) => {
-            dispatch(addCurToFavorite(abr, id, dynamic, favoriteFirst));
         }
     };
 };

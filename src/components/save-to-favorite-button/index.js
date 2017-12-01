@@ -1,0 +1,1 @@
+export * from './ik-save-to-favorite-button.component.js';

@@ -21,8 +21,6 @@ export class AvailableCurrencies extends React.Component {
       if (target.className === 'ik-available-currencies__row') {
         let end = moment();
         let start = moment().date(-20);
-
-        this.props.getDynamic(target.getAttribute('id'), start, end);
         this.props.changeCurForDynamic(target.getAttribute('id'), target.getAttribute('abr'));
         return;
       }
