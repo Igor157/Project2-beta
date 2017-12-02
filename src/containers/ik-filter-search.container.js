@@ -1,6 +1,4 @@
 import { connect } from 'react-redux';
-import { chooseCur } from '../actions';
-import { getAvailableCur } from '../actions';
 import { filterAvailableCur } from '../actions';
 
 import {Search} from '../components/search';

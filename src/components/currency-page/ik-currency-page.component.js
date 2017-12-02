@@ -8,25 +8,15 @@ import {
   Switch
 } from 'react-router-dom';
 
-import { Navigation } from '../navigation/ik-navigation.component.js';
-// import { Search } from '../search/ik-search.component.js'
-// import { AvailableCurrencies } from '../available-currencies';
-// import { CurrencyDateTable } from '../currency-date-table/ik-currency-date-table.component.js';
-import { ConverterButton } from '../converter-button/ik-converter-button.component.js';
-import { ConverterContainer } from '../converter-container/ik-converter-container.component.js';
 import { ChooseAvailableCurrencies } from '../../containers/ik-choose-available-currencies.container.js';
 import { FilterSearch } from '../../containers/ik-filter-search.container.js';
-import { ChangeableCurrencyDateTable } from '../../containers/ik-changeable-currency-date-table.container.js';
-import { BothSideConverterContainer } from '../../containers/ik-both-side-converter.container.js';
-import { EmptyTemplate } from '../../components/empty-template';
 import { ConnectedCurrencyCalculator } from '../../containers/ik-connected-currency-calculator.container.js';
 import { About } from '../about';
-import { CurrencyDynamicForDates } from '../currency-dynamic-for-dates';
 import { ConnectedNavigation } from '../../containers/connected-navigation.js';
 import { ConnectedFavoriteCurrencies } from '../favorite-currencies';
 import {ConnectedSaveableCurrencyDynamic} from '../../components/saveable-currency-dynamic';
-export class CurrencyPage extends React.Component {
 
+export class CurrencyPage extends React.Component {
   render() {
     return (
       <Route

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { getCur } from '../actions';
 import { getDynamic } from '../actions';
 import { changeStartDate } from '../actions';
 import { changeEndDate } from '../actions';

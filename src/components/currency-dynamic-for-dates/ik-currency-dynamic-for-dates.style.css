@@ -8,17 +8,8 @@
     padding-top: 40px;
     padding-bottom:30px;
 }
-.ik-currency-dynamic-for-dates__savebutton {
-    margin-left: 80%;
-    border: 2px solid black;
-    background-color: rgb(48, 136, 84);
-    border-radius: 2px;
-}
 .ik-currency-dynamic-for-dates__date-picker {
     display: inline-block;
-}
-.ik-currency-dynamic-for-dates__date-table {
-
 }
 .ik-currency-dynamic-for-dates__graph {
     

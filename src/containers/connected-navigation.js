@@ -1,8 +1,4 @@
 import { connect } from 'react-redux';
-import { chooseCur } from '../actions';
-import { getAvailableCur } from '../actions';
-import { getFilterText } from '../actions';
-
 import { Navigation } from '../components/navigation';
 
 

@@ -6,8 +6,8 @@ import { faService } from '../../services/Services.js';
 import moment from 'moment';
 import FontAwesome from 'react-fontawesome';
 
-const rizeStyle = "ik-available-currencies__day-progress--green";
-const downStyle = "ik-available-currencies__day-progress--red";
+const rizeStyle = 'ik-available-currencies__day-progress--green';
+const downStyle = 'ik-available-currencies__day-progress--red';
 
 
 export class AvailableCurrencies extends React.Component {

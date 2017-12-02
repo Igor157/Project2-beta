@@ -27,13 +27,6 @@ export class CurrencyGraph extends React.Component {
         );
     }
 
-
-    // componentDidUpdate() {
-    //     if (this.canvas && this.props.dynamic) {
-    //         this.renderChart(this.canvas, this.props.dynamic);
-    //     }
-    // }
-
     renderChart(canvas, curData) {
         let axisX = curData.map((item) => item.date);
         let axisY = curData.map((item) => +item.curRate);

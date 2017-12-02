@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styles from './ik-currency-tabs.style.css';
-// import { services } from '../../services/Services.js';
 import FontAwesome from 'react-fontawesome';
 
 

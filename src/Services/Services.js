@@ -37,11 +37,8 @@ class RequestServices {
                 });
                 return result;
             });
-        // .catch(err => { console.log(err) });
     }
     getDynamicOfCurrencie(reqId, startMoment, endMoment) {
-        console.dir(startMoment);
-        console.dir(endMoment);
         let start = startMoment.toDate();
         let end = endMoment.toDate();
         let startDate = `${start.getFullYear()}-${start.getMonth() + 1}-${start.getDate()}`;
@@ -51,8 +48,6 @@ class RequestServices {
         return this.reqCur(urlForPeriod);
     }
     getDynamicForCurId(id, start, end) {
-        console.log(start);
-        console.log(end);
         let dynamicOfCurrencie = this.getDynamicOfCurrencie(id, start, end);
         return dynamicOfCurrencie
             .then((data = []) => {
@@ -70,18 +65,6 @@ class MapperService {
         this.date = entity.Date || '';
         this.curId = entity.Cur_ID || '';
     }
-
-    // toEntity() {
-    //     return {
-    //         Cur_Abbreviation: this.curAbr,
-    //         Cur_OfficialRate: this.curRate,
-    //         Date: this.date
-    //     };
-    // }
-
-    // fromEntity(entity) {
-    //     return new Entity(entity);
-    // }
 }
 
 class ConverterServices {
@@ -114,7 +97,6 @@ class ConverterServices {
                 allCurrencies[0].curRate :
                 1;
         }
-        console.log(rate, 'rate');
         return rate;
     }
 

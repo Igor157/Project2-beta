@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import styles from './ik-one-side-converter-container.style.css';
 import { OneSideConverterInput } from '../one-side-converter-input/ik-one-side-converter-input.component.js';
 import { converterServices } from '../../services/Services.js';
-import { ConverterButton } from '../converter-button/ik-converter-button.component.js';
-
 
 export class OneSideConverterContainer extends React.Component {
   constructor(props) {
@@ -26,17 +24,9 @@ export class OneSideConverterContainer extends React.Component {
     const value = this.state.inputValue;
     const valueAbr = this.props.currentAbr;
     const destinationAbr = this.state.choosenAbr;
-    console.log(destinationAbr, 'destinationAbr');
     const allCurrencies = this.props.currency;
     const currentValueRate = converterServices.getRates(allCurrencies, valueAbr);
     const currentDestRate = converterServices.getRates(allCurrencies, destinationAbr);
-
-    // const filteredForValueArr = converterServices.filterCurForTarget(allCurrencies, valueAbr);
-    // const filteredForDestArr = converterServices.filterCurForTarget(allCurrencies, destinationAbr);
-    // const currentValueRate = filteredForValueArr.curRate;
-    // const currentDestRate = destinationAbr ?
-    //   filteredForDestArr.curRate :
-    //   allCurrencies[0].curRate;
     const destinationField = converterServices.tryConvert(value, currentValueRate, currentDestRate, converterServices.moneyConvert);
     const valueField = value;
     return (

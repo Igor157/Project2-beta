@@ -2,22 +2,22 @@ import { requestServices } from '../Services/Services.js';
 import { converterServices } from '../Services/Services.js';
 
 
-export const filterCur = (value) => {
-    return {
-        type: 'FILTER_CUR',
-        payload: value
-    };
-};
+// export const filterCur = (value) => {
+//     return {
+//         type: 'FILTER_CUR',
+//         payload: value
+//     };
+// };
 
-export const chooseCur = (id, abr) => {
-    return {
-        type: 'CHOOSE_CUR',
-        payload: {
-            id: id,
-            abr: abr
-        }
-    };
-};
+// export const chooseCur = (id, abr) => {
+//     return {
+//         type: 'CHOOSE_CUR',
+//         payload: {
+//             id: id,
+//             abr: abr
+//         }
+//     };
+// };
 
 
 export function getCur() {
@@ -70,28 +70,28 @@ export function filterAvailableCur(value) {
         }
     };
 }
-export function changeAbr1(target, cur) {
-    return {
-        type: 'CHANGE_ABR_1',
-        payload: {
-            input1Abr: target,
-            current1Rate: converterServices.filterCurForTarget(cur, target) ?
-                converterServices.filterCurForTarget(cur, target).curRate
-                : ''
-        }
-    };
-}
-export function changeAbr2(target, cur) {
-    return {
-        type: 'CHANGE_ABR_2',
-        payload: {
-            input2Abr: target,
-            current2Rate: converterServices.filterCurForTarget(cur, target) ?
-                converterServices.filterCurForTarget(cur, target).curRate
-                : ''
-        }
-    };
-}
+// export function changeAbr1(target, cur) {
+//     return {
+//         type: 'CHANGE_ABR_1',
+//         payload: {
+//             input1Abr: target,
+//             current1Rate: converterServices.filterCurForTarget(cur, target) ?
+//                 converterServices.filterCurForTarget(cur, target).curRate
+//                 : ''
+//         }
+//     };
+// }
+// export function changeAbr2(target, cur) {
+//     return {
+//         type: 'CHANGE_ABR_2',
+//         payload: {
+//             input2Abr: target,
+//             current2Rate: converterServices.filterCurForTarget(cur, target) ?
+//                 converterServices.filterCurForTarget(cur, target).curRate
+//                 : ''
+//         }
+//     };
+// }
 
 export function changeStartDate(date) {
     return {

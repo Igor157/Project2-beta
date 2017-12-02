@@ -49,7 +49,6 @@ export class OneSideConverterInput extends React.Component {
                     {operation === 'Value' ?
                         <div className="ik-converter__value-abr">{valueAbr}</div> :
                         <select className="ik-converter-select" onChange={this.onChangeAbr}>
-                            {/* <option>select currency</option> */}
                             {abr}
                         </select>
                     }

@@ -12,7 +12,6 @@ export class FavoriteCurrencies extends React.Component {
         super(props);
     }
     render() {
-        console.log(this.props.empty);
         const pageElementClass = this.props.className;
         if (this.props.empty) {
             return (

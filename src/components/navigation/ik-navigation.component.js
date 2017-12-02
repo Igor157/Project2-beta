@@ -16,7 +16,6 @@ export class Navigation extends React.Component {
         <NavLink
           className="ik-navigation__button"
           to='/'
-
         > Currencies
         </NavLink>
         <NavLink

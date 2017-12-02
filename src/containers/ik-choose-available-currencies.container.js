@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { getCur } from '../actions';
 import { changeCurForDynamic } from '../actions';
-import { getFilterText } from '../actions';
 import { AvailableCurrencies } from '../components/available-currencies';
 
 const mapStateToProps = (state) => {

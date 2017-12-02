@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './ik-currency-dynamic-for-dates.style.css';
-import { CurrencyDateTable } from '../currency-date-table';
 import { CurrencyGraph } from '../currency-graph';
 
 import DatePicker from 'react-datepicker';
