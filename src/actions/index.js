@@ -70,23 +70,6 @@ export function filterAvailableCur(value) {
         }
     };
 }
-
-// export function changeValue1(target) {
-//     return {
-//         type: 'CHANGE_VALUE_1',
-//         payload: {
-//             inputValue: target
-//         }
-//     };
-// }
-// export function changeValue2(target) {
-//     return {
-//         type: 'CHANGE_VALUE_2',
-//         payload: {
-//             inputValue: target
-//         }
-//     };
-// }
 export function changeAbr1(target, cur) {
     return {
         type: 'CHANGE_ABR_1',
@@ -133,6 +116,7 @@ export function addCurToFavorite() {
         let favoriteFirst = state.curToFavorite.favoriteCurData.length === 0 ? true : false;
         dispatch({
             type: 'ADD_CUR_TO_FAVORITE',
+            empty: false,
             payload: {
                 favoriteId: state.availableCurrencies.choosenId,
                 favoriteAbr: state.availableCurrencies.choosenAbr,

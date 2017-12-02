@@ -16,7 +16,10 @@ let initDateForStat = { startDate: moment().date(-20), endDate: moment() };
 let store = configureStore({
     getCurrencies: { cur: [] },
     getDynamic: { dynamic: [] },
-    curToFavorite: { favoriteCurData: [] },
+    curToFavorite: {
+        empty: true,
+        favoriteCurData: []
+    },
     changeDate: {
         startDate: initDateForStat.startDate,
         endDate: initDateForStat.endDate

@@ -9,8 +9,7 @@ import { CurrencyDynamicForDates } from '../components/currency-dynamic-for-date
 const mapStateToProps = (state) => {
     return {
         dynamic: state.getDynamic.dynamic,
-        choosenId: state.availableCurrencies.choosenId,
-        choosenAbr: state.availableCurrencies.choosenAbr,
+        choosenId: state.curToFavorite.favoriteCurData.filter((item) => {return item.selected === true; })[0].favoriteId,
         startDate: state.changeDate.startDate,
         endDate: state.changeDate.endDate
     };
@@ -18,8 +17,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getDynamic: (target, start, end) => {
-            dispatch(getDynamic(target, start, end));
+        getDynamic: (id, start, end) => {
+            dispatch(getDynamic(id, start, end));
         },
         changeStartDate: (date) => {
             dispatch(changeStartDate(date));
@@ -30,7 +29,7 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export const ConnectedCurrencyDynamicForDates = connect(
+export const ConnectedFavoriteCurrencyDynamicForDates = connect(
     mapStateToProps,
     mapDispatchToProps
 )(CurrencyDynamicForDates);

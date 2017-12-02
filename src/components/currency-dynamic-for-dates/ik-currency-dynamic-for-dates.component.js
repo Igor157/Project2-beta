@@ -23,8 +23,13 @@ export class CurrencyDynamicForDates extends React.Component {
     this.props.changeEndDate(date);
     this.props.getDynamic(this.props.choosenId, this.props.startDate, date);
   }
-  componentDidMount(prevProps) {
+  componentDidMount() {
+    this.props.getDynamic(this.props.choosenId, moment().date(-20), moment());
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.choosenId !== this.props.choosenId) {
       this.props.getDynamic(this.props.choosenId, moment().date(-20), moment());
+    }
   }
   render() {
     const pageElementClass = this.props.className;

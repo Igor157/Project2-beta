@@ -1,11 +1,8 @@
 import { connect } from 'react-redux';
-import { chooseCur } from '../actions';
-import { getAvailableCur } from '../actions';
-import { filterAvailableCur } from '../actions';
 import {selectFavoriteCur} from '../actions';
 import {removeFromFavorite} from '../actions';
 
-import { FavoriteCurrencies } from '../components/favorite-currencies';
+import { CurrencyTabs } from '../components/currency-tabs';
 
 
 const mapStateToProps = (state) => {
@@ -25,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export const ConnectedFavoriteCurrencies = connect(
+export const ConnectedCurrencyTabs = connect(
     mapStateToProps,
     mapDispatchToProps
-)(FavoriteCurrencies);
+)(CurrencyTabs);

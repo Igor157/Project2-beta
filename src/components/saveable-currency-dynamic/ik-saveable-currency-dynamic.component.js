@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import styles from './ik-saveable-currency-dynamic.style.css';
 import {ConnectedSaveToFavoriteButton} from '../../containers/ik-connected-save-to-favorite-button.container.js';
-import {ConnectedCurrencyDynamicForDates} from '../../containers/ik-connected-currency-for-dates.container';
+import {ConnectedMainCurrencyDynamicForDates} from '../../containers/ik-connected-main-currency-for-dates.container';
 import {EmptyTemplate} from '../empty-template';
 
 
@@ -20,7 +20,7 @@ export class SaveableCurrencyDynamic extends React.Component {
                 <ConnectedSaveToFavoriteButton
                     className="ik-saveable-currency-dynamic__button"
                 />
-                <ConnectedCurrencyDynamicForDates
+                <ConnectedMainCurrencyDynamicForDates
                     className="ik-saveable-currency-dynamic__currency-dynamic-for-dates"
                 />
             </div>

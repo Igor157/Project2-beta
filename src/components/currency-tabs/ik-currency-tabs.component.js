@@ -12,7 +12,6 @@ export class CurrencyTabs extends React.Component {
     clickHandler(e) {
         let target = e.target;
         let needToClose = false;
-        console.log(this.props, 'this');
         if (target.className === 'ik-currency-tab__close') {
             needToClose = !needToClose;
         }

@@ -22,9 +22,8 @@ import { EmptyTemplate } from '../../components/empty-template';
 import { ConnectedCurrencyCalculator } from '../../containers/ik-connected-currency-calculator.container.js';
 import { About } from '../about';
 import { CurrencyDynamicForDates } from '../currency-dynamic-for-dates';
-import { ConnectedCurrencyDynamicForDates } from '../../containers/ik-connected-currency-for-dates.container.js';
 import { ConnectedNavigation } from '../../containers/connected-navigation.js';
-import { ConnectedFavoriteCurrencies } from '../../containers/connected-favorite-currencies.container.js';
+import { ConnectedFavoriteCurrencies } from '../favorite-currencies';
 import {ConnectedSaveableCurrencyDynamic} from '../../components/saveable-currency-dynamic';
 export class CurrencyPage extends React.Component {
 
