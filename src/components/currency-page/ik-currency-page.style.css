@@ -14,7 +14,8 @@ body, html {
     background-color: rgb(88, 82, 82);  
     display: flex;
     flex-wrap: wrap;
-    max-width: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 .ik-currency-page__search {
     width: 30%;
@@ -71,8 +72,6 @@ body, html {
     max-width: 80%;
     height: 89%;
     margin: auto;
-
-    background-color: white;
 }
 .ik-currency-page__saveable-currency-dynamic {
     margin-top: 20px;

@@ -15,7 +15,9 @@ export class FavoriteCurrencies extends React.Component {
         const pageElementClass = this.props.className;
         if (this.props.empty) {
             return (
-                <EmptyTemplate />
+                <EmptyTemplate
+                    className= {pageElementClass}
+                />
             );
         }
         return (

@@ -1,9 +1,12 @@
 .ik-favorite-currencies {
-
 }
 .ik-favorite-currencies__currency-tabs {
     display: flex;
+    flex-wrap:wrap;
+    align-content:flex-start;
 }
 .ik-favorite-currencies__dynamic-for-dates {
-    
+    padding: 30px;
+    border: 2px solid #ddd;
+    background-color: white;
 }

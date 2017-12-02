@@ -1,20 +1,20 @@
 .ik-currency-tabs {
     max-width: 95%;
+    color: #ddd;
 }
 .ik-currency-tab {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 2px solid rgb(116, 110, 110);
+    border: 2px solid #ddd;
     width: 100px;
     height: 40px;
-    flex-shrink: 0,1;
 }
 .ik-currency-tab--selected {
-    background-color: rgb(74, 74, 228);
+    background-color: white;
 }
 .ik-currency-tab__new {
-
+    color:red;
 }
 .ik-currency-tab__abr {
 

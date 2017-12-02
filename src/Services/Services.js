@@ -43,7 +43,6 @@ class RequestServices {
         let end = endMoment.toDate();
         let startDate = `${start.getFullYear()}-${start.getMonth() + 1}-${start.getDate()}`;
         let endDate = `${end.getFullYear()}-${end.getMonth() + 1}-${end.getDate()}`;
-        // http://www.nbrb.by/API/ExRates/Rates/Dynamics/190?startDate=2016-6-1&endDate=2016-6-30
         let urlForPeriod = `http://www.nbrb.by/API/ExRates/Rates/Dynamics/${reqId}?startDate=${startDate}&endDate=${endDate}`;
         return this.reqCur(urlForPeriod);
     }

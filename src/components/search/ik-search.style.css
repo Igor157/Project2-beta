@@ -5,7 +5,7 @@
 width:70%;
 color: white;
 background-color: rgb(74, 74, 228);
-border: 2px solid white;
+border: 2px solid #ddd;
 border-radius: 10px 0 0 10px;
 }
 .ik-search__search-button {

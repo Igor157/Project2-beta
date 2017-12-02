@@ -49,7 +49,7 @@ export class CurrencyTabs extends React.Component {
                 <FontAwesome
                     className="ik-currency-tab__close"
                     name='times'
-                    style={{ color: 'white' }}
+                    style={{ color: '#ddd' }}
                 />
 
             </div>

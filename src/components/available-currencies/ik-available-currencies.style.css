@@ -1,6 +1,6 @@
 
 .ik-available-currencies {
-    border: 2px solid black;
+    border: 2px solid #ddd;
     border-radius: 5px;
     overflow: auto;
     color: rgb(74, 74, 228);
@@ -28,9 +28,10 @@
 }
 .ik-available-currencies__abr {
     font-weight: bold;
+    min-width: 75px;
 }
 .ik-available-currencies__rate {
-
+    min-width: 75px;
 }
 .ik-available-currencies__day-progress {
     border: 2px solid white;
