@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styles from './ik-currency-tabs.style.css';
-import { services } from '../../services/Services.js';
+// import { services } from '../../services/Services.js';
+import FontAwesome from 'react-fontawesome';
 
 
 export class CurrencyTabs extends React.Component {
@@ -12,14 +13,13 @@ export class CurrencyTabs extends React.Component {
     clickHandler(e) {
         let target = e.target;
         let needToClose = false;
-        if (target.className === 'ik-currency-tab__close') {
+        if (target.className === `fa fa-times ik-currency-tab__close`) {
             needToClose = !needToClose;
         }
         while (target !== this) {
             if (target.className === 'ik-currency-tab' || target.className === 'ik-currency-tab ik-currency-tab--selected') {
                 let indexOfSelected = 0;
                 let targetId = target.getAttribute('id');
-                console.log(this, 'this');
                 this.props.selectFavoriteCur(targetId);
                 if (needToClose) {
                     this.props.removeFromFavorite(targetId);
@@ -47,10 +47,12 @@ export class CurrencyTabs extends React.Component {
                     className="ik-currency-tab__abr">
                     {item.favoriteAbr}
                 </div>
-                <div
-                    className="ik-currency-tab__close">
-                    x
-        </div>
+                <FontAwesome
+                    className="ik-currency-tab__close"
+                    name='times'
+                    style={{ color: 'white' }}
+                />
+
             </div>
         );
         return (

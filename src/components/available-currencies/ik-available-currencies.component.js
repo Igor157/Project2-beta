@@ -49,7 +49,6 @@ export class AvailableCurrencies extends React.Component {
         <FontAwesome
           className="ik-available-currencies__icon"
           name={faService.chooseIco(item.curAbr)}
-          size='1x'
           style={{ color: 'white' }}
         />
         <div className="ik-available-currencies__abr">{item.curAbr}</div>

@@ -1,22 +1,24 @@
 import { connect } from 'react-redux';
-import { chooseCur } from '../actions';
-import { getAvailableCur } from '../actions';
-import { getFilterText } from '../actions';
-
+import { getDynamic } from '../actions';
 import {CurrencyCalculator} from '../components/currency-calculator';
 
-
 const mapStateToProps = (state) => {
-  console.log(state.availableCurrencies.choosenAbr);
   return {
     currentAbr: state.availableCurrencies.choosenAbr,
+    choosenId: state.availableCurrencies.choosenId,
     dynamic: state.getDynamic.dynamic,
     currency: state.getCurrencies.cur
   };
 };
-
-
+const mapDispatchToProps = (dispatch) => {
+  return {
+      getDynamic: (id, start, end) => {
+          dispatch(getDynamic(id, start, end));
+      }
+  };
+};
 
 export const ConnectedCurrencyCalculator = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(CurrencyCalculator);
