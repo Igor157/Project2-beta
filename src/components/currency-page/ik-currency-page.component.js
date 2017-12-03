@@ -12,7 +12,7 @@ import { ChooseAvailableCurrencies } from '../../containers/ik-choose-available-
 import { FilterSearch } from '../../containers/ik-filter-search.container.js';
 import { ConnectedCurrencyCalculator } from '../../containers/ik-connected-currency-calculator.container.js';
 import { About } from '../about';
-import { ConnectedNavigation } from '../../containers/connected-navigation.js';
+import { ConnectedNavigation } from '../../containers/ik-connected-navigation.js';
 import { ConnectedFavoriteCurrencies } from '../favorite-currencies';
 import {ConnectedSaveableCurrencyDynamic} from '../../components/saveable-currency-dynamic';
 

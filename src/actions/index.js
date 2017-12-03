@@ -1,4 +1,4 @@
-import { requestServices } from '../Services/Services.js';
+import { requestServices } from '../services/Services.js';
 import {
     GET_CUR_REQUEST,
     GET_CUR_SUCCESS,
