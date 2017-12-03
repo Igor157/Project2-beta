@@ -104,18 +104,24 @@ export function changeEndDate(date) {
 export function addCurToFavorite() {
     return (dispatch, getState) => {
         let state = getState();
-        let favoriteFirst = state.curToFavorite.favoriteCurData.length === 0 ? true : false;
-        dispatch({
-            type: ADD_CUR_TO_FAVORITE,
-            empty: false,
-            payload: {
-                favoriteId: state.availableCurrencies.choosenId,
-                favoriteAbr: state.availableCurrencies.choosenAbr,
-                dynamic: state.getDynamic.dynamic,
-                selected: favoriteFirst,
-                new: true
-            }
+        let favoriteCurData = state.curToFavorite.favoriteCurData;
+        let favoriteFirst = favoriteCurData.length === 0 ? true : false;
+        let equalCur = favoriteCurData.some((item) => {
+            return item.favoriteId === state.availableCurrencies.choosenId;
         });
+        if (!equalCur) {
+            dispatch({
+                type: ADD_CUR_TO_FAVORITE,
+                empty: false,
+                payload: {
+                    favoriteId: state.availableCurrencies.choosenId,
+                    favoriteAbr: state.availableCurrencies.choosenAbr,
+                    dynamic: state.getDynamic.dynamic,
+                    selected: favoriteFirst,
+                    new: true
+                }
+            });
+        }
     };
 }
 
