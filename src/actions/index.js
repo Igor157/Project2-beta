@@ -12,7 +12,7 @@ import {
     ADD_CUR_TO_FAVORITE,
     SELECT_FAVORITE_CUR,
     REMOVE_FROM_FAVORITE
-  } from '../constants/constants.js';
+} from '../constants/constants.js';
 
 export function getCur() {
 
@@ -95,28 +95,53 @@ export function addCurToFavorite() {
                 favoriteAbr: state.availableCurrencies.choosenAbr,
                 dynamic: state.getDynamic.dynamic,
                 selected: favoriteFirst,
-                new:true
+                new: true
             }
         });
     };
 }
 
 export function selectFavoriteCur(targetId) {
-    return {
-        type: SELECT_FAVORITE_CUR,
-        payload: {
-            id: targetId,
-            new: false,
-            selected: true
-        }
+    return (dispatch, getState) => {
+        let state = getState();
+        let id = targetId;
+        let newCur = false;
+        let selected = true;
+        let favoriteCurData = state.curToFavorite.favoriteCurData.map((item) => {
+            if (item.favoriteId === id) {
+                return { ...item, new: newCur, selected: selected };
+            }
+            else {
+                return { ...item, selected: false };
+            }
+        });
+        dispatch({
+            type: SELECT_FAVORITE_CUR,
+            payload: {
+                favoriteCurData: favoriteCurData
+            }
+        });
     };
-
 }
+
 export function removeFromFavorite(targetId) {
-    return {
-        type: REMOVE_FROM_FAVORITE,
-        payload: {
-            id: targetId
+    return (dispatch, getState) => {
+        let state = getState();
+        let id = targetId;
+        let theRestOfFavorite = state.curToFavorite.favoriteCurData.filter(item => {
+            return item.favoriteId !== id;
+        });
+        if (theRestOfFavorite.length !== 0) {
+            theRestOfFavorite[0].selected = true;
         }
+        let empty = theRestOfFavorite.length === 0 ? true : false;
+        console.log(empty, 'empty');
+        dispatch({
+            type: REMOVE_FROM_FAVORITE,
+            payload: {
+                favoriteCurData: theRestOfFavorite
+            },
+            empty: empty
+        });
     };
 }

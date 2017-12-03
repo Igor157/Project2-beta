@@ -9,27 +9,13 @@ export function curToFavorite(state = {}, action) {
             };
         case 'SELECT_FAVORITE_CUR':
             return {
-                ...state,
-                favoriteCurData: state.favoriteCurData.map((item) => {
-                    if (item.favoriteId === action.payload.id) {
-                        return { ...item, new: action.payload.new, selected: action.payload.selected };
-                    }
-                    else {
-                        return { ...item, selected: false };
-                    }
-                })
+                ...state, favoriteCurData: action.payload.favoriteCurData
             };
         case 'REMOVE_FROM_FAVORITE':
-            let theRestOfFavorite = state.favoriteCurData.filter(item => {
-                return item.favoriteId !== action.payload.id;
-            });
-            if (theRestOfFavorite.length !== 0) {
-                theRestOfFavorite[0].selected = true;
-            }
             return {
                 ...state,
-                favoriteCurData: theRestOfFavorite,
-                empty: theRestOfFavorite.length === 0 ? true : false
+                favoriteCurData: action.payload.favoriteCurData,
+                empty: action.empty
             };
         default:
             return state;
