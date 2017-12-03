@@ -21,19 +21,16 @@ export class Navigation extends React.Component {
         <NavLink
           className="ik-navigation__button"
           to='/calculator'
-          activeClassName="ik-navigation__button--selected"
         > Calculator
         </NavLink>
         <NavLink
           className="ik-navigation__button"
           to='/about'
-          activeClassName="ik-navigation__button--selected"
         > About
         </NavLink>
         <NavLink
           className="ik-navigation__button"
           to='/favorite'
-          activeClassName="ik-navigation__button--selected"
         > Favorite
         <div className="ik-navigation__counter">
             {this.props.counter ?

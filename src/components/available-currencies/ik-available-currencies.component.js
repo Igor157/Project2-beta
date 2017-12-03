@@ -17,7 +17,7 @@ export class AvailableCurrencies extends React.Component {
   }
   clickHandler(e) {
     let target = e.target;
-    while (target !== this) {
+    while (target.className !== 'ik-available-currencies  ik-currency-page__available-currencies') {
       if (target.className === 'ik-available-currencies__row') {
         let end = moment();
         let start = moment().date(-20);

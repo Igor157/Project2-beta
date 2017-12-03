@@ -15,7 +15,8 @@ export class CurrencyTabs extends React.Component {
         if (target.className === `fa fa-times ik-currency-tab__close`) {
             needToClose = !needToClose;
         }
-        while (target !== this) {
+        while (target.className !== 'ik-currency-tabs  ik-favorite-currencies__currency-tabs') {
+            console.log(target);
             if (target.className === 'ik-currency-tab' || target.className === 'ik-currency-tab ik-currency-tab--selected') {
                 let indexOfSelected = 0;
                 let targetId = target.getAttribute('id');
