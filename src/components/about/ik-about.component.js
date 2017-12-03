@@ -15,8 +15,8 @@ export class About extends React.Component {
           </a>
         </div>
         <div className="ik-about__link">GitHub pages:
-          <a href="https://igor157.github.io/Currencies-project/#/">
-            https://igor157.github.io/Currencies-project/#/
+          <a href="https://igor157.github.io/ik-currency-project/#/">
+            https://igor157.github.io/ik-currency-project/#/
           </a>
         </div>
         <div className="ik-about__link">Design:
