@@ -3,10 +3,11 @@ import { Navigation } from '../components/navigation';
 
 
 const mapStateToProps = (state) => {
+    let maxcount = 9;
     return {
-        counter: state.curToFavorite.favoriteCurData.length <= 9 ?
+        counter: state.curToFavorite.favoriteCurData.length <= maxcount ?
             state.curToFavorite.favoriteCurData.length :
-            "9+"
+            `${maxcount}+`
 
     };
 };

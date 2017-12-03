@@ -1,5 +1,4 @@
 import { requestServices } from '../Services/Services.js';
-import { converterServices } from '../Services/Services.js';
 import {
     GET_CUR_REQUEST,
     GET_CUR_SUCCESS,
@@ -55,7 +54,6 @@ export function getInfo(curID) {
             type: GET_INFO_REQUEST
         });
         let infoPromise = requestServices.getCurrencyInfo(curID);
-        console.log(infoPromise);
         infoPromise
             .then(data => {
                 dispatch({

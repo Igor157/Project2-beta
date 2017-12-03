@@ -12,6 +12,7 @@ export class CurrencyGraph extends React.Component {
 
     render() {
         if (this.canvas && this.props.dynamic) {
+            console.log(this.props.dynamic);
             this.renderChart(this.canvas, this.props.dynamic);
         }
         const pageElementClass = this.props.className;
@@ -29,6 +30,7 @@ export class CurrencyGraph extends React.Component {
 
     renderChart(canvas, curData) {
         let axisX = curData.map((item) => item.date);
+        console.log(axisX, 'axisX');
         let axisY = curData.map((item) => +item.curRate);
         let minY = Math.min(...axisY);
         let maxY = Math.max(...axisY);
@@ -59,7 +61,7 @@ export class CurrencyGraph extends React.Component {
                         stacked: true,
                         ticks: {
                             min: axisX[0],
-                            max: axisX[10]
+                            max: axisX[30]
                         }
                     }]
                 }

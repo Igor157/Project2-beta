@@ -60,7 +60,6 @@ class RequestServices {
         return curInfoPromise
             .then((data = []) => {
                 let result = new MapperService(data);
-                console.log(data);
                 return result;
             });
     }
