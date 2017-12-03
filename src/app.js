@@ -23,6 +23,9 @@ let store = configureStore({
     changeDate: {
         startDate: initDateForStat.startDate,
         endDate: initDateForStat.endDate
+    },
+    getInfo: {
+        info: []
     }
 });
 ReactDOM.render(

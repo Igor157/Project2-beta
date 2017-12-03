@@ -9,6 +9,7 @@
     border: 2px solid #ddd;
     width: 100px;
     height: 40px;
+    cursor: pointer;
 }
 .ik-currency-tab--selected {
     background-color: white;

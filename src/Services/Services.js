@@ -54,6 +54,16 @@ class RequestServices {
                 return result;
             });
     }
+    getCurrencyInfo(reqId) {
+        let urlForInfo = `https://www.nbrb.by/API/ExRates/Currencies/${reqId}`;
+        let curInfoPromise = this.reqCur(urlForInfo);
+        return curInfoPromise
+            .then((data = []) => {
+                let result = new MapperService(data);
+                console.log(data);
+                return result;
+            });
+    }
 }
 export let requestServices = new RequestServices();
 
@@ -63,6 +73,9 @@ class MapperService {
         this.curRate = entity.Cur_OfficialRate || '';
         this.date = entity.Date || '';
         this.curId = entity.Cur_ID || '';
+        this.curName = entity.Cur_Name_Eng || '';
+        this.startDate = entity.Cur_DateStart || '';
+        this.endDate = entity.Cur_DateEnd || '';
     }
 }
 

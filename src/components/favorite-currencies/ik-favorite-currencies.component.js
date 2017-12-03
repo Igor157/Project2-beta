@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import styles from './ik-favorite-currencies.style.css';
 import { ConnectedCurrencyTabs } from '../../containers/ik-connected-currency-tabs.container.js';
 import { EmptyTemplate } from '../empty-template';
-import { ConnectedFavoriteCurrencyDynamicForDates } from '../../containers/ik-connected-favorite-currency-for-dates.container.js';
+import { FavoriteCurrenciesInfo } from '../favorite-currencies-info';
 
 
 export class FavoriteCurrencies extends React.Component {
@@ -16,7 +16,7 @@ export class FavoriteCurrencies extends React.Component {
         if (this.props.empty) {
             return (
                 <EmptyTemplate
-                    className= {pageElementClass}
+                    className={pageElementClass}
                 />
             );
         }
@@ -25,8 +25,8 @@ export class FavoriteCurrencies extends React.Component {
                 <ConnectedCurrencyTabs
                     className="ik-favorite-currencies__currency-tabs"
                 />
-                <ConnectedFavoriteCurrencyDynamicForDates
-                    className="ik-favorite-currencies__dynamic-for-dates"
+                <FavoriteCurrenciesInfo
+                    className="ik-favorite-currencies__currency-info"
                 />
             </div>
         );

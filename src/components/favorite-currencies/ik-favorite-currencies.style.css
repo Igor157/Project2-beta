@@ -5,7 +5,7 @@
     flex-wrap:wrap;
     align-content:flex-start;
 }
-.ik-favorite-currencies__dynamic-for-dates {
+.ik-favorite-currencies__currency-info {
     padding: 30px;
     border: 2px solid #ddd;
     background-color: white;

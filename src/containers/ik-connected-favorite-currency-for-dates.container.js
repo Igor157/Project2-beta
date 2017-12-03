@@ -8,7 +8,9 @@ import { CurrencyDynamicForDates } from '../components/currency-dynamic-for-date
 const mapStateToProps = (state) => {
     return {
         dynamic: state.getDynamic.dynamic,
-        choosenId: state.curToFavorite.favoriteCurData.filter((item) => {return item.selected === true; })[0].favoriteId,
+        choosenId: state.curToFavorite.favoriteCurData.filter((item) => {
+            return item.selected === true;
+        })[0].favoriteId,
         startDate: state.changeDate.startDate,
         endDate: state.changeDate.endDate
     };

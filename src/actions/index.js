@@ -11,7 +11,9 @@ import {
     CHANGE_END_DATE,
     ADD_CUR_TO_FAVORITE,
     SELECT_FAVORITE_CUR,
-    REMOVE_FROM_FAVORITE
+    REMOVE_FROM_FAVORITE,
+    GET_INFO_REQUEST,
+    GET_INFO_SUCCESS
 } from '../constants/constants.js';
 
 export function getCur() {
@@ -47,6 +49,24 @@ export function getDynamic(curID, start, end) {
             });
     };
 }
+export function getInfo(curID) {
+    return (dispatch) => {
+        dispatch({
+            type: GET_INFO_REQUEST
+        });
+        let infoPromise = requestServices.getCurrencyInfo(curID);
+        console.log(infoPromise);
+        infoPromise
+            .then(data => {
+                dispatch({
+                    type: GET_INFO_SUCCESS,
+                    payload: data
+                });
+            });
+    };
+}
+
+
 export function changeCurForDynamic(id, abr) {
     return {
         type: CHANGE_CUR_FOR_DYNAMIC,
@@ -135,7 +155,6 @@ export function removeFromFavorite(targetId) {
             theRestOfFavorite[0].selected = true;
         }
         let empty = theRestOfFavorite.length === 0 ? true : false;
-        console.log(empty, 'empty');
         dispatch({
             type: REMOVE_FROM_FAVORITE,
             payload: {
