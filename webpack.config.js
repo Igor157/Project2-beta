@@ -1,10 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const NODE_ENV = process.env.NODE_ENV;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-console.log(NODE_ENV === 'development');
+console.log(NODE_ENV);
 
 module.exports = {
     context: __dirname + '/src',
@@ -33,7 +33,11 @@ module.exports = {
             filename: "css/[name].css?[hash]-[chunkhash]-[contenthash]-[name]",
             disable: false,
             allChunks: true
-        })
+        }),
+        new webpack.EnvironmentPlugin({
+            NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
+            DEBUG: false
+          })
     ],
     module: {
         rules: [
