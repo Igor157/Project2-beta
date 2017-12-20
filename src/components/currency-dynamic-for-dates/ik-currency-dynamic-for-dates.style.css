@@ -1,11 +1,12 @@
 .ik-currency-dynamic-for-dates {
-
+    height: 90%;
 }
 .ik-currency-dynamic-for-dates__date-input {
     display: flex;
     justify-content: space-between;
     color: white;
     padding-bottom:30px;
+    
 }
 .ik-currency-dynamic-for-dates__date-picker {
     display: inline-block;
