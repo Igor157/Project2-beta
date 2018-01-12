@@ -2,8 +2,14 @@ import React from 'react';
 
 import './ik-currency-graph.style.css';
 import moment from 'moment';
-
-import { Chart } from 'chart.js';
+import {
+    AreaChart,
+    Area,
+    XAxis,
+    YAxis,
+    ResponsiveContainer,
+    Tooltip
+} from 'recharts';
 
 export class CurrencyGraph extends React.Component {
     constructor(props) {
@@ -11,62 +17,16 @@ export class CurrencyGraph extends React.Component {
     }
 
     render() {
-        if (this.canvas && this.props.dynamic) {
-            console.log(this.props.dynamic);
-            this.renderChart(this.canvas, this.props.dynamic);
-        }
         const pageElementClass = this.props.className;
         return (
-            <div>
-                <canvas id="myChart"
-                    className={pageElementClass}
-                    ref={(canvas) => {
-                        this.canvas = canvas;
-                    }}
-                ></canvas>
-            </div>
+            <ResponsiveContainer height="70%">
+                <AreaChart data={this.props.dynamic}>
+                    <XAxis dataKey="date" />
+                    <YAxis domain={['dataMin', 'dataMax']} />
+                    <Area type="monotone" dataKey="curRate" stroke="#8884d8" fillOpacity={1} fill="rgb(74, 74, 228)" />
+                    <Tooltip />
+                </AreaChart>
+            </ResponsiveContainer>
         );
     }
-
-    renderChart(canvas, curData) {
-        let axisX = curData.map((item) => item.date);
-        console.log(axisX, 'axisX');
-        let axisY = curData.map((item) => +item.curRate);
-        let minY = Math.min(...axisY);
-        let maxY = Math.max(...axisY);
-        let rangeY = maxY - minY;
-        let borderValue = 0.1;
-        let ctx = canvas.getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: axisX,
-                datasets: [{
-                    label: 'Currency dynamic',
-                    data: axisY,
-                    backgroundColor: ['#ddd'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        stacked: true,
-                        ticks: {
-                            min: minY - borderValue * rangeY,
-                            max: maxY + borderValue * rangeY
-                        }
-                    }],
-                    xAxes: [{
-                        stacked: true,
-                        ticks: {
-                            min: axisX[0],
-                            max: axisX[30]
-                        }
-                    }]
-                }
-            }
-        });
-    }
-
 }

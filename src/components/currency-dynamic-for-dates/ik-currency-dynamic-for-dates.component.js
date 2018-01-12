@@ -40,10 +40,6 @@ export class CurrencyDynamicForDates extends React.Component {
   }
   render() {
     const pageElementClass = this.props.className;
-    // let chartingData = this.props.dynamic.map((item) => {
-    //   return { name: item.date, value: item.curRate };
-    // });
-    // console.log(chartingData, 'chartingData');
     let dynamic = this.props.dynamic;
     return (
       <div className={`ik-currency-dynamic-for-dates ${pageElementClass}`}>
@@ -63,18 +59,10 @@ export class CurrencyDynamicForDates extends React.Component {
             />
           </div>
         </div>
-        <ResponsiveContainer height="70%">
-          <AreaChart data={dynamic}>
-            <XAxis dataKey="date" />
-            <YAxis domain={['dataMin', 'dataMax']} />
-            <Area type="monotone" dataKey="curRate" stroke="#8884d8" fillOpacity={1} fill="#8884d8" />
-            <Tooltip />
-          </AreaChart>
-        </ResponsiveContainer>
-        {/* <CurrencyGraph
+        <CurrencyGraph
           className="ik-currency-dynamic-for-dates__graph"
           dynamic={this.props.dynamic}
-        /> */}
+        />
       </div>
     );
   }

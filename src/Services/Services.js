@@ -70,7 +70,7 @@ class MapperService {
     constructor(entity) {
         this.curAbr = entity.Cur_Abbreviation || '';
         this.curRate = entity.Cur_OfficialRate || '';
-        this.date = entity.Date || '';
+        this.date = moment(entity.Date).format("MMMM Do YYYY") || '';
         this.curId = entity.Cur_ID || '';
         this.curName = entity.Cur_Name_Eng || '';
         this.startDate = entity.Cur_DateStart || '';

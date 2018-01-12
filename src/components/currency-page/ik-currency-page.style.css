@@ -65,8 +65,8 @@ body, html {
     flex-direction: column;
 } 
 .ik-currency-page__favorite-currencies {
-    min-width:80%;
-    min-height: 80%;
+    width:80%;
+    height: 80%;
     margin:auto;
     margin-bottom: 40px;
 }
