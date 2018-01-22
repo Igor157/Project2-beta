@@ -14,7 +14,7 @@ export class FavoriteCurrenciesInfo extends React.Component {
         return (
             <div className={`ik-favorite-currencies-info ${pageElementClass}`}>
                 <ConnectedCurInfo
-                    className="ik-favorite-currencies__info-table"
+                    className="ik-favorite-currencies-info__info-table"
                 />
                 <ConnectedFavoriteCurrencyDynamicForDates
                     className="ik-favorite-currencies-info__dynamic-for-dates"

@@ -1,8 +1,9 @@
-
 .ik-converter-container {
     color: white;
-}
-.ik-converter-container__converter-input {
-    padding-top:20px;
+    padding-bottom: 5%;
 }
 
+.ik-converter-container__converter-input {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}

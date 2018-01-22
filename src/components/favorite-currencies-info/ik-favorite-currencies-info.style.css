@@ -1,8 +1,11 @@
-
-.ik-favorite-currencies-info__info-table {
+.ik-favorite-currencies-info {
+    height: 70vh;
 }
+
+.ik-favorite-currencies-info__info-table {}
+
 .ik-favorite-currencies__dynamic-for-dates {
-    padding: 30px;
+    padding: 3%;
     border: 2px solid #ddd;
     background-color: white;
 }

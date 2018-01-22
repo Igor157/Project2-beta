@@ -49,31 +49,26 @@ body {
 .ik-currency-page__info-place {
     margin-top: 2%;
     width: 60%;
-    max-height: 85vh;
 }
 
 .ik-currency-page__currency-calculator {
     margin-top: 2%;
     width: 60%;
-    max-height: 85vh;
 }
 
 .ik-currency-page__about {
     margin: auto;
-    margin-bottom: 400px;
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
 }
 
 .ik-currency-page__favorite-currencies {
     width: 80%;
-    height: 80%;
     margin: auto;
-    margin-bottom: 40px;
 }
 
 .ik-currency-page__saveable-currency-dynamic {
     margin-top: 2%;
     width: 60%;
-    max-height: 85vh;
 }

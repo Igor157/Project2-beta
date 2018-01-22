@@ -6,8 +6,7 @@
     align-content:flex-start;
 }
 .ik-favorite-currencies__currency-info {
-    padding: 30px;
+    padding: 3%;
     border: 2px solid #ddd;
     background-color: white;
-    height:80%;
 }
