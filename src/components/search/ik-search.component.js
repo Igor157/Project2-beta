@@ -20,10 +20,11 @@ export class Search extends React.Component {
           value={this.props.filterText}
           onChange={this.handleFilterTextChange}
         />
-        <input
+        <div
           className="ik-search__search-button"
-          type="button"
-          value="Search" />
+        >
+          Search
+        </div>
       </form>
     );
   }

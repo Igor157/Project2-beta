@@ -1,17 +1,21 @@
 .ik-search {
-    height: 45px;    
+    max-height: 10%;
 }
+
 .ik-search__search-place {
-width:70%;
-color: white;
-background-color: rgb(74, 74, 228);
-border: 2px solid #ddd;
-border-radius: 10px 0 0 10px;
+    padding: 2%;
+    min-width: 70%;
+    color: white;
+    background-color: rgb(74, 74, 228);
+    border: 2px solid #ddd;
+    border-radius: 10px 0 0 10px;
 }
+
 .ik-search__search-button {
-    float: right;
+    padding: 2%;
     color: white;
     background-color: rgb(228, 192, 74);
     border: 2px solid white;
     border-radius: 0 10px 10px 0;
+    user-select: none;
 }

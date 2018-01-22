@@ -4,14 +4,6 @@ import styles from './ik-currency-dynamic-for-dates.style.css';
 import { CurrencyGraph } from '../currency-graph';
 
 import DatePicker from 'react-datepicker';
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  ResponsiveContainer,
-  Tooltip
-} from 'recharts';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 

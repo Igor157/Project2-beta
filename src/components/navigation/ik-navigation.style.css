@@ -1,17 +1,16 @@
-.ik-navigation {
-    color: white;
-    height: 50px;
+.ik-navigation {}
 
-}
 .ik-navigation__button {
-    color:white;
+    color: white;
 }
+
 .ik-navigation__button--selected {
     color: rgb(74, 74, 228);
 }
+
 .ik-navigation__counter {
-    color:red;
+    color: red;
     text-decoration: none;
-    float:right;
-    margin-left:10px;
+    float: right;
+    margin-left: 10px;
 }

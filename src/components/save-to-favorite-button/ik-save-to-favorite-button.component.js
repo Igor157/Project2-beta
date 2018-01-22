@@ -17,7 +17,7 @@ export class SaveToFavoriteButton extends React.Component {
         return (
             <button
                 onClick={this.clickToFavorite} className={`ik-save-to-favorite-button ${pageElementClass}`}
-            >To Favorite
+            >To Favorite!
              </button>
         );
     }

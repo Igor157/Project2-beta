@@ -1,40 +1,53 @@
-
 .ik-available-currencies {
     border: 2px solid #ddd;
     border-radius: 5px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     color: rgb(74, 74, 228);
 }
+
 .ik-available-currencies__day-progress--red {
     background-color: rgb(151, 21, 21);
 }
+
 .ik-available-currencies__day-progress--green {
     background-color: rgb(30, 126, 30);
 }
+
 .ik-available-currencies__row {
     display: flex;
-    justify-content: space-around;   
-    padding-top: 10px;
-    padding-bottom: 10px;
+    justify-content: space-around;
+    padding-top: 2%;
+    padding-bottom: 2%;
     cursor: pointer;
 }
+
 .ik-available-currencies__row:hover {
     background-color: rgb(74, 74, 228);
-    color:white;
+    color: white;
 }
+
 .ik-available-currencies__row--selected {
     background-color: rgb(74, 74, 228);
-    color:white;    
+    color: white;
 }
+
+.ik-available-currencies__icon {
+    width: 10%;
+}
+
 .ik-available-currencies__abr {
     font-weight: bold;
-    min-width: 75px;
+    width: 30%;
 }
+
 .ik-available-currencies__rate {
-    min-width: 75px;
+    width: 30%;
 }
+
 .ik-available-currencies__day-progress {
     border: 2px solid white;
-    min-width: 75px;
+    width: 20%;
     border-radius: 5px;
+    cursor: pointer;
 }

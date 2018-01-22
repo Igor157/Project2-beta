@@ -1,77 +1,79 @@
-body, html { 
-    width: 100%;
+html {
     height: 100%;
-    padding: 0;
-    margin:0;
 }
+
+body {
+    height: 100%;
+}
+
 .ik-page {
-    min-width: 100%;
     min-height: 100%;
-    display: flex;
-    align-items:stretch;
+    background-color: rgb(88, 82, 82);
 }
+
 .ik-currency-page {
-    background-color: rgb(88, 82, 82);  
+    max-height: 100%;
+    max-width: 1600px;
     display: flex;
     flex-wrap: wrap;
-    min-width: 100%;
-    min-height: 100%;
+    padding: 3%;
 }
+
 .ik-currency-page__search {
+    min-height: 120%;
     width: 30%;
     display: flex;
-    padding-left: 30px;
-    padding-top: 20px;
     box-sizing: border-box;
 }
+
 .ik-currency-page__search--unvizible {
-    visibility: hidden; 
+    visibility: hidden;
 }
+
 .ik-currency-page__navigation {
     width: 70%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    padding-left: 200px;
-    padding-right: 50px;
-    padding-top: 20px;
+    padding-left: 20%;
     box-sizing: border-box;
 }
+
 .ik-currency-page__available-currencies {
     width: 30%;
-    height: 100%;
-    margin: 30px;
-    margin-bottom: 40px;
+    max-height: 78vh;
+    margin-top: 2%;
     box-sizing: border-box;
-    margin-top: 20px;
-    max-height: 85vh;
-    min-height: 85vh;  
 }
 
 .ik-currency-page__info-place {
-    margin-top: 20px;
+    margin-top: 2%;
     width: 60%;
     max-height: 85vh;
 }
 
 .ik-currency-page__currency-calculator {
-    margin-top: 20px;
+    margin-top: 2%;
     width: 60%;
     max-height: 85vh;
 }
+
 .ik-currency-page__about {
     margin: auto;
     margin-bottom: 400px;
-    display:flex;
+    display: flex;
     flex-direction: column;
-} 
+}
+
 .ik-currency-page__favorite-currencies {
-    width:80%;
+    width: 80%;
     height: 80%;
-    margin:auto;
+    margin: auto;
     margin-bottom: 40px;
 }
+
 .ik-currency-page__saveable-currency-dynamic {
-    margin-top: 20px;
+    margin-top: 2%;
     width: 60%;
     max-height: 85vh;
 }
