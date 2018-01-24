@@ -1,5 +1,7 @@
 .ik-search {
-    max-height: 10%;
+}
+.ik-search__form {
+    display: flex;
 }
 
 .ik-search__search-place {

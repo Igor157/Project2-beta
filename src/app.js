@@ -34,6 +34,6 @@ ReactDOM.render(
             <CurrencyPage />
         </Router>
     </Provider>,
-    document.getElementById('ik-page')
+    document.body
 );
 
