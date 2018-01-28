@@ -1,9 +1,12 @@
 html, body {
     height: 100%;
 }
+#ik-page{
+    height:100%;
+}
 
 .ik-currency-page {
-    height: 100%;
+    min-height: 100%;
     max-width: 1600px;
     display: flex;
     flex-wrap: wrap;
