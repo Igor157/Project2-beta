@@ -75,6 +75,7 @@ class MapperService {
         this.curName = entity.Cur_Name_Eng || '';
         this.startDate = entity.Cur_DateStart || '';
         this.endDate = entity.Cur_DateEnd || '';
+        this.curScale = entity.Cur_Scale || '';
     }
 }
 
@@ -83,17 +84,20 @@ class ConverterServices {
     filterCurForTarget(cur, target) {
         return cur.filter((item) => item.curAbr === target)[0];
     }
-    moneyConvert(value, currency1, currency2) {
-        return value * currency1 / currency2;
+    moneyConvert(value, currency1, currency2, currencyScale1, currencyScale2) {
+        let result = value * currency1 * currencyScale2 / (currency2 * currencyScale1);
+        return result;
     }
-    tryConvert(value, currency1, currency2, convert) {
+    tryConvert(value, currency1, currency2, convert, currencyScale1, currencyScale2) {
         const input = parseFloat(value);
         const cur1 = parseFloat(currency1);
         const cur2 = parseFloat(currency2);
+        const curScale1 = parseFloat(currencyScale1);
+        const curScale2 = parseFloat(currencyScale2);
         if (Number.isNaN(input)) {
             return '';
         }
-        const output = convert(input, cur1, cur2);
+        const output = convert(input, cur1, cur2, curScale1, curScale2);
         const rounded = Math.round(output * 1000) / 1000;
         return Number.isNaN(rounded) ? 'select currency' : rounded;
     }
@@ -106,6 +110,19 @@ class ConverterServices {
         else {
             rate = allCurrencies[0] ?
                 allCurrencies[0].curRate :
+                1;
+        }
+        return rate;
+    }
+    getScale(allCurrencies, abr) {
+        const filteredArr = this.filterCurForTarget(allCurrencies, abr);
+        let rate = 1;
+        if (filteredArr) {
+            rate = filteredArr.curScale;
+        }
+        else {
+            rate = allCurrencies[0] ?
+                allCurrencies[0].curScale :
                 1;
         }
         return rate;

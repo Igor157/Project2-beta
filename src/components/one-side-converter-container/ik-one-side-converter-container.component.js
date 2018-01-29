@@ -25,9 +25,17 @@ export class OneSideConverterContainer extends React.Component {
     const valueAbr = this.props.currentAbr;
     const destinationAbr = this.state.choosenAbr;
     const allCurrencies = this.props.currency;
+    console.log(allCurrencies);
     const currentValueRate = converterServices.getRates(allCurrencies, valueAbr);
     const currentDestRate = converterServices.getRates(allCurrencies, destinationAbr);
-    const destinationField = converterServices.tryConvert(value, currentValueRate, currentDestRate, converterServices.moneyConvert);
+    const currentValueScale = converterServices.getScale(allCurrencies, valueAbr);
+    const currentDestScale = converterServices.getScale(allCurrencies, destinationAbr);
+    const destinationField = converterServices.tryConvert(value,
+      currentValueRate,
+      currentDestRate,
+      converterServices.moneyConvert,
+      currentValueScale,
+      currentDestScale);
     const valueField = value;
     return (
       <div className={`ik-converter-container ${pageElementClass}`}>

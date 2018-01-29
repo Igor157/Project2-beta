@@ -19,14 +19,16 @@ export class CurrencyGraph extends React.Component {
     render() {
         const pageElementClass = this.props.className;
         return (
-            <ResponsiveContainer height="70%">
-                <AreaChart data={this.props.dynamic}>
-                    <XAxis dataKey="date" />
-                    <YAxis domain={['dataMin', 'dataMax']} />
-                    <Area type="monotone" dataKey="curRate" stroke="#8884d8" fillOpacity={1} fill="rgb(74, 74, 228)" />
-                    <Tooltip />
-                </AreaChart>
-            </ResponsiveContainer>
+            <div className={`${pageElementClass}`}>
+                <ResponsiveContainer height="100%">
+                    <AreaChart data={this.props.dynamic}>
+                        <XAxis dataKey="date" />
+                        <YAxis domain={['dataMin', 'dataMax']} />
+                        <Area type="monotone" dataKey="curRate" stroke="#8884d8" fillOpacity={1} fill="rgb(74, 74, 228)" />
+                        <Tooltip />
+                    </AreaChart>
+                </ResponsiveContainer>
+            </div>
         );
     }
 }

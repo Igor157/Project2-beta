@@ -1,5 +1,5 @@
 .ik-favorite-currencies-info {
-    height: 70vh;
+    /* height: 73vh; */
 }
 
 .ik-favorite-currencies-info__info-table {}
@@ -8,4 +8,10 @@
     padding: 3%;
     border: 2px solid #ddd;
     background-color: white;
+}
+
+@media (max-width: 600px){
+    .ik-favorite-currencies-info {
+        height: 500px;
+    }
 }

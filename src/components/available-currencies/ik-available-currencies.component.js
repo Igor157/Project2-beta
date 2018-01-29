@@ -52,7 +52,7 @@ export class AvailableCurrencies extends React.Component {
           style={{ color: 'white' }}
         />
         <div className="ik-available-currencies__abr">{item.curAbr}</div>
-        <div className="ik-available-currencies__rate">{item.curRate}</div>
+        <div className="ik-available-currencies__rate">{(item.curRate / item.curScale).toFixed(5)}</div>
         <button
           className={`ik-available-currencies__day-progress  ${item.curDifference > 0 ? rizeStyle : downStyle}`}
         >
