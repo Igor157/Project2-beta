@@ -6,3 +6,9 @@
 .ik-about__author {}
 
 .ik-about__link {}
+
+@media (max-width: 600px) {
+    .ik-about {
+        font-size: 1.1em;
+    }
+}

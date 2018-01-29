@@ -22,13 +22,15 @@ export class CurrencyCalculator extends React.Component {
   }
 
   render() {
-    if (this.props.currentAbr === undefined) {
-      return (
-        <EmptyTemplate />
-      );
-    }
     const pageElementClass = this.props.className;
     const currentAbr = this.props.currentAbr;
+    if (this.props.currentAbr === undefined) {
+      return (
+        <EmptyTemplate
+          className={`${pageElementClass}`}
+        />
+      );
+    }
     return (
       <div className={`ik-currency-calculator ${pageElementClass}`}>
         <OneSideConverterContainer

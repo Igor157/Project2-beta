@@ -7,36 +7,44 @@ import {
   NavLink,
   Switch
 } from 'react-router-dom';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
+import MediaQuery from 'react-responsive';
+import { ToggleNavigation } from '../toggle-navigation';
 
 export class Navigation extends React.Component {
   render() {
     const pageElementClass = this.props.className;
     return (
       <div className={`ik-navigation ${pageElementClass}`}>
-        <NavLink
-          className="ik-navigation__button"
-          to='/'
-        > Currencies
+        <MediaQuery query="(min-width: 600px)">
+          <NavLink
+            className="ik-navigation__button"
+            to='/'
+          > Currencies
         </NavLink>
-        <NavLink
-          className="ik-navigation__button"
-          to='/calculator'
-        > Calculator
+          <NavLink
+            className="ik-navigation__button"
+            to='/calculator'
+          > Calculator
         </NavLink>
-        <NavLink
-          className="ik-navigation__button"
-          to='/about'
-        > About
+          <NavLink
+            className="ik-navigation__button"
+            to='/about'
+          > About
         </NavLink>
-        <NavLink
-          className="ik-navigation__button"
-          to='/favorite'
-        > Favorite
+          <NavLink
+            className="ik-navigation__button"
+            to='/favorite'
+          > Favorite
         <div className="ik-navigation__counter">
-            {this.props.counter ?
-              this.props.counter : ''}
-          </div>
-        </NavLink>
+              {this.props.counter ?
+                this.props.counter : ''}
+            </div>
+          </NavLink>
+        </MediaQuery>
+        <MediaQuery query="(max-width: 600px)">
+          <ToggleNavigation counter={this.props.counter} />
+        </MediaQuery>
       </div>
     );
   }

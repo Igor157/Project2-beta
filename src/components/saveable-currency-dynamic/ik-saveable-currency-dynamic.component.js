@@ -2,17 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import styles from './ik-saveable-currency-dynamic.style.css';
-import {ConnectedSaveToFavoriteButton} from '../../containers/ik-connected-save-to-favorite-button.container.js';
-import {ConnectedMainCurrencyDynamicForDates} from '../../containers/ik-connected-main-currency-for-dates.container';
-import {EmptyTemplate} from '../empty-template';
+import { ConnectedSaveToFavoriteButton } from '../../containers/ik-connected-save-to-favorite-button.container.js';
+import { ConnectedMainCurrencyDynamicForDates } from '../../containers/ik-connected-main-currency-for-dates.container';
+import { EmptyTemplate } from '../empty-template';
 
 
 export class SaveableCurrencyDynamic extends React.Component {
     render() {
         const pageElementClass = this.props.className;
+        console.log(pageElementClass,'pageElementClass');
         if (this.props.choosenId === undefined) {
             return (
-                <EmptyTemplate />
+                <EmptyTemplate
+                    className={`${pageElementClass}`}
+                />
             );
         }
         return (
@@ -34,12 +37,12 @@ export class SaveableCurrencyDynamic extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  return {
-    choosenId: state.availableCurrencies.choosenId
-  };
+    return {
+        choosenId: state.availableCurrencies.choosenId
+    };
 };
 
 
 export const ConnectedSaveableCurrencyDynamic = connect(
-  mapStateToProps
+    mapStateToProps
 )(SaveableCurrencyDynamic);

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { CurrencyPage } from './components/currency-page';
 import configureStore from './store/configureStore.js';
 import moment from 'moment';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import {
     HashRouter as Router,
