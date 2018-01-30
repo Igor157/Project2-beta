@@ -46,11 +46,13 @@ html, body {
 }
 
 .ik-currency-page__info-place {
-    width: 60%;
+    width: 70%;
+    box-sizing: border-box;
 }
 
 .ik-currency-page__currency-calculator {
-    width: 60%;
+    width: 70%;
+    box-sizing: border-box;
 }
 
 .ik-currency-page__about {
@@ -66,7 +68,7 @@ html, body {
 }
 
 .ik-currency-page__saveable-currency-dynamic {
-    width: 60%;
+    width: 70%;
 }
 
 @media (max-width: 600px) {

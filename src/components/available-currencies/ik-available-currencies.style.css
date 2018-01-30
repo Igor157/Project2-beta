@@ -33,23 +33,25 @@
 }
 
 .ik-available-currencies__icon {
-    width: 10%;
+    min-width: 10%;
+    margin: auto;
 }
 
 .ik-available-currencies__abr {
     font-weight: bold;
-    width: 30%;
+    min-width: 20%;
 }
 
 .ik-available-currencies__rate {
-    width: 30%;
+    min-width: 32%;
 }
 
 .ik-available-currencies__day-progress {
     border: 2px solid white;
-    width: 20%;
+    min-width: 38%;
     border-radius: 5px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 @media (max-width: 600px) {
