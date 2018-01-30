@@ -23,7 +23,7 @@
 .ik-currency-tab__close {
 
 }
-@media (max-width: 600px){
+@media (max-width: 700px){
     .ik-currency-tab {
         width: 70px;
     }

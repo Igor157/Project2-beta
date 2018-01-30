@@ -71,7 +71,7 @@ html, body {
     width: 70%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .ik-currency-page {
         flex-wrap: nowrap;
         flex-direction: column;

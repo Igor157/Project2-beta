@@ -16,7 +16,7 @@ export class Navigation extends React.Component {
     const pageElementClass = this.props.className;
     return (
       <div className={`ik-navigation ${pageElementClass}`}>
-        <MediaQuery query="(min-width: 600px)">
+        <MediaQuery query="(min-width: 700px)">
           <NavLink
             className="ik-navigation__button"
             to='/'
@@ -42,7 +42,7 @@ export class Navigation extends React.Component {
             </div>
           </NavLink>
         </MediaQuery>
-        <MediaQuery query="(max-width: 600px)">
+        <MediaQuery query="(max-width: 700px)">
           <ToggleNavigation counter={this.props.counter} />
         </MediaQuery>
       </div>

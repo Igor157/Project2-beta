@@ -16,7 +16,7 @@
 .ik-currency-dynamic-for-dates__graph {
     height: 30vh;
 }
-@media (max-width: 600px){
+@media (max-width: 700px){
     .ik-currency-dynamic-for-dates__date-input {
         display: block;        
     }
