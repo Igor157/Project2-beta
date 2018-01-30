@@ -33,7 +33,7 @@ export class OneSideConverterInput extends React.Component {
                     {operation === 'Value' ?
                         <input
                             className="ik-converter-input__textarea"
-                            type="text"
+                            type="number"
                             placeholder="InputNumbers"
                             onChange={this.onChangeValue}
                             value={currentValue}
