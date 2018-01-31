@@ -98,7 +98,7 @@ class ConverterServices {
             return '';
         }
         const output = convert(input, cur1, cur2, curScale1, curScale2);
-        const rounded = Math.round(output * 1000) / 1000;
+        const rounded = Math.round(output * 10000) / 10000;
         return Number.isNaN(rounded) ? 'select currency' : rounded;
     }
     getRates(allCurrencies, abr) {

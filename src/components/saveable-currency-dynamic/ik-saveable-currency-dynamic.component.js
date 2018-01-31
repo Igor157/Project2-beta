@@ -10,7 +10,6 @@ import { EmptyTemplate } from '../empty-template';
 export class SaveableCurrencyDynamic extends React.Component {
     render() {
         const pageElementClass = this.props.className;
-        console.log(pageElementClass,'pageElementClass');
         if (this.props.choosenId === undefined) {
             return (
                 <EmptyTemplate

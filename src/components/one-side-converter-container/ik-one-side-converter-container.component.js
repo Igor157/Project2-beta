@@ -25,7 +25,6 @@ export class OneSideConverterContainer extends React.Component {
     const valueAbr = this.props.currentAbr;
     const destinationAbr = this.state.choosenAbr;
     const allCurrencies = this.props.currency;
-    console.log(allCurrencies);
     const currentValueRate = converterServices.getRates(allCurrencies, valueAbr);
     const currentDestRate = converterServices.getRates(allCurrencies, destinationAbr);
     const currentValueScale = converterServices.getScale(allCurrencies, valueAbr);

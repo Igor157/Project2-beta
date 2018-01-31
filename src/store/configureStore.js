@@ -4,6 +4,7 @@ import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import {todoApp} from '../reducers/index.js';
+import persistState from 'redux-localstorage';
 
 export default function configureStore(initialState) {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -11,7 +12,8 @@ export default function configureStore(initialState) {
     todoApp,
     initialState,
     composeEnhancers(
-    applyMiddleware(thunk, logger)
+    applyMiddleware(thunk, logger),
+    persistState()
   ));
   return store;
 }

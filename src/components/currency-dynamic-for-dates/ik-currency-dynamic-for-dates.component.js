@@ -16,11 +16,11 @@ export class CurrencyDynamicForDates extends React.Component {
 
   handleChangeStart(date) {
     this.props.changeStartDate(date);
-    this.props.getDynamic(this.props.choosenId, date, this.props.endDate);
+    this.props.getDynamic(this.props.choosenId, date, moment(this.props.endDate));
   }
   handleChangeEnd(date) {
     this.props.changeEndDate(date);
-    this.props.getDynamic(this.props.choosenId, this.props.startDate, date);
+    this.props.getDynamic(this.props.choosenId, moment(this.props.startDate), date);
   }
   componentDidMount() {
     this.props.getDynamic(this.props.choosenId, moment().date(-20), moment());
@@ -33,31 +33,30 @@ export class CurrencyDynamicForDates extends React.Component {
   render() {
     const pageElementClass = this.props.className;
     let dynamic = this.props.dynamic;
-    console.log(this.props.endDate,'this.props.endDate');
     return (
       <div className={`ik-currency-dynamic-for-dates ${pageElementClass}`}>
         <div className="ik-currency-dynamic-for-dates__date-input">
           <div className="ik-currency-dynamic-for-dates__date-picker">
             <div>From date</div>
             < DatePicker
-              selected={this.props.startDate}
+              selected={moment(this.props.startDate)}
               selectsStart
-              startDate={this.props.startDate}
-              endDate={this.props.endDate}
+              startDate={moment(this.props.startDate)}
+              endDate={moment(this.props.endDate)}
               onSelect={this.handleChangeStart}
               minDate={moment().add(-365, "days")}
-              maxDate={this.props.endDate}
+              maxDate={moment(this.props.endDate)}
             />
           </div>
           <div className="ik-currency-dynamic-for-dates__date-picker">
             <div>End date</div>
             <DatePicker
-              selected={this.props.endDate}
+              selected={moment(this.props.endDate)}
               selectsEnd
-              startDate={this.props.startDate}
-              endDate={this.props.endDate}
+              startDate={moment(this.props.startDate)}
+              endDate={moment(this.props.endDate)}
               onSelect={this.handleChangeEnd}
-              minDate={this.props.startDate}
+              minDate={moment(this.props.startDate)}
               maxDate={moment()}
             />
           </div>
