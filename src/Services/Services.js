@@ -19,7 +19,7 @@ class RequestServices {
     }
     getCurrenciesForDate(year, month, date) {
         let reqDate = `${year}-${month + 1}-${date}`;
-        let urlForDate = `https://www.nbrb.by/API/ExRates/Rates?onDate=${reqDate}&Periodicity=0`;
+        let urlForDate = `https://cors-anywhere.herokuapp.com/http://www.nbrb.by/API/ExRates/Rates?onDate=${reqDate}&Periodicity=0`;
         return this.reqCur(urlForDate);
     }
     getTodaysCurrencies() {
@@ -43,7 +43,9 @@ class RequestServices {
         let end = endMoment.toDate();
         let startDate = `${start.getFullYear()}-${start.getMonth() + 1}-${start.getDate()}`;
         let endDate = `${end.getFullYear()}-${end.getMonth() + 1}-${end.getDate()}`;
-        let urlForPeriod = `https://www.nbrb.by/API/ExRates/Rates/Dynamics/${reqId}?startDate=${startDate}&endDate=${endDate}`;
+        /* eslint-disable */
+        let urlForPeriod = `https://cors-anywhere.herokuapp.com/http://www.nbrb.by/API/ExRates/Rates/Dynamics/${reqId}?startDate=${startDate}&endDate=${endDate}`;
+        /* eslint-enable */
         return this.reqCur(urlForPeriod);
     }
     getDynamicForCurId(id, start, end) {
