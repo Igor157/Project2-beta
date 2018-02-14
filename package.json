@@ -1,31 +1,61 @@
 {
   "name": "ik-project",
   "version": "1.0.0",
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
   "description": "",
   "main": "page.js",
   "scripts": {
     "start": "SET NODE_ENV='development' && webpack-dev-server",
     "build": "SET NODE_ENV='development' && webpack",
     "release": "SET NODE_ENV='production' && webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Igor_Kazakov",
   "license": "ISC",
+  "jest": {
+    "modulePaths": [
+      "/shared/vendor/modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.2.2",
     "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-hot-loader": "^1.3.2",
     "css-loader": "^0.28.7",
     "eslint": "^4.11.0",
     "eslint-loader": "^1.9.0",
+    "eslint-plugin-jest": "^21.12.1",
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",
+    "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^3.4.2",
+    "jest": "^22.3.0",
     "redux-devtools": "^3.4.1",
+    "regenerator-runtime": "^0.11.1",
     "style-loader": "^0.19.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
