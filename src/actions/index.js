@@ -22,7 +22,8 @@ export function getCur() {
             type: GET_CUR_REQUEST
         });
         let todaysCurPromise = requestServices.getTodaysCurrencies();
-        todaysCurPromise
+        console.log(todaysCurPromise, 'todaysCurPromise');
+        return todaysCurPromise
             .then(data => {
                 dispatch({
                     type: GET_CUR_SUCCESS,
@@ -39,7 +40,7 @@ export function getDynamic(curID, start, end) {
             type: GET_DYNAMIC_REQUEST
         });
         let dynamicForIdPromise = requestServices.getDynamicForCurId(curID, start, end);
-        dynamicForIdPromise
+        return dynamicForIdPromise
             .then(data => {
                 dispatch({
                     type: GET_DYNAMIC_SUCCESS,
@@ -54,7 +55,7 @@ export function getInfo(curID) {
             type: GET_INFO_REQUEST
         });
         let infoPromise = requestServices.getCurrencyInfo(curID);
-        infoPromise
+        return infoPromise
             .then(data => {
                 dispatch({
                     type: GET_INFO_SUCCESS,
