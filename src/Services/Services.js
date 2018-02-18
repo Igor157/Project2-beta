@@ -58,7 +58,7 @@ class RequestServices {
             });
     }
     getCurrencyInfo(reqId) {
-        let urlForInfo = `https://www.nbrb.by/API/ExRates/Currencies/${reqId}`;
+        let urlForInfo = `https://cors-anywhere.herokuapp.com/http://www.nbrb.by/API/ExRates/Currencies/${reqId}`;
         let curInfoPromise = this.reqCur(urlForInfo);
         return curInfoPromise
             .then((data = []) => {

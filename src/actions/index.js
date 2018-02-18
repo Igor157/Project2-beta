@@ -22,7 +22,6 @@ export function getCur() {
             type: GET_CUR_REQUEST
         });
         let todaysCurPromise = requestServices.getTodaysCurrencies();
-        console.log(todaysCurPromise, 'todaysCurPromise');
         return todaysCurPromise
             .then(data => {
                 dispatch({
