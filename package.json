@@ -23,7 +23,8 @@
     "start": "SET NODE_ENV='development' && webpack-dev-server",
     "build": "SET NODE_ENV='development' && webpack",
     "release": "SET NODE_ENV='production' && webpack",
-    "test": "jest"
+    "test": "jest",
+    "snapshot": "jest -u"
   },
   "author": "Igor_Kazakov",
   "license": "ISC",
@@ -55,6 +56,8 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-hot-loader": "^1.3.2",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.11.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-jest": "^21.12.1",
@@ -65,6 +68,7 @@
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^3.4.2",
     "jest": "^22.3.0",
+    "react-test-renderer": "^16.2.0",
     "redux-devtools": "^3.4.1",
     "redux-mock-store": "^1.5.1",
     "regenerator-runtime": "^0.11.1",
