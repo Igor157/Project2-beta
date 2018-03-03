@@ -1,9 +1,9 @@
 @import "../currency-page/variables.scss";
-
 .ik-currency-tabs {
     max-width: 95%;
     color: $lightGrey;
 }
+
 .ik-currency-tab {
     display: flex;
     justify-content: space-around;
@@ -12,21 +12,19 @@
     width: 100px;
     height: 40px;
     cursor: pointer;
-}
-.ik-currency-tab--selected {
-    background-color: white;
-}
-.ik-currency-tab__new {
-    color:red;
-}
-.ik-currency-tab__abr {
-
-}
-.ik-currency-tab__close {
-
-}
-@media (max-width: 700px){
-    .ik-currency-tab {
+    @media (max-width: $smallScreen) {
         width: 70px;
     }
 }
+
+.ik-currency-tab--selected {
+    background-color: white;
+}
+
+.ik-currency-tab__new {
+    color: red;
+}
+
+.ik-currency-tab__abr {}
+
+.ik-currency-tab__close {}

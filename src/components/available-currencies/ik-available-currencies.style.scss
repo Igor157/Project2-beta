@@ -5,6 +5,11 @@
     overflow-y: auto;
     overflow-x: hidden;
     color: $blue;
+    @media (max-width: $smallScreen) {
+        display: flex;
+        width: 100%;
+        overflow: auto;
+    }
 }
 
 .ik-available-currencies__day-progress--red {
@@ -21,11 +26,14 @@
     padding-top: 2%;
     padding-bottom: 2%;
     cursor: pointer;
-}
-
-.ik-available-currencies__row:hover {
-    background-color: $blue;
-    color: white;
+    @media (max-width: $smallScreen) {
+        border: 1px solid $lightGrey;
+        flex-direction: column;
+    }
+    &:hover {
+        background-color: $blue;
+        color: white;
+    }
 }
 
 .ik-available-currencies__row--selected {
@@ -53,23 +61,17 @@
     border-radius: 5px;
     cursor: pointer;
     box-sizing: border-box;
+    @media (max-width: $smallScreen) {
+        width: 100%;
+        margin: auto;
+    }
 }
 
-@media (max-width: 700px) {
-    .ik-available-currencies {
-        display: flex;
-        width: 100%;
-        overflow: auto;
-    }
-    .ik-available-currencies__row {
-        border: 1px solid $lightGrey;
-        flex-direction: column;
-    }
-    .ik-available-currencies__icon, .ik-available-currencies__abr, .ik-available-currencies__rate, .ik-available-currencies__day-progress {
-        margin: 3px;
-    }
+@media (max-width: $smallScreen) {
+    .ik-available-currencies__icon,
+    .ik-available-currencies__abr,
+    .ik-available-currencies__rate,
     .ik-available-currencies__day-progress {
-        width:100%;
-        margin: auto;
+        margin: 3px;
     }
 }
