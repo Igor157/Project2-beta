@@ -1,3 +1,5 @@
+@import "../currency-page/variables.scss";
+
 .ik-converter-input {
 
 }
@@ -16,7 +18,7 @@
 .ik-converter-select {
     border-radius: 5px;
     width:60px;
-    background-color: rgb(88, 82, 82);
+    background-color: $darkGrey;
     color:white;
 }
 .ik-converter__value-abr {

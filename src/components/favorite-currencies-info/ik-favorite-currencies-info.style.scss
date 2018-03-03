@@ -1,3 +1,5 @@
+@import "../currency-page/variables.scss";
+
 .ik-favorite-currencies-info {
     /* height: 73vh; */
 }
@@ -6,7 +8,7 @@
 
 .ik-favorite-currencies__dynamic-for-dates {
     padding: 3%;
-    border: 2px solid #ddd;
+    border: 2px solid $lightGrey;
     background-color: white;
 }
 

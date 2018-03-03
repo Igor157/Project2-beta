@@ -1,6 +1,8 @@
+@import "../currency-page/variables.scss";
+
 .ik-save-to-favorite-button {
     border: 2px solid white;
-    background-color: rgb(48, 136, 84);
+    background-color: $addingGreen;
     border-radius: 3px;
     color:white;
     min-width: 20%;

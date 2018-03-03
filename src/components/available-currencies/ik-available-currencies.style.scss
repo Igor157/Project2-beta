@@ -1,17 +1,18 @@
+@import "../currency-page/variables.scss";
 .ik-available-currencies {
-    border: 2px solid #ddd;
+    border: 2px solid $lightGrey;
     border-radius: 5px;
     overflow-y: auto;
     overflow-x: hidden;
-    color: rgb(74, 74, 228);
+    color: $blue;
 }
 
 .ik-available-currencies__day-progress--red {
-    background-color: rgb(151, 21, 21);
+    background-color: $commonRed;
 }
 
 .ik-available-currencies__day-progress--green {
-    background-color: rgb(30, 126, 30);
+    background-color: $commonGreen;
 }
 
 .ik-available-currencies__row {
@@ -23,12 +24,12 @@
 }
 
 .ik-available-currencies__row:hover {
-    background-color: rgb(74, 74, 228);
+    background-color: $blue;
     color: white;
 }
 
 .ik-available-currencies__row--selected {
-    background-color: rgb(74, 74, 228);
+    background-color: $blue;
     color: white;
 }
 
@@ -61,7 +62,7 @@
         overflow: auto;
     }
     .ik-available-currencies__row {
-        border: 1px solid #ddd;
+        border: 1px solid $lightGrey;
         flex-direction: column;
     }
     .ik-available-currencies__icon, .ik-available-currencies__abr, .ik-available-currencies__rate, .ik-available-currencies__day-progress {

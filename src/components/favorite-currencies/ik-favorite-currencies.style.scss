@@ -1,3 +1,5 @@
+@import "../currency-page/variables.scss";
+
 .ik-favorite-currencies {
 }
 .ik-favorite-currencies__currency-tabs {
@@ -7,6 +9,6 @@
 }
 .ik-favorite-currencies__currency-info {
     padding: 3%;
-    border: 2px solid #ddd;
+    border: 2px solid $lightGrey;
     background-color: white;
 }

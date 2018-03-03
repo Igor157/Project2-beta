@@ -1,12 +1,14 @@
+@import "../currency-page/variables.scss";
+
 .ik-currency-tabs {
     max-width: 95%;
-    color: #ddd;
+    color: $lightGrey;
 }
 .ik-currency-tab {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 2px solid #ddd;
+    border: 2px solid $lightGrey;
     width: 100px;
     height: 40px;
     cursor: pointer;

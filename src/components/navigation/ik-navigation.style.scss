@@ -1,3 +1,5 @@
+@import "../currency-page/variables.scss";
+
 .ik-navigation {}
 
 .ik-navigation__button {
@@ -5,11 +7,11 @@
 }
 
 .ik-navigation__button--selected {
-    color: rgb(74, 74, 228);
+    color: $blue;
 }
 
 .ik-navigation__counter {
-    color: red;
+    color: $commonRed;
     text-decoration: none;
     float: right;
     margin-left: 10px;
