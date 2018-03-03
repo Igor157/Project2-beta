@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
-import styles from './ik-currency-calculator.style.css';
+import styles from './ik-currency-calculator.style.scss';
 
 import { OneSideConverterContainer } from '../one-side-converter-container';
 import { EmptyTemplate } from '../empty-template';

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-cur-info.style.css';
+import styles from './ik-cur-info.style.scss';
 
 
 export class CurInfo extends React.Component {

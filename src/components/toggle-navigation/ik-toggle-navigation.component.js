@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-toggle-navigation.style.css';
+import styles from './ik-toggle-navigation.style.scss';
 import {
   NavLink
 } from 'react-router-dom';

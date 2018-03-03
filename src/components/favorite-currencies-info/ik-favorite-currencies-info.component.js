@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-favorite-currencies-info.style.css';
+import styles from './ik-favorite-currencies-info.style.scss';
 import { ConnectedFavoriteCurrencyDynamicForDates } from '../../containers/ik-connected-favorite-currency-for-dates.container.js';
 import { ConnectedCurInfo } from '../../containers/ik-connected-cur-info.container.js';
 

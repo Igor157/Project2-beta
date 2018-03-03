@@ -1,28 +1,38 @@
-html, body {
+@import "./variables.scss";
+html,
+body {
     height: 100%;
 }
 
 #ik-page {
     height: 100%;
-    width:100%;
-    background-color: rgb(88, 82, 82);
+    width: 100%;
+    background-color: $darkGrey;
 }
 
 .ik-currency-page {
     min-height: 100%;
-    width:100%;
+    width: 100%;
     max-width: 1600px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 3%;
-    background-color: rgb(88, 82, 82);
-
+    background-color: $darkGrey;
+    @media (max-width: $smallScreen) {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: space-around;
+    }
 }
 
 .ik-currency-page__search {
     width: 30%;
     box-sizing: border-box;
+    @media (max-width: $smallScreen) {
+        order: 1;
+    }
 }
 
 .ik-currency-page__search--unvizible {
@@ -37,22 +47,39 @@ html, body {
     justify-content: space-around;
     padding-left: 20%;
     box-sizing: border-box;
+    @media (max-width: $smallScreen) {
+        order: 0;
+        align-self: flex-end;
+    }
 }
 
 .ik-currency-page__available-currencies {
     width: 30%;
     max-height: 78vh;
     box-sizing: border-box;
+    @media (max-width: $smallScreen) {
+        order: 2;
+        margin-top: 5px;
+    }
 }
 
 .ik-currency-page__info-place {
     width: 70%;
     box-sizing: border-box;
+    @media (max-width: $smallScreen) {
+        order: 3;
+    }
 }
 
 .ik-currency-page__currency-calculator {
     width: 70%;
     box-sizing: border-box;
+    @media (max-width: $smallScreen) {
+        order: 3;
+        margin-top: 5px;
+        height: 450px;
+        width: 100%;
+    }
 }
 
 .ik-currency-page__about {
@@ -60,57 +87,25 @@ html, body {
     margin-top: 10%;
     display: flex;
     flex-direction: column;
+    @media (max-width: $smallScreen) {
+        order: 3;
+    }
 }
 
 .ik-currency-page__favorite-currencies {
     width: 80%;
     margin: auto;
+    @media (max-width: $smallScreen) {
+        order: 3;
+        width: 100%;
+    }
 }
 
 .ik-currency-page__saveable-currency-dynamic {
     width: 70%;
-}
-
-@media (max-width: 700px) {
-    .ik-currency-page {
-        flex-wrap: nowrap;
-        flex-direction: column;
-        align-content: flex-start;
-        justify-content:space-around;
-    }
-    .ik-currency-page__search {
-        order: 1;
-    }
-    .ik-currency-page__search--unvizible {
-        visibility: hidden;
-    }
-    .ik-currency-page__navigation {
-        order: 0;
-        align-self: flex-end;
-    }
-    .ik-currency-page__available-currencies {
-        order: 2;
-        margin-top: 5px;
-    }
-    .ik-currency-page__info-place {
+    @media (max-width: $smallScreen) {
         order: 3;
-    }
-    .ik-currency-page__currency-calculator {
-        order: 3;
-        margin-top: 5px;
-        height: 450px;
-        width:100%;
-    }
-    .ik-currency-page__about {
-        order: 3;
-    }
-    .ik-currency-page__favorite-currencies {
-        order: 3;
-        width:100%;
-    }
-    .ik-currency-page__saveable-currency-dynamic {
-        order: 3;
-        width:100%;
+        width: 100%;
         height: 450px;
         margin-top: 5px;
     }

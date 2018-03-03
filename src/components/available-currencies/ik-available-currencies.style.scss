@@ -1,17 +1,23 @@
+@import "../currency-page/variables.scss";
 .ik-available-currencies {
-    border: 2px solid #ddd;
+    border: 2px solid $lightGrey;
     border-radius: 5px;
     overflow-y: auto;
     overflow-x: hidden;
-    color: rgb(74, 74, 228);
+    color: $blue;
+    @media (max-width: $smallScreen) {
+        display: flex;
+        width: 100%;
+        overflow: auto;
+    }
 }
 
 .ik-available-currencies__day-progress--red {
-    background-color: rgb(151, 21, 21);
+    background-color: $commonRed;
 }
 
 .ik-available-currencies__day-progress--green {
-    background-color: rgb(30, 126, 30);
+    background-color: $commonGreen;
 }
 
 .ik-available-currencies__row {
@@ -20,15 +26,18 @@
     padding-top: 2%;
     padding-bottom: 2%;
     cursor: pointer;
-}
-
-.ik-available-currencies__row:hover {
-    background-color: rgb(74, 74, 228);
-    color: white;
+    @media (max-width: $smallScreen) {
+        border: 1px solid $lightGrey;
+        flex-direction: column;
+    }
+    &:hover {
+        background-color: $blue;
+        color: white;
+    }
 }
 
 .ik-available-currencies__row--selected {
-    background-color: rgb(74, 74, 228);
+    background-color: $blue;
     color: white;
 }
 
@@ -52,23 +61,17 @@
     border-radius: 5px;
     cursor: pointer;
     box-sizing: border-box;
+    @media (max-width: $smallScreen) {
+        width: 100%;
+        margin: auto;
+    }
 }
 
-@media (max-width: 700px) {
-    .ik-available-currencies {
-        display: flex;
-        width: 100%;
-        overflow: auto;
-    }
-    .ik-available-currencies__row {
-        border: 1px solid #ddd;
-        flex-direction: column;
-    }
-    .ik-available-currencies__icon, .ik-available-currencies__abr, .ik-available-currencies__rate, .ik-available-currencies__day-progress {
-        margin: 3px;
-    }
+@media (max-width: $smallScreen) {
+    .ik-available-currencies__icon,
+    .ik-available-currencies__abr,
+    .ik-available-currencies__rate,
     .ik-available-currencies__day-progress {
-        width:100%;
-        margin: auto;
+        margin: 3px;
     }
 }

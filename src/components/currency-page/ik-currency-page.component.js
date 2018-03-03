@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './default.css';
-import styles from './ik-currency-page.style.css';
+import './default.scss';
+import styles from './ik-currency-page.style.scss';
 import {
   HashRouter as Router,
   Route,

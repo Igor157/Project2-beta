@@ -1,3 +1,5 @@
+@import "../currency-page/variables.scss";
+
 .ik-search {
 }
 .ik-search__form {
@@ -8,15 +10,15 @@
     padding: 2%;
     min-width: 70%;
     color: white;
-    background-color: rgb(74, 74, 228);
-    border: 2px solid #ddd;
+    background-color: $blue;
+    border: 2px solid $lightGrey;
     border-radius: 10px 0 0 10px;
 }
 
 .ik-search__search-button {
     padding: 2%;
     color: white;
-    background-color: rgb(228, 192, 74);
+    background-color: $gold;
     border: 2px solid white;
     border-radius: 0 10px 10px 0;
     user-select: none;

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-one-side-converter-input.style.css';
+import styles from './ik-one-side-converter-input.style.scss';
 
 export class OneSideConverterInput extends React.Component {
     constructor(props) {

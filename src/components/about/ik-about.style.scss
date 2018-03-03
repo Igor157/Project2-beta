@@ -1,0 +1,12 @@
+@import "../currency-page/variables.scss";
+.ik-about {
+    color: $blue;
+    font-size: 1.6em;
+    @media (max-width: $smallScreen) {
+        font-size: 1.1em;
+    }
+}
+
+.ik-about__author {}
+
+.ik-about__link {}
