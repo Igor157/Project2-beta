@@ -3,41 +3,39 @@ const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractCSS = new ExtractTextPlugin({
+    filename: 'css/[name].css?[hash]-[chunkhash]-[contenthash]-[name]',
+    disable: false,
+    allChunks: true
+});
+const extractSASS = new ExtractTextPlugin({
+    filename: 'scss/[name].scss?[hash]-[chunkhash]-[contenthash]-[name]',
+    disable: false,
+    allChunks: true
+});
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 console.log(NODE_ENV);
 
 module.exports = {
-    context: __dirname + '/src',
+    context: path.resolve(__dirname, "./src"),
     entry: {
         app: './app.js'
     },
     output: {
-        path: __dirname + '/build',
-        filename: "[name].js"
-        // library:  "[name]"
-    },
-    watch: NODE_ENV === 'development',
-    devtool:'source-map',
-    devServer: {
-        contentBase: path.resolve(__dirname)
+        path: path.resolve(__dirname, 'build'),
+        filename: '[name].bundle.js'
     },
     plugins: [
+        new CleanWebpackPlugin(['build']),
         new HtmlWebpackPlugin({
             hash: true,
             title: 'My Awesome application',
-            myPageHeader: 'Hello World',
             template: '.././src/index.html',
             filename: './index.html'
         }),
-        new ExtractTextPlugin({
-            filename: "css/[name].css?[hash]-[chunkhash]-[contenthash]-[name]",
-            disable: false,
-            allChunks: true
-        }),
-        new webpack.EnvironmentPlugin({
-            NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
-            DEBUG: false
-          })
+        extractCSS,
+        extractSASS
     ],
     module: {
         rules: [
@@ -46,24 +44,31 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: "eslint-loader"
-              },
+            },
             {
                 test: /\.js$/,
                 exclude: [/node_modules/],
                 use:
-                {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['es2015', 'react', 'stage-2']
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['es2015', 'react', 'stage-2']
+                        }
                     }
-                }
 
             },
             {
                 test: /\.css$/,
-                use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+                use: ['css-hot-loader'].concat(extractCSS.extract({
                     fallback: 'style-loader',
                     use: 'css-loader'
+                }))
+            },
+            {
+                test: /\.scss$/,
+                use: ['css-hot-loader'].concat(extractCSS.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
                 }))
             },
             {
@@ -86,7 +91,6 @@ module.exports = {
                                 progressive: true,
                                 quality: 65
                             },
-                            // Specifying webp here will create a WEBP version of your JPG/PNG images
                             webp: {
                                 quality: 75
                             }
@@ -97,14 +101,3 @@ module.exports = {
         ]
     }
 };
-
-if (NODE_ENV === 'production') {
-    module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-                drop_console: true
-            }
-        })
-    );
-}
