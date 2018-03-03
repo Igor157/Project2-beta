@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ik-currency-graph.style.css';
+import './ik-currency-graph.style.scss';
 import moment from 'moment';
 import {
     AreaChart,

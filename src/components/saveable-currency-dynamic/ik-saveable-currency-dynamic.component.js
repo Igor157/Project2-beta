@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import styles from './ik-saveable-currency-dynamic.style.css';
+import styles from './ik-saveable-currency-dynamic.style.scss';
 import { ConnectedSaveToFavoriteButton } from '../../containers/ik-connected-save-to-favorite-button.container.js';
 import { ConnectedMainCurrencyDynamicForDates } from '../../containers/ik-connected-main-currency-for-dates.container';
 import { EmptyTemplate } from '../empty-template';

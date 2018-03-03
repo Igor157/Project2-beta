@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-navigation.style.css';
+import styles from './ik-navigation.style.scss';
 import {
   HashRouter as Router,
   Route,

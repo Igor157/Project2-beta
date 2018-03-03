@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import styles from './ik-favorite-currencies.style.css';
+import styles from './ik-favorite-currencies.style.scss';
 import { ConnectedCurrencyTabs } from '../../containers/ik-connected-currency-tabs.container.js';
 import { EmptyTemplate } from '../empty-template';
 import { FavoriteCurrenciesInfo } from '../favorite-currencies-info';

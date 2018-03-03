@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-save-to-favorite-button.style.css';
+import styles from './ik-save-to-favorite-button.style.scss';
 
 
 export class SaveToFavoriteButton extends React.Component {

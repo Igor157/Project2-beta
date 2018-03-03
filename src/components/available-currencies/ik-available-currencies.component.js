@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-available-currencies.style.css';
+import styles from './ik-available-currencies.style.scss';
 import { mathService } from '../../services/Services.js';
 import { faService } from '../../services/Services.js';
 import moment from 'moment';

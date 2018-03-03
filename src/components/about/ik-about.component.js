@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-about.style.css';
+import styles from './ik-about.style.scss';
 
 
 export class About extends React.Component {

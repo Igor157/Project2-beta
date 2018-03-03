@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import styles from './ik-search.style.css';
+import styles from './ik-search.style.scss';
 
 export class Search extends React.Component {
   constructor(props) {

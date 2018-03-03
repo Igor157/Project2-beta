@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-empty-template.style.css';
+import styles from './ik-empty-template.style.scss';
 
 
 export class EmptyTemplate extends React.Component {

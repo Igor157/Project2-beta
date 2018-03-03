@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './ik-one-side-converter-container.style.css';
+import styles from './ik-one-side-converter-container.style.scss';
 import { OneSideConverterInput } from '../one-side-converter-input/ik-one-side-converter-input.component.js';
 import { converterServices } from '../../services/Services.js';
 
