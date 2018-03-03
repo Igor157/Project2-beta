@@ -24,7 +24,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].bundle.js'
+        filename: '[name].[chunkhash].js'
     },
     plugins: [
         new CleanWebpackPlugin(['build']),
@@ -35,7 +35,10 @@ module.exports = {
             filename: './index.html'
         }),
         extractCSS,
-        extractSASS
+        extractSASS,
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest'
+        })
     ],
     module: {
         rules: [
