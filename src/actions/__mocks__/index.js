@@ -48,3 +48,16 @@ export function changeCurForDynamic(id, abr) {
         }
     };
 }
+
+export function getDynamic(curID, start, end) {
+
+    return (dispatch) => {
+        dispatch({
+            type: 'GET_DYNAMIC_REQUEST'
+        });
+        dispatch({
+            type: 'GET_DYNAMIC_SUCCESS',
+            payload: 'someData'
+        });
+    };
+}

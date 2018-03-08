@@ -11,6 +11,8 @@ import { About } from '../src/components/about';
 import { AvailableCurrencies } from '../src/components/available-currencies';
 import { ChooseAvailableCurrencies } from '../src/containers/ik-choose-available-currencies.container';
 // import { requestServices } from '../src/services/Services.js';
+import { CurrencyCalculator } from '../src/components/currency-calculator';
+import { ConnectedCurrencyCalculator } from '../src/containers/ik-connected-currency-calculator.container';
 
 import thunk from 'redux-thunk';
 const middlewares = [thunk];
@@ -135,20 +137,112 @@ describe('ChooseAvailableCurrencies container should map states and dispatch act
         expect(wrapper.find(ChooseAvailableCurrencies).length).toEqual(1);
     });
 
-    it('+++ check Prop matches with initialState', () => {
+    test('+++ check Prop matches with initialState', () => {
         expect(wrapper.find(AvailableCurrencies).prop('filterText')).toEqual(initialState.availableCurrencies.filterText);
         expect(wrapper.find(AvailableCurrencies).prop('cur')).toEqual(initialState.getCurrencies.cur);
         expect(wrapper.find(AvailableCurrencies).prop('choosenId')).toEqual(initialState.availableCurrencies.choosenId);
     });
 
-    it('+++ check action on dispatching ', () => {
-        console.log(wrapper.find('.ik-available-currencies__row').at(0));
+    test('+++ check action on dispatching ', () => {
         wrapper.find('.ik-available-currencies__row').at(0).simulate('click');
         let action = store.getActions();
-        console.log(action);
         expect(action[0].type).toBe('GET_CUR_REQUEST');
         expect(action[1].type).toBe('GET_CUR_SUCCESS');
         expect(action[2].type).toBe('CHANGE_CUR_FOR_DYNAMIC');
+    });
+
+});
+
+
+describe('CurrencyCalculator should render Empty if there are not choosen abr and calculator+graph if abr chosen', () => {
+    test('render Empty', () => {
+        let wrapper = shallow(
+            <CurrencyCalculator
+            />);
+        expect(wrapper.find('EmptyTemplate').length).toEqual(1);
+
+    });
+    test('render calculator+graph', () => {
+        let wrapper = shallow(
+            <CurrencyCalculator
+                currentAbr='USD'
+            />);
+        expect(wrapper.find('OneSideConverterContainer').length).toEqual(1);
+        expect(wrapper.find('CurrencyGraph').length).toEqual(1);
+    });
+});
+
+let mockDynamic = [{
+    curAbr: "",
+    curRate: 5.901,
+    date: "February 8th 2018",
+    curId: 293,
+    curName: "",
+    startDate: "",
+    endDate: "",
+    curScale: ""
+},
+{
+    curAbr: "",
+    curRate: 5.8549,
+    date: "February 9th 2018",
+    curId: 293,
+    curName: "",
+    startDate: "",
+    endDate: "",
+    curScale: ""
+},
+{
+    curAbr: "",
+    curRate: 5.8492,
+    date: "February 10th 2018",
+    curId: 293,
+    curName: "",
+    startDate: "",
+    endDate: "",
+    curScale: ""
+}];
+
+describe('ConnectedCurrencyCalculator container should map states and dispatch actions', () => {
+    const initialState = {
+        getCurrencies: {
+            cur: mockCur
+        },
+        availableCurrencies: {
+            choosenAbr: 'USD',
+            choosenId: '145'
+        },
+        getDynamic: {
+            dynamic: mockDynamic
+        }
+    };
+    const mockStore = configureStore(middlewares);
+    let store, wrapper;
+    beforeEach(() => {
+        store = mockStore(initialState);
+        wrapper = mount(<Provider store={store}>
+            <ConnectedCurrencyCalculator
+            />
+        </Provider>);
+    });
+    test('+++ render the connected(SMART) component', () => {
+        expect(wrapper.find(ConnectedCurrencyCalculator).length).toEqual(1);
+    });
+
+    test('+++ check Prop matches with initialState', () => {
+        expect(wrapper.find(CurrencyCalculator).prop('dynamic')).toEqual(initialState.getDynamic.dynamic);
+        expect(wrapper.find(CurrencyCalculator).prop('currency')).toEqual(initialState.getCurrencies.cur);
+        expect(wrapper.find(CurrencyCalculator).prop('choosenId')).toEqual(initialState.availableCurrencies.choosenId);
+        expect(wrapper.find(CurrencyCalculator).prop('currentAbr')).toEqual(initialState.availableCurrencies.choosenAbr);
+    });
+
+    test('+++ check action on dispatching ', () => {
+        let action = store.getActions();
+        expect(action[0].type).toBe('GET_DYNAMIC_REQUEST');
+        expect(action[1].type).toBe('GET_DYNAMIC_SUCCESS');
+        wrapper.setProps({ currentAbr: 'EUR' });
+        expect(action[2].type).toBe('GET_DYNAMIC_REQUEST');
+        expect(action[3].type).toBe('GET_DYNAMIC_SUCCESS');
     });
 
 });

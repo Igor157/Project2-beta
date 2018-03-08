@@ -17,12 +17,10 @@ export class AvailableCurrencies extends React.Component {
   }
   clickHandler(e) {
     let target = e.target;
-    console.log(target.className);
     while (target.className !== 'ik-available-currencies  ik-currency-page__available-currencies') {
       if (target.className === 'ik-available-currencies__row') {
         let end = moment();
         let start = moment().date(-20);
-        console.log("!!!!!!!!!!!!!!!!!!");
         this.props.changeCurForDynamic(target.getAttribute('id'), target.getAttribute('abr'));
         return;
       }
