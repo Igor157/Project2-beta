@@ -29,3 +29,22 @@ export function getCur() {
         });
     };
 }
+
+export function filterAvailableCur(value) {
+    return {
+        type: 'FILTER_AVAILABLE_CUR',
+        payload: {
+            filterText: value
+        }
+    };
+}
+
+export function changeCurForDynamic(id, abr) {
+    return {
+        type: 'CHANGE_CUR_FOR_DYNAMIC',
+        payload: {
+            changedId: id,
+            changedAbr: abr
+        }
+    };
+}

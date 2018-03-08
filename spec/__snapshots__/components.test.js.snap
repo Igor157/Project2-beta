@@ -47,7 +47,101 @@ exports[`Snapshot test of AvailableCurrencies 1`] = `
 <div
   className="ik-available-currencies  ik-currency-page__available-currencies"
   onClick={[Function]}
-/>
+>
+  <div
+    abr="AUD"
+    className="ik-available-currencies__row"
+    id={170}
+    smth="ik-currency-tab"
+  >
+    <span
+      aria-hidden={true}
+      className="fa fa-money ik-available-currencies__icon"
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    />
+    <div
+      className="ik-available-currencies__abr"
+    >
+      AUD
+    </div>
+    <div
+      className="ik-available-currencies__rate"
+    >
+      1.52850
+    </div>
+    <button
+      className="ik-available-currencies__day-progress  ik-available-currencies__day-progress--green"
+    >
+      +0.0031
+    </button>
+  </div>
+  <div
+    abr="BGN"
+    className="ik-available-currencies__row"
+    id={191}
+    smth="ik-currency-tab"
+  >
+    <span
+      aria-hidden={true}
+      className="fa fa-money ik-available-currencies__icon"
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    />
+    <div
+      className="ik-available-currencies__abr"
+    >
+      BGN
+    </div>
+    <div
+      className="ik-available-currencies__rate"
+    >
+      1.24430
+    </div>
+    <button
+      className="ik-available-currencies__day-progress  ik-available-currencies__day-progress--green"
+    >
+      +0.0044
+    </button>
+  </div>
+  <div
+    abr="UAH"
+    className="ik-available-currencies__row"
+    id={290}
+    smth="ik-currency-tab"
+  >
+    <span
+      aria-hidden={true}
+      className="fa fa-money ik-available-currencies__icon"
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    />
+    <div
+      className="ik-available-currencies__abr"
+    >
+      UAH
+    </div>
+    <div
+      className="ik-available-currencies__rate"
+    >
+      0.07503
+    </div>
+    <button
+      className="ik-available-currencies__day-progress  ik-available-currencies__day-progress--green"
+    >
+      +0.0364
+    </button>
+  </div>
+</div>
 `;
 
 exports[`Snapshot test of Search 1`] = `
