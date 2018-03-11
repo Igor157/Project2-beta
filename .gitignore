@@ -61,4 +61,4 @@ build/
 # ignore files in dist/
 dist/
 # ignore package-lock
-/package-lock
+package-lock.json
