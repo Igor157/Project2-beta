@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import moment from 'moment';
 import { configure, shallow, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
@@ -13,6 +14,9 @@ import { ChooseAvailableCurrencies } from '../src/containers/ik-choose-available
 // import { requestServices } from '../src/services/Services.js';
 import { CurrencyCalculator } from '../src/components/currency-calculator';
 import { ConnectedCurrencyCalculator } from '../src/containers/ik-connected-currency-calculator.container';
+import { CurrencyDynamicForDates } from '../src/components/currency-dynamic-for-dates';
+import {CurrencyGraph} from '../src/components/currency-graph';
+import {ConnectedMainCurrencyDynamicForDates} from '../src/containers/ik-connected-main-currency-for-dates.container';
 
 import thunk from 'redux-thunk';
 const middlewares = [thunk];
@@ -240,9 +244,98 @@ describe('ConnectedCurrencyCalculator container should map states and dispatch a
         let action = store.getActions();
         expect(action[0].type).toBe('GET_DYNAMIC_REQUEST');
         expect(action[1].type).toBe('GET_DYNAMIC_SUCCESS');
-        wrapper.setProps({ currentAbr: 'EUR' });
-        expect(action[2].type).toBe('GET_DYNAMIC_REQUEST');
-        expect(action[3].type).toBe('GET_DYNAMIC_SUCCESS');
     });
 
 });
+
+jest.mock('../src/components/currency-graph');
+
+test('Snapshot test of CurrencyDynamicForDates', function () {
+    CurrencyGraph.mockReturnValue(<div></div>);
+    const component = renderer.create(
+        <CurrencyDynamicForDates
+            dynamic={mockDynamic}
+            choosenId={170}
+            choosenAbr='AUD'
+            startDate='2018-02-08T17:52:13.164Z'
+            endDate='2018-03-10T17:52:13.151Z'
+            getDynamic={jest.fn()}
+            changeStartDate={jest.fn()}
+            changeEndDate={jest.fn()}
+        />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
+
+describe('ConnectedMainCurrencyDynamicForDates container should map states and dispatch actions', () => {
+    const initialState = {
+        availableCurrencies: {
+            choosenAbr: 'AUD',
+            choosenId: '170'
+        },
+        getDynamic: {
+            dynamic: mockDynamic
+        },
+        changeDate: {
+            startDate: '2018-02-08T17:52:13.164Z',
+            endDate: '2018-03-10T17:52:13.151Z'
+        }
+    };
+    const mockStore = configureStore(middlewares);
+    let store, wrapper;
+    beforeEach(() => {
+        store = mockStore(initialState);
+        wrapper = mount(<Provider store={store}>
+            <ConnectedMainCurrencyDynamicForDates
+            />
+        </Provider>);
+    });
+    test('+++ render the connected(SMART) component', () => {
+        expect(wrapper.find(ConnectedMainCurrencyDynamicForDates).length).toEqual(1);
+    });
+
+    test('+++ check Prop matches with initialState', () => {
+        expect(wrapper.find(CurrencyDynamicForDates).prop('dynamic')).toEqual(initialState.getDynamic.dynamic);
+        expect(wrapper.find(CurrencyDynamicForDates).prop('choosenId')).toEqual(initialState.availableCurrencies.choosenId);
+        expect(wrapper.find(CurrencyDynamicForDates).prop('choosenAbr')).toEqual(initialState.availableCurrencies.choosenAbr);
+        expect(wrapper.find(CurrencyDynamicForDates).prop('startDate')).toEqual(initialState.changeDate.startDate);
+        expect(wrapper.find(CurrencyDynamicForDates).prop('endDate')).toEqual(initialState.changeDate.endDate);
+    });
+
+    test('+++ check action on dispatching ', () => {
+        wrapper.find('input').last().simulate('select');
+        let action = store.getActions();
+        expect(action[0].type).toBe('GET_DYNAMIC_REQUEST');
+        expect(action[1].type).toBe('GET_DYNAMIC_SUCCESS');
+        expect(action[2].type).toBe('CHANGE_END_DATE');
+        expect(action[3].type).toBe('CHANGE_START_DATE');
+    });
+
+});
+
+
+
+
+// describe('CurrencyDynamicForDates should render Empty if there are not choosen abr and calculator+graph if abr chosen', () => {
+//     test('render Empty', () => {
+//         let wrapper = shallow(
+//             <CurrencyDynamicForDates
+//             dynamic={mockDynamic}
+//             choosenId={170}
+//             choosenAbr='AUD'
+//             startDate=
+//             endDate=
+//             />);
+//         expect(wrapper.find('EmptyTemplate').length).toEqual(1);
+
+//     });
+//     test('render calculator+graph', () => {
+//         let wrapper = shallow(
+//             <CurrencyCalculator
+//                 currentAbr='USD'
+//             />);
+//         expect(wrapper.find('OneSideConverterContainer').length).toEqual(1);
+//         expect(wrapper.find('CurrencyGraph').length).toEqual(1);
+//     });
+// });

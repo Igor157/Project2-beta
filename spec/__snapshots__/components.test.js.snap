@@ -144,6 +144,91 @@ exports[`Snapshot test of AvailableCurrencies 1`] = `
 </div>
 `;
 
+exports[`Snapshot test of CurrencyDynamicForDates 1`] = `
+<div
+  className="ik-currency-dynamic-for-dates undefined"
+>
+  <div
+    className="ik-currency-dynamic-for-dates__date-input"
+  >
+    <div
+      className="ik-currency-dynamic-for-dates__date-picker"
+    >
+      <div>
+        From date
+      </div>
+      <div>
+        <div
+          className="react-datepicker-wrapper"
+        >
+          <div
+            className="react-datepicker__input-container"
+          >
+            <input
+              autoComplete={undefined}
+              autoFocus={undefined}
+              className=""
+              disabled={false}
+              id={undefined}
+              name={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder={undefined}
+              readOnly={undefined}
+              required={undefined}
+              tabIndex={undefined}
+              title={undefined}
+              type="text"
+              value="02/08/2018"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ik-currency-dynamic-for-dates__date-picker"
+    >
+      <div>
+        End date
+      </div>
+      <div>
+        <div
+          className="react-datepicker-wrapper"
+        >
+          <div
+            className="react-datepicker__input-container"
+          >
+            <input
+              autoComplete={undefined}
+              autoFocus={undefined}
+              className=""
+              disabled={false}
+              id={undefined}
+              name={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder={undefined}
+              readOnly={undefined}
+              required={undefined}
+              tabIndex={undefined}
+              title={undefined}
+              type="text"
+              value="03/10/2018"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Snapshot test of Search 1`] = `
 <div
   className="ik-search undefined"

@@ -61,3 +61,19 @@ export function getDynamic(curID, start, end) {
         });
     };
 }
+export function changeStartDate(date) {
+    return {
+        type: 'CHANGE_START_DATE',
+        payload: {
+            startDate: date
+        }
+    };
+}
+export function changeEndDate(date) {
+    return {
+        type: 'CHANGE_END_DATE',
+        payload: {
+            endDate: date
+        }
+    };
+}
