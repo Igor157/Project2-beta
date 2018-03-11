@@ -24,6 +24,8 @@ export class CurrencyDynamicForDates extends React.Component {
   }
   componentDidMount() {
     this.props.getDynamic(this.props.choosenId, moment().date(-20), moment());
+    this.props.changeEndDate(moment());
+    this.props.changeStartDate(moment().add(-30, 'days'));
   }
   componentDidUpdate(prevProps) {
     if (prevProps.choosenId !== this.props.choosenId) {

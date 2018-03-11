@@ -1,4 +1,7 @@
 {
+    "plugins": [
+        "jest"
+    ],
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
@@ -11,7 +14,8 @@
     "env": {
         "es6": true,
         "browser": true,
-        "node": true
+        "node": true,
+        "jest/globals": true
     },
     "rules": {
         ////Possible Errors////
@@ -126,6 +130,14 @@
             2,
             3
         ],
-        "quotes": [1, "single"]
+        "quotes": [
+            1,
+            "single"
+        ],
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
     }
 }

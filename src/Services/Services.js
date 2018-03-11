@@ -1,4 +1,5 @@
 import moment from 'moment';
+import axios from 'axios';
 
 class MathService {
     curTendetionDetermination(cur) {
@@ -9,9 +10,9 @@ export let mathService = new MathService();
 
 class RequestServices {
     reqCur(url) {
-        return fetch(url)
+        return axios.get(url)
             .then((result) => {
-                return result.json();
+                return result.data;
             })
             .catch((err) => {
                 console.log(err);
@@ -57,7 +58,7 @@ class RequestServices {
             });
     }
     getCurrencyInfo(reqId) {
-        let urlForInfo = `https://www.nbrb.by/API/ExRates/Currencies/${reqId}`;
+        let urlForInfo = `https://cors-anywhere.herokuapp.com/http://www.nbrb.by/API/ExRates/Currencies/${reqId}`;
         let curInfoPromise = this.reqCur(urlForInfo);
         return curInfoPromise
             .then((data = []) => {
@@ -167,3 +168,4 @@ class FaService {
 
 }
 export let faService = new FaService();
+
