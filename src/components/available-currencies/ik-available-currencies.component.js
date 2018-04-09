@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './ik-available-currencies.style.scss';
-import { mathService } from '../../services/Services.js';
-import { faService } from '../../services/Services.js';
+import { mathService } from '../../Services/Services.js';
+import { faService } from '../../Services/Services.js';
 import moment from 'moment';
 import FontAwesome from 'react-fontawesome';
 

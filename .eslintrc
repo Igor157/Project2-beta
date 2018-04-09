@@ -46,7 +46,7 @@
         "no-sparse-arrays": 2,
         "use-isnan": 2,
         "valid-typeof": 2,
-        "no-extra-parens": 2,
+        // "no-extra-parens": 2,
         ////Best Practices////
         "eqeqeq": [
             2,
